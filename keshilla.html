@@ -17,6 +17,18 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
   </head>
   <body>
+    <div id="header-container"></div>
+    <script>
+      // JavaScript për të ngarkuar header-in nga file-i i jashtëm
+      fetch('nav.html')
+          .then(response => response.text())
+          .then(data => {
+              // Vendos përmbajtjen e header-it në div-in me id="header-container"
+              document.getElementById('header-container').innerHTML = data;
+          })
+          .catch(err => console.error('Gabim gjatë ngarkimit të header-it:', err));
+  </script>
+
     <div class="wrapper">
       <div class="head">
         <h1> Top K&#235shillat</h1>
