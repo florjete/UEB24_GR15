@@ -31,7 +31,7 @@
       <input type="text" id="kerko" onkeyup="kerko()" placeholder="Kerko..">
       <br>
       <div class="dropdown"  >
-        <button onclick="myFunction()" class="dropbtn">Qytetet <span class="glyphicon glyphicon-chevron-down" style="font-size: 10px;" ></span></button>
+        <button onclick="toggleDropdown(event, 'myDropdown')" class="dropbtn">Qytetet <span class="glyphicon glyphicon-chevron-down" style="font-size: 10px;" ></span></button>
         <div id="myDropdown" class="dropdown-content">
           <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
           <a href="#">Prishtin&#235;</a>
@@ -47,15 +47,10 @@
           <a href="#">Vushtrri</a>
           <a href="#">Malishev&#235;</a>
           <a href="#">Drenas</a>
-
-          
-          
-
-
         </div>
       </div>
       <div class="dropdown">
-        <button onclick="myFunction2()" class="dropbtn">Fushat <span class="glyphicon glyphicon-chevron-down" style="font-size: 10px;" ></span></button>
+        <button onclick="toggleDropdown(event, 'myDropdown2')" class="dropbtn">Fushat <span class="glyphicon glyphicon-chevron-down" style="font-size: 10px;" ></span></button>
         <div id="myDropdown2" class="dropdown-content">
           <input type="text" placeholder="Search.." id="myInput2" onkeyup="filterFunction2()">
           <a href="#">Sh&#235;ndet&#235;si</a>
@@ -70,7 +65,7 @@
       </div>
       </div>
       <div class="dropdown">
-        <button onclick="myFunction3()" class="dropbtn">Gjuha <span class="glyphicon glyphicon-chevron-down" style="font-size: 10px;" ></button>
+        <button onclick="toggleDropdown(event, 'myDropdown3')" class="dropbtn">Gjuha <span class="glyphicon glyphicon-chevron-down" style="font-size: 10px;" ></button>
         <div id="myDropdown3" class="dropdown-content">
           <input type="text" placeholder="Search.." id="myInput3" onkeyup="filterFunction3()">
           <a href="#">Gjuh&#235; Shqipe</a>

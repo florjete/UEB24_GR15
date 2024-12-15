@@ -1,12 +1,4 @@
-function myFunction() {
-    document.getElementById("myDropdown").classList.toggle("show");
-  }
-  function myFunction2() {
-    document.getElementById("myDropdown2").classList.toggle("show2");
-  }
-  function myFunction3() {
-    document.getElementById("myDropdown3").classList.toggle("show3");
-  }
+
   
   function filterFunction() {
     var input, filter, ul, li, a, i;
@@ -52,6 +44,30 @@ function myFunction() {
         a[i].style.display = "none";
       }
     }
+  }
+ window.onclick = function(event) {
+        if (!event.target.matches('.dropbtn') && !event.target.matches('.dropbtn *')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            for (var i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+        }
+    }
+    function toggleDropdown(event, dropdownId) {
+      // Close all dropdowns first
+      var dropdowns = document.getElementsByClassName("dropdown-content");
+      for (var i = 0; i < dropdowns.length; i++) {
+          dropdowns[i].classList.remove("show");
+      }
+
+      // Stop event bubbling up
+      event.stopPropagation();
+
+      // Open the clicked dropdown
+      document.getElementById(dropdownId).classList.toggle("show");
   }
   document.addEventListener("DOMContentLoaded", function () {
     const kartat = document.querySelectorAll(".puna");
