@@ -4,13 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        body {
+        .body1 {
             margin: 0;
             font-family: Arial, Helvetica, sans-serif;
             background-color: #F4F4F4;
             color: #FFFFFF;
         }
         nav {
+            position: relative;
+            z-index: 10;
             background-color: #264653;
             display: flex;
             align-items: center;
@@ -46,24 +48,27 @@
         }
 
         /* Styles for navigation links */
-        ul {
+        .nav-links {
             margin: 0;
             padding: 0;
             list-style: none;
             display: flex;
         }
-        ul li {
+        .nav-links li {
             margin: 0 15px;
         }
-        a {
+        #site {
+            pointer-events: auto;
             text-decoration: none;
             color: #FFFAFE;
             font-size: 18px;
         }
-        a:hover {
+        #site:hover {
             color: #E9C46A;
         }
         .hamburger {
+            position: relative;
+            z-index: 1000;
             display: none;
             font-size: 24px;
             cursor: pointer;
@@ -71,7 +76,7 @@
 
         /* Dizajn responsive */
         @media (max-width: 768px) {
-            ul {
+            .nav-links {
                 display: none;
                 flex-direction: column;
                 width: 100%;
@@ -81,10 +86,10 @@
                 left: 0;
                 text-align: center;
             }
-            ul.show {
+            .nav-links.show {
                 display: flex;
             }
-            ul li {
+            .nav-links li {
                 margin: 10px 0;
             }
             .hamburger {
@@ -93,7 +98,7 @@
         }
     </style>
 </head>
-<body>
+<body class="body1">
     <nav>
         <!-- Logo dhe text container -->
         <div class="logo-container">
@@ -105,11 +110,19 @@
 
         <!-- Navigation links -->
         <ul class="nav-links">
+<<<<<<< HEAD
             <li><a href="homeprova.html">Ballina</a></li>
             <li><a href="about.html">Rreth nesh</a></li>
             <li><a href="gallery.html">Shpallje</a></li>
             <li><a href="programs.html">K&#235shilla</a></li>
             <li><a href="login.html">Ky&#231u</a></li>
+=======
+            <li class="web"><a id="site" href="homeprova.html">Ballina</a></li>
+            <li class="web"><a id="site" href="about.html">Rreth nesh</a></li>
+            <li class="web"><a id="site" href="gallery.html">Shpallje</a></li>
+            <li class="web"><a id="site" href="keshilla.html">K&#235shilla</a></li>
+            <li class="web"><a id="site" href="contact.html">Kontakti</a></li>
+>>>>>>> c95f8a42b04f337b6b2f3c399c45f0cfcb9f97d6
         </ul>
 
         <!-- Pjesa e hamburger per menu -->

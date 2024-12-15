@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5 Libra për të Frymëzuar Suksesin</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+        }
+        .librat {
+            padding-left: 20px;
+        }
+        .libri {
+            margin: 15px 0;
+            background-color: #e7f7e7;
+            padding: 10px;
+            border-left: 5px solid #4CAF50;
+        }
+        .libri:hover {
+            background-color: #d1f7d1;
+        }
+    </style>
+</head>
+<body>
+    <div id="header-container"></div>
+    <script>
+      // JavaScript për të ngarkuar header-in nga file-i i jashtëm
+      fetch('nav.html')
+          .then(response => response.text())
+          .then(data => {
+              // Vendos përmbajtjen e header-it në div-in me id="header-container"
+              document.getElementById('header-container').innerHTML = data;
+          })
+          .catch(err => console.error('Gabim gjatë ngarkimit të header-it:', err));
+  </script>
+
+    <div class="container">
+        <h1>5 Libra që Duhet Lexuar për të Frymëzuar Suksesin</h1>
+        <ol class="librat">
+            <li class="libri"><strong>"The Power of Habit"</strong> - Charles Duhigg: Njohuri mbi rëndësinë e zakoneve dhe si ato ndikojnë në suksesin personal dhe profesional.</li>
+            <li class="libri"><strong>"Atomic Habits"</strong> - James Clear: Përcakton se si përmirësimi i zakoneve të vogla mund të çojë në ndryshime të mëdha në jetë.</li>
+            <li class="libri"><strong>"The 7 Habits of Highly Effective People"</strong> - Stephen Covey: Një udhëzues për zhvillimin e zakoneve dhe parimeve që udhëhojnë drejt suksesit afatgjatë.</li>
+            <li class="libri"><strong>"Think and Grow Rich"</strong> - Napoleon Hill: Një libër klasik për mendimin pozitiv dhe rëndësinë e qëllimeve të qarta në arritjen e suksesit.</li>
+            <li class="libri"><strong>"Start with Why"</strong> - Simon Sinek: Ndihmon individët dhe liderët të kuptojnë rëndësinë e qëllimit dhe misionit në arritjen e suksesit.</li>
+        </ol>
+    </div>
+
+</body>
+</html>
