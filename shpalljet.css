@@ -169,4 +169,43 @@ body {
   margin-right: 6px;
 }
 
+.card {
+  margin: 20px 0;
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Kalim i butë për animacion */
+}
+.card:hover {
+  transform: translateY(-10px); /* Lëvizja e kartës lart kur kalohet me miun */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Hija më e theksuar kur kalon miu */
+}
+.card img {
+  max-height: 200px;
+  object-fit: cover;
+}
+.date {
+  font-size: 14px;
+  color: #6c757d;
+}
+.btn-primary {
+  background-color: #264653;
+  border-color: #264653;
+  color: white;
+}
+.btn-primary:hover {
+  background-color:#E9c46a ;
+  border-color: #E9c46a;
+}
+.icon {
+  margin-right: 8px;
+  color: #E9c46a;
+}
+.card-body p {
+  margin-bottom: 10px;
+}
+.card-body .details {
+  font-size: 14px;
+  color: #6c757d;
+}
+
 
