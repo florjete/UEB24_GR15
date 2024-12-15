@@ -54,11 +54,11 @@
             list-style: none;
             display: flex;
         }
-        .web {
+        .nav-links li {
             margin: 0 15px;
         }
         #site {
-            pointer-events: auto; /* Siguron që link-et janë të klikueshme */
+            pointer-events: auto;
             text-decoration: none;
             color: #FFFAFE;
             font-size: 18px;
@@ -76,7 +76,7 @@
 
         /* Dizajn responsive */
         @media (max-width: 768px) {
-            ul {
+            .nav-links {
                 display: none;
                 flex-direction: column;
                 width: 100%;
@@ -86,10 +86,10 @@
                 left: 0;
                 text-align: center;
             }
-            ul.show {
+            .nav-links.show {
                 display: flex;
             }
-            ul li {
+            .nav-links li {
                 margin: 10px 0;
             }
             .hamburger {
