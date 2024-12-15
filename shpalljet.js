@@ -53,3 +53,19 @@ function myFunction() {
       }
     }
   }
+  document.addEventListener("DOMContentLoaded", function () {
+    const kartat = document.querySelectorAll(".puna");
+  
+    kartat.forEach((karta) => {
+        karta.addEventListener("mouseenter", () => {
+            karta.style.transform = "scale(1.02)";
+            karta.style.transition = "all 0.3s ease-in-out";
+            karta.style.boxShadow = "0 4px 8px rgba(0, 0, 0, 0.2)";
+        });
+  
+        karta.addEventListener("mouseleave", () => {
+            karta.style.transform = "scale(1)";
+            karta.style.boxShadow = "0 2px 5px rgba(0, 0, 0, 0.1)";
+        });
+    });
+  });

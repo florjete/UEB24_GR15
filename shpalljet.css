@@ -103,3 +103,68 @@ margin-left: 200px;
 .show {display:block;}
 .show2 {display: block;}
 .show3 {display: block;}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+/* Konteineri i përgjithshëm */
+.puna {
+  margin-left: 230px;
+  max-width: 100%;
+  width: 985px;
+  margin-top: 50px ;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  
+}
+
+.titulli-punesimi {
+  color: #264653;
+  font-size: 1.7em;
+  margin-bottom: 5px;
+}
+
+.emri-kompanise {
+  color: #6c757d;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.detajet-punesimi{
+  display: block;
+  margin-left: -200px;
+}
+
+.detajet-punesimi p {
+  margin-bottom: 8px;
+  font-size: 1.3em;
+  display: flex;
+  color:  #264653;;
+  
+  
+ 
+}
+.lokacioni,.data-shpalljes,.kategoria,.paga {
+  margin-left:5px;
+}
+
+.ikone {
+ 
+  color:#F4A261 ;
+  margin-right: 6px;
+}
+
+
