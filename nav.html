@@ -4,13 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        body {
+        .body1 {
             margin: 0;
             font-family: Arial, Helvetica, sans-serif;
             background-color: #F4F4F4;
             color: #FFFFFF;
         }
         nav {
+            position: relative;
+            z-index: 10;
             background-color: #264653;
             display: flex;
             align-items: center;
@@ -56,6 +58,7 @@
             margin: 0 15px;
         }
         #site {
+            pointer-events: auto; /* Siguron që link-et janë të klikueshme */
             text-decoration: none;
             color: #FFFAFE;
             font-size: 18px;
@@ -64,6 +67,8 @@
             color: #E9C46A;
         }
         .hamburger {
+            position: relative;
+            z-index: 1000;
             display: none;
             font-size: 24px;
             cursor: pointer;
@@ -93,7 +98,7 @@
         }
     </style>
 </head>
-<body>
+<body class="body1">
     <nav>
         <!-- Logo dhe text container -->
         <div class="logo-container">
