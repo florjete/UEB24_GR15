@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cilat jan&#235 disa nga mund&#235sit&#235 e zhvillimit profesional</title>
+    <style>
+        ::-webkit-scrollbar{
+        width: 10px;
+        }
+        ::-webkit-scrollbar-track{
+        
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb{
+            background:#264653;
+            border-radius: 10px;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        main {
+            margin: 20px;
+        }
+
+        .mundesit-h1 {
+            color: #264653;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .mundesit-h2 {
+            color: #2a9d8f;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .mundesit-p {
+            font-size: 1.2em;
+            color: #333;
+            font-style: italic;
+        }
+
+        ol {
+            margin: 20px;
+            padding-left: 40px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="header-container"></div>
+    <script>
+      // JavaScript për të ngarkuar header-in nga file-i i jashtëm
+      fetch('nav.html')
+          .then(response => response.text())
+          .then(data => {
+              // Vendos përmbajtjen e header-it në div-in me id="header-container"
+              document.getElementById('header-container').innerHTML = data;
+          })
+          .catch(err => console.error('Gabim gjatë ngarkimit të header-it:', err));
+    </script>
+
+    <!-- Main content -->
+    <main>
+        <h1>Mundësitë për Zhvillim Profesional</h1>
+
+        <section>
+            <h2 class="mundesit-h2">Fushat ku mund të zhvilloheni</h2>
+            <p class="mundesit-p">
+                <em>Zhvillimi profesional është një proces i vazhdueshëm që ndihmon individët të përmirësojnë aftësitë e tyre dhe të arrijnë suksese të reja në karrierën e tyre. Ja disa mundësi që mund t'ju ndihmojnë në zhvillimin e karrierës tuaj:</em>
+            </p>
+
+            <ol>
+                <li>
+                    <h3 class="mundesit-h3">Kurse dhe Trajnime</h3>
+                    <p class="mundesit-p"><em>Kurset dhe trajnimet e specializuara janë mundësi të shkëlqyera për të mësuar aftësi të reja ose për të përmirësuar ato ekzistuese. Kjo mund të përfshijë trajnimet në fushën e menaxhimit, teknologjisë, financave dhe shumë të tjera.</em></p>
+                </li>
+                <li>
+                    <h3 class="mundesit-h3">Arsimimi i Mëtejshëm</h3>
+                    <p class="mundesit-p"><em>Një mundësi tjetër për zhvillim është vazhdimi i arsimit të lartë, përmes studimeve master ose doktoraturë, që mund të hapin mundësi të reja në karrierën tuaj profesionale.</em></p>
+                </li>
+                <li>
+                    <h3 class="mundesit-h3">Mentorimi dhe Këshillimi</h3>
+                    <p class="mundesit-p"><em>Një mentor ose këshilltar profesional mund të ofrojë udhëzime dhe mbështetje në karrierën tuaj, duke ndihmuar në zhvillimin e aftësive dhe rrjetit tuaj profesional.</em></p>
+                </li>
+                <li>
+                    <h3>Pjesëmarrja në Konferenca dhe Seminare</h3>
+                    <p><em>Pjesëmarrja në ngjarje profesionale si konferenca dhe seminare është një mundësi e shkëlqyer për të mësuar rreth zhvillimeve të fundit në fushën tuaj dhe për të ndërtuar lidhje profesionale.</em></p>
+                </li>
+                <li>
+                    <h3>Voluntariati</h3>
+                    <p class="mundesit-p"><em>Angazhimi në aktivitete vullnetarizmi mund të ju ofrojë përvojë praktike dhe mundësi për të zhvilluar aftësi të reja që mund t'ju ndihmojnë në rritjen profesionale.</em></p>
+                </li>
+            </ol>
+        </section>
+
+    </main>
+
+    <div id="footer-container"></div>
+    <script>
+      // JavaScript per ngarkim i footer-it nga file-i i jashtëm
+      fetch('footer.html')
+          .then(response => response.text())
+          .then(data => {
+              // Vendos pjese e footer-it ne div-in me id="footer-container"
+              document.getElementById('footer-container').innerHTML = data;
+          })
+          .catch(err => console.error('Gabim gjatë ngarkimit të footer-it:', err));
+    </script>
+
+</body>
+</html>

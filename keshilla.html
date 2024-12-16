@@ -27,7 +27,7 @@
               document.getElementById('header-container').innerHTML = data;
           })
           .catch(err => console.error('Gabim gjatë ngarkimit të header-it:', err));
-  </script>
+    </script>
     <div class="wrapper">
       <div class="head">
         <h1> Top K&#235shillat</h1>
@@ -40,27 +40,27 @@
           <h4>5 Libra q&#235 duhen lexuar p&#235r t&#235 frym&#235zuar suksesin</h4>
         </div>
         <div class="card "data-title="Elevator Pitch"  >
-          <a id="link-keshillat" href="5libra.html" target="_blank">
+          <a id="link-keshillat" href="elevatorPitch.html" target="_blank">
             <img src="https://media.istockphoto.com/id/1337672378/vector/office-staff-wait-elevator-in-business-center-hall.jpg?s=612x612&w=0&k=20&c=2PX8DUGkDbCHXaF-mcPtbMKpb_ivrds_Aw9uZn67KnA="><br>
           </a>
           <h4>Elevator Pitch</h4>
         </div>
         <div class="card " data-title="Faktor&#235t ndikues n&#235 p&#235rzgjedhjen e karrier&#235s">
-          <a id="link-keshillat" href="5libra.html" target="_blank">
+          <a id="link-keshillat" href="faktoretNdikues.html" target="_blank">
             <img src="https://studenti.solutions/wp-content/uploads/2022/07/360_F_216366012_xamXcdVg3tXZhfgLJrAbg5XDu6cuku1X.jpg">
           </a>
           <h4>Faktor&#235t ndikues n&#235 p&#235rzgjedhjen e karrier&#235s</h4>
         </div>
-        <div class="card " data-title="&Ccedilka nevojitet p&#235rveç motivimet p&#235r ti arritur q&#235llimet?" >
-          <a id="link-keshillat" href="5libra.html" target="_blank">
+        <div class="card " data-title="&Ccedilka nevojitet p&#235rve&#231 motivimet p&#235r ti arritur q&#235llimet?" >
+          <a id="link-keshillat" href="arritjaQellimit.html" target="_blank">
             <img src="https://media.istockphoto.com/id/1195893403/vector/girl-marks-done-the-to-do-list-make-a-choice.jpg?s=612x612&w=0&k=20&c=sMlF2un78idsmGooAVpssfLRrgNNCvMCKZWo_KkO7Z4=">
           </a>
-          <h4>&Ccedilka nevojitet p&#235rveç motivimet
+          <h4>&Ccedilka nevojitet p&#235rve&#231 motivimit
             p&#235r ti arritur q&#235llimet?
           </h4>
         </div>
         <div class="card " data-title="Cilat jan&#235 disa nga mund&#235sit&#235 e zhvillimit profesional">
-          <a id="link-keshillat" href="5libra.html" target="_blank">
+          <a id="link-keshillat" href="mundesiteZhvillimit.html" target="_blank">
             <img src="https://img.freepik.com/premium-vector/ui-ux-design-concept-people-creating-application-content-text-place-illustration_138260-627.jpg"><br>
           </a>
           <h4>Cilat jan&#235 disa nga mund&#235sit&#235 e zhvillimit profesional</h4>
@@ -71,7 +71,7 @@
      src="script2.js">
     </script>
     <div class="mid-message" style="text-align: center; font-style: italic;">
-      Hulumtoni historinë dhe storien e suksesit të kompanive më serioze.
+      Hulumtoni historin&euml dhe storien e suksesit t&euml kompanive m&euml serioze.
     </div>
     <table>
       <tr>
@@ -163,6 +163,7 @@
       </tr>
     </table>
     <section class="V1"> 
+      <!-- <div class="" -->
       <section class="video">
         <h5>Video p&eumlr zgjedhjen e karrier&eumls</h5>
         <video controls class="video1">
@@ -227,5 +228,16 @@
         </audio>
       </div>
     </div>
+    <div id="footer-container"></div>
+    <script>
+      // JavaScript per ngarkim i footer-it nga file-i i jashtëm
+      fetch('footer.html')
+          .then(response => response.text())
+          .then(data => {
+              // Vendos pjese e footer-it ne div-in me id="footer-container"
+              document.getElementById('footer-container').innerHTML = data;
+          })
+          .catch(err => console.error('Gabim gjatë ngarkimit të footer-it:', err));
+    </script>
  </body>
 </html>

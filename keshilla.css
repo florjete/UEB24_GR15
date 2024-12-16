@@ -176,38 +176,32 @@ table th{
 #link-tab:hover{
     color:#264653;
 }
-.V1{
-    
-    gap: 300px;
-    margin-left: 10%;
-   
+.V1 {
+    margin-top: 50px;
+    display: flex; 
+    justify-content: space-between; 
+    gap: 20px; 
 }
-.video h5{
-    color: #264653;
-    text-align: center;
-    margin-top: 150px;
-    font-weight: bold;
-}
-.video1{
-    width: 450px;
-    border: 4px solid #2A9D8F;
-    margin-top: 25px;
-    margin-left: -60px;
-    border-radius: 2px;
-    box-shadow: 2px 2px 0 0 #2A9D8F;
-}
-.video2{
-    width: 450px;
-    border: 4px solid #2A9D8F;
-    margin-top: 25px;
-    margin-left: -40px;
-    border-radius: 2px;
-    box-shadow: 2px 2px 0 0 #2A9D8F;
-}
-@media (min-width: 768px){
-.V1{
+
+.video {
+    width: 40%;
     display: flex;
+    flex-direction: column; 
+    align-items: center;
 }
+
+
+.video h5 {
+    text-align: center; 
+    margin-bottom: 20px;
+}
+
+
+.video video {
+    width: 98%;
+    max-width: 100%; 
+    box-shadow: 2px 2px 2px 2px rgb(42, 157, 143);
+    border-radius: 3%;
 }
 .mov{
     color: #fff;
@@ -268,12 +262,13 @@ table th{
     display: flex;         
     gap: 400px;              
     justify-content: center;
-    margin-top: 60px;   
 }
 .audio-item {
     display: flex;          
     flex-direction: column;
     align-items: center;  
+    margin-top: 100px;   
+    margin-bottom: 100px;
 }
 .au{
     color: #264653;        
