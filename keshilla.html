@@ -27,7 +27,7 @@
               document.getElementById('header-container').innerHTML = data;
           })
           .catch(err => console.error('Gabim gjatë ngarkimit të header-it:', err));
-  </script>
+    </script>
     <div class="wrapper">
       <div class="head">
         <h1> Top K&#235shillat</h1>
@@ -163,6 +163,7 @@
       </tr>
     </table>
     <section class="V1"> 
+      <!-- <div class="" -->
       <section class="video">
         <h5>Video p&eumlr zgjedhjen e karrier&eumls</h5>
         <video controls class="video1">
@@ -228,6 +229,7 @@
       </div>
     </div>
 
+<<<<<<< Updated upstream
     <div id="footer-container"></div>
 
     <script>
@@ -250,5 +252,16 @@
                 document.getElementById('footer-container').innerHTML = '<p>Ka ndodhur një gabim gjatë ngarkimit të footer-it.</p>';
             });
     </script> 
+=======
+     <div id="footer-container"></div>
+
+    <script>
+        // Përdorim AJAX për të përfshirë footer.html
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('footer-container').innerHTML = data)
+            .catch(error => console.error('Error loading footer:', error));
+    </script>
+>>>>>>> Stashed changes
  </body>
 </html>
