@@ -3,8 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>5 Libra për të Frymëzuar Suksesin</title>
+    <title>5 Libra p&eumlr t&euml Frym&eumlzuar Suksesin</title>
     <style>
+     ::-webkit-scrollbar{
+      width: 10px;
+    }
+    ::-webkit-scrollbar-track{
+   
+     border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb{
+        background:#264653;
+        border-radius: 10px;
+    }
+
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
@@ -21,7 +33,7 @@
         }
         h1 {
             text-align: center;
-            color: #4CAF50;
+            color: #F4A261;
         }
         .librat {
             padding-left: 20px;
@@ -30,7 +42,7 @@
             margin: 15px 0;
             background-color: #e7f7e7;
             padding: 10px;
-            border-left: 5px solid #4CAF50;
+            border-left: 5px solid #2A9D8F;
         }
         .libri:hover {
             background-color: #d1f7d1;
@@ -51,15 +63,25 @@
   </script>
 
     <div class="container">
-        <h1>5 Libra që Duhet Lexuar për të Frymëzuar Suksesin</h1>
+        <h1>5 Libra q&euml Duhet Lexuar p&eumlr t&euml Frym&eumlzuar Suksesin</h1>
         <ol class="librat">
-            <li class="libri"><strong>"The Power of Habit"</strong> - Charles Duhigg: Njohuri mbi rëndësinë e zakoneve dhe si ato ndikojnë në suksesin personal dhe profesional.</li>
-            <li class="libri"><strong>"Atomic Habits"</strong> - James Clear: Përcakton se si përmirësimi i zakoneve të vogla mund të çojë në ndryshime të mëdha në jetë.</li>
-            <li class="libri"><strong>"The 7 Habits of Highly Effective People"</strong> - Stephen Covey: Një udhëzues për zhvillimin e zakoneve dhe parimeve që udhëhojnë drejt suksesit afatgjatë.</li>
-            <li class="libri"><strong>"Think and Grow Rich"</strong> - Napoleon Hill: Një libër klasik për mendimin pozitiv dhe rëndësinë e qëllimeve të qarta në arritjen e suksesit.</li>
-            <li class="libri"><strong>"Start with Why"</strong> - Simon Sinek: Ndihmon individët dhe liderët të kuptojnë rëndësinë e qëllimit dhe misionit në arritjen e suksesit.</li>
+            <li class="libri"><strong>"The Power of Habit"</strong> - Charles Duhigg: Njohuri mbi r&eumlnd&eumlsin&euml e zakoneve dhe si ato ndikojn&euml n&euml suksesin personal dhe profesional.</li>
+            <li class="libri"><strong>"Atomic Habits"</strong> - James Clear: P&eumlrcakton se si p&eumlrmir&eumlsimi i zakoneve t&euml vogla mund t&euml çoj&euml n&euml ndryshime t&euml m&eumldha n&euml jet&euml.</li>
+            <li class="libri"><strong>"The 7 Habits of Highly Effective People"</strong> - Stephen Covey: Nj&euml udh&eumlzues p&eumlr zhvillimin e zakoneve dhe parimeve q&euml udh&eumlhojn&euml drejt suksesit afatgjat&euml.</li>
+            <li class="libri"><strong>"Think and Grow Rich"</strong> - Napoleon Hill: Nj&euml lib&eumlr klasik p&eumlr mendimin pozitiv dhe r&eumlnd&eumlsin&euml e q&eumlllimeve t&euml qarta n&euml arritjen e suksesit.</li>
+            <li class="libri"><strong>"Start with Why"</strong> - Simon Sinek: Ndihmon individ&eumlt dhe lider&eumlt t&euml kuptojn&euml r&eumlnd&eumlsin&euml e q&eumlllimit dhe misionit n&euml arritjen e suksesit.</li>
         </ol>
     </div>
-
+    <div id="footer-container"></div>
+    <script>
+      // JavaScript per ngarkim i footer-it nga file-i i jashtëm
+      fetch('footer.html')
+          .then(response => response.text())
+          .then(data => {
+              // Vendos pjese e footer-it ne div-in me id="footer-container"
+              document.getElementById('footer-container').innerHTML = data;
+          })
+          .catch(err => console.error('Gabim gjatë ngarkimit të footer-it:', err));
+    </script>
 </body>
 </html>
