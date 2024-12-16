@@ -227,5 +227,28 @@
         </audio>
       </div>
     </div>
+
+    <div id="footer-container"></div>
+
+    <script>
+        // Përdorimi i fetch për të ngarkuar përmbajtjen e footer.html dhe ta shtoni në faqen kryesore
+        fetch('footer.html')
+            .then(response => {
+                // Kontrollojmë nëse kërkesa u përpunua me sukses
+                if (!response.ok) {
+                    throw new Error('Gabim në ngarkimin e footer-it');
+                }
+                return response.text();
+            })
+            .then(data => {
+                // Vendosim përmbajtjen e footer-it në elementin me id "footer-container"
+                document.getElementById('footer-container').innerHTML = data;
+            })
+            .catch(error => {
+                // Në rast gabimi, mund të tregojmë mesazhin e gabimit
+                console.error('Gabim:', error);
+                document.getElementById('footer-container').innerHTML = '<p>Ka ndodhur një gabim gjatë ngarkimit të footer-it.</p>';
+            });
+    </script> 
  </body>
 </html>
