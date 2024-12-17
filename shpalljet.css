@@ -134,6 +134,11 @@ body {
   background-color: #f8f9fa;
   color: #333;
 }
+#card-container {
+  display: flex; /* Aktivizon Flexbox */
+  flex-wrap: wrap; /* Lejon që të kalojë në rresht tjetër nëse nuk ka hapësirë */
+  gap: 20px; /* Hapësira mes kartave */
+}
 
 .container {
   margin-top: 50px;
@@ -141,7 +146,7 @@ body {
 
 .card {
   display: block;
-  margin: 20px 0;
+  margin: 20px 100px 0 10px;
   border: none;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Kalim i butë për animacion */
@@ -159,6 +164,7 @@ body {
   height: 200px;
   object-fit: cover;
   width: 320px;
+
 }
 .date {
   font-size: 14px;
@@ -184,5 +190,4 @@ body {
   font-size: 14px;
   color: #6c757d;
 }
-
 
