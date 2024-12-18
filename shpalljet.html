@@ -61,38 +61,42 @@
           <a href="#" onclick="filterByCategory(this)">Arte dhe Dizajn</a>
           <a href="#" onclick="filterByCategory(this)">IT dhe Teknologji e Informacionit</a>
           <a href="#" onclick="filterByCategory(this)">Gjuh&#235; dhe Komunikim</a>
+          <a href="#" onclick="filterByCategory(this)">Arsimi</a>
         </div>
       </div>
       </div>
-      <div class="dropdown">
-        <button onclick="toggleDropdown(event, 'myDropdown3')" class="dropbtn">Gjuha <span class="glyphicon glyphicon-chevron-down" style="font-size: 10px;" ></button>
-        <div id="myDropdown3" class="dropdown-content">
-          <input type="text" placeholder="Search.." id="myInput3" onkeyup="filterFunction3()">
-          <a href="#" onclick="filterByLanguage(this)">Gjuh&#235; Shqipe</a>
-          <a href="#" onclick="filterByLanguage(this)">Gjuh&#235; Angleze</a>
-          <a href="#" onclick="filterByLanguage(this)">Gjuh&#235; Gjermane</a>
-          <a href="#" onclick="filterByLanguage(this)">Gjuh&#235; Frenge</a>
-          <a href="#" onclick="filterByLanguage(this)">Gjuh&#235; Serbe</a>
-         
+     
+        <button onclick="resetFilters()" class="reset-btn">
+          Rifillo Filtrimet
+        </button>
         </div>
       </div>
       </div>
     </section>
-    <div class="container">
+    <div class="container" id="card-container">
       <div class="row">
           <!-- Pozita 1 -->
           <div class="col-md-4">
               <div class="card">
-                  <img src="Shkolla e Mesme Alpbach.jpg" class="card-img-top" alt="Pozitë e Lirë - Mësuese Matematikë">
+                  <img src="foto/Shkolla e Mesme Alpbach.jpg" class="card-img-top" alt="Pozitë e Lirë - Mësuese Matematikë">
                   <div class="card-body">
                       <h4 class="card-title">Pozitë e Lirë - Mësuese e Matematikës</h4>
                       <p class="date"><i class="fas fa-calendar-alt icon"></i>Shpallur: 18/06/2024</p>
-                      <p><i class="fas fa-briefcase icon"></i>Kategori: Arsimi</p>
-                      <p><i class="fas fa-briefcase icon"></i>Paga: 500€</p>
-                      <p><i class="fas fa-map-marker-alt icon"></i>Lokacioni: Prishtinë</p>
-                      <p>"Shkolla e Mesme Alpbach" në Prishtinë kërkon mësuese të matematikës për vitin shkollor të ardhshëm.</p>
-                      <p><strong>Afati i aplikimit:</strong> 15/03/2025</p>
-                      <a href="/job/vacancy-education?role=mesuese&location=prishtine" class="btn btn-primary" target="_blank">Apliko Këtu</a>
+                      <p><span class="ikone" style="margin-left: 10px; "><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-journal" viewBox="0 0 16 16" style="color: #F4A261;">
+                        <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2"/>
+                        <path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1z"/>
+          
+                      </svg></span> <strong>Kategoria:</strong> <span class="kategoria" style="margin-left: 0px;">Arsimi</span></p>
+                      <p><span class="ikone" style="margin-left: 10px;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cash-stack" viewBox="0 0 16 16">
+                        <path d="M1 3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1zm7 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4"/>
+                        <path d="M0 5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm3 0a2 2 0 0 1-2 2v4a2 2 0 0 1 2 2h10a2 2 0 0 1 2-2V7a2 2 0 0 1-2-2z"/>
+                      </svg></span > <strong>Paga:</strong> <span class="paga" style="margin-left: 0px;">€700</span></p>
+                      <p><span class="ikone" style="margin-left: 10px;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-fill" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M4 4a4 4 0 1 1 4.5 3.969V13.5a.5.5 0 0 1-1 0V7.97A4 4 0 0 1 4 3.999zm2.493 8.574a.5.5 0 0 1-.411.575c-.712.118-1.28.295-1.655.493a1.3 1.3 0 0 0-.37.265.3.3 0 0 0-.057.09V14l.002.008.016.033a.6.6 0 0 0 .145.15c.165.13.435.27.813.395.751.25 1.82.414 3.024.414s2.273-.163 3.024-.414c.378-.126.648-.265.813-.395a.6.6 0 0 0 .146-.15l.015-.033L12 14v-.004a.3.3 0 0 0-.057-.09 1.3 1.3 0 0 0-.37-.264c-.376-.198-.943-.375-1.655-.493a.5.5 0 1 1 .164-.986c.77.127 1.452.328 1.957.594C12.5 13 13 13.4 13 14c0 .426-.26.752-.544.977-.29.228-.68.413-1.116.558-.878.293-2.059.465-3.34.465s-2.462-.172-3.34-.465c-.436-.145-.826-.33-1.116-.558C3.26 14.752 3 14.426 3 14c0-.599.5-1 .961-1.243.505-.266 1.187-.467 1.957-.594a.5.5 0 0 1 .575.411"/>
+                      </svg></span> <strong>Lokacioni:</strong> <span class="lokacioni" style="margin-left: 0px;">Prizren</span></p>
+                      <p style="margin: 10px; size: 1em;">"Shkolla e Mesme Alpbach" në Prishtinë kërkon mësuese të matematikës për vitin shkollor të ardhshëm.</p>
+                      <p style="margin-left: 10px;"><strong>Afati i aplikimit:</strong> 15/03/2025</p>
+                      <a href="/job/vacancy-education?role=mesuese&location=prishtine" class="btn btn-primary" target="_blank" style="margin-left: 215px; margin-bottom: 10px;">Apliko Këtu</a>
                   </div>
               </div>
 
@@ -101,16 +105,25 @@
           <!-- Pozita 2 -->
           <div class="col-md-4">
               <div class="card">
-                  <img src="Design Studio Prizren.jpg" class="card-img-top" alt="Pozitë e Lirë - Arkitekt">
+                  <img src="foto/Design Studio Prizren.jpg" class="card-img-top" alt="Pozitë e Lirë - Arkitekt">
                   <div class="card-body">
                       <h4 class="card-title">Pozitë e Lirë - Arkitekt</h4>
                       <p class="date"><i class="fas fa-calendar-alt icon"></i>Shpallur: 20/06/2024</p>
-                      <p><i class="fas fa-briefcase icon"></i>Kategori: Arkitekturë</p>
-                      <p><i class="fas fa-briefcase icon"></i>Paga: 800€</p>
-                      <p><i class="fas fa-map-marker-alt icon"></i>Lokacioni: Prizren</p>
-                      <p>"Design Studio Prizren" kërkon arkitekt të përkushtuar për projekte të reja të dizajnimit dhe planifikimit urban.</p>
-                      <p><strong>Afati i aplikimit:</strong> 20/02/2025</p>
-                      <a href="/job/vacancy-architecture?role=arkitekt&location=prizren" class="btn btn-primary" target="_blank">Apliko Këtu</a>
+                      <p><span class="ikone" style="margin-left: 10px;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-journal" viewBox="0 0 16 16">
+                        <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2"/>
+                        <path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1z"/>
+          
+                      </svg></span> <strong>Kategoria:</strong> <span class="kategoria" style="margin-left: 0px;">Arkitekturë</span></p>
+                      <p><span class="ikone" style="margin-left: 10px;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cash-stack" viewBox="0 0 16 16">
+                        <path d="M1 3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1zm7 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4"/>
+                        <path d="M0 5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm3 0a2 2 0 0 1-2 2v4a2 2 0 0 1 2 2h10a2 2 0 0 1 2-2V7a2 2 0 0 1-2-2z"/>
+                      </svg></span > <strong>Paga:</strong> <span class="paga" style="margin-left: 0px;">€800</span></p>
+                      <p><span class="ikone" style="margin-left: 10px;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-fill" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M4 4a4 4 0 1 1 4.5 3.969V13.5a.5.5 0 0 1-1 0V7.97A4 4 0 0 1 4 3.999zm2.493 8.574a.5.5 0 0 1-.411.575c-.712.118-1.28.295-1.655.493a1.3 1.3 0 0 0-.37.265.3.3 0 0 0-.057.09V14l.002.008.016.033a.6.6 0 0 0 .145.15c.165.13.435.27.813.395.751.25 1.82.414 3.024.414s2.273-.163 3.024-.414c.378-.126.648-.265.813-.395a.6.6 0 0 0 .146-.15l.015-.033L12 14v-.004a.3.3 0 0 0-.057-.09 1.3 1.3 0 0 0-.37-.264c-.376-.198-.943-.375-1.655-.493a.5.5 0 1 1 .164-.986c.77.127 1.452.328 1.957.594C12.5 13 13 13.4 13 14c0 .426-.26.752-.544.977-.29.228-.68.413-1.116.558-.878.293-2.059.465-3.34.465s-2.462-.172-3.34-.465c-.436-.145-.826-.33-1.116-.558C3.26 14.752 3 14.426 3 14c0-.599.5-1 .961-1.243.505-.266 1.187-.467 1.957-.594a.5.5 0 0 1 .575.411"/>
+                      </svg></span> <strong>Lokacioni:</strong> <span class="lokacioni" style="margin-left: 0px;">Prizren</span></p>
+                      <p style="margin: 10px; size: 1em;">"Design Studio Prizren" kërkon arkitekt të përkushtuar për projekte të reja të dizajnimit dhe planifikimit urban.</p>
+                      <p style="margin-left: 10px;"><strong>Afati i aplikimit:</strong> 20/02/2025</p>
+                      <a href="/job/vacancy-architecture?role=arkitekt&location=prizren" class="btn btn-primary" target="_blank" style="margin-left: 215px; margin-bottom: 10px;">Apliko Këtu</a>
                   </div>
               </div>
           </div>
@@ -118,16 +131,25 @@
           <!-- Pozita 3 -->
           <div class="col-md-4">
               <div class="card">
-                  <img src="Ndërtimi Peja.jpg" class="card-img-top" alt="Pozitë e Lirë - Inxhinier">
+                  <img src="foto/Ndërtimi Peja.jpg" class="card-img-top" alt="Pozitë e Lirë - Inxhinier">
                   <div class="card-body">
                       <h4 class="card-title">Pozitë e Lirë - Inxhinier</h4>
                       <p class="date"><i class="fas fa-calendar-alt icon"></i>Shpallur: 22/06/2024</p>
-                      <p><i class="fas fa-briefcase icon"></i>Kategori: Inxhinieri</p>
-                      <p><i class="fas fa-briefcase icon"></i>Paga: 700€</p>
-                      <p><i class="fas fa-map-marker-alt icon"></i>Lokacioni: Pejë</p>
-                      <p>Kompania "Ndërtimi Peja" në Pejë kërkon inxhinier për mbikëqyrje dhe implementim të projekteve të ndërtimit.</p>
-                      <p><strong>Afati i aplikimit:</strong> 01/03/2025</p>
-                      <a href="/job/vacancy-engineering?role=inxhinier&location=peje" class="btn btn-primary" target="_blank">Apliko Këtu</a>
+                      <p><span class="ikone" style="margin-left: 10px;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-journal" viewBox="0 0 16 16">
+                        <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2"/>
+                        <path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1z"/>
+          
+                      </svg></span> <strong>Kategoria:</strong> <span class="kategoria" style="margin-left: 0px;">Inxhinieri</span></p>
+                      <p><span class="ikone" style="margin-left: 10px;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cash-stack" viewBox="0 0 16 16">
+                        <path d="M1 3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1zm7 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4"/>
+                        <path d="M0 5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm3 0a2 2 0 0 1-2 2v4a2 2 0 0 1 2 2h10a2 2 0 0 1 2-2V7a2 2 0 0 1-2-2z"/>
+                      </svg></span > <strong>Paga:</strong> <span class="paga" style="margin-left: 0px;">€700</span></p>
+                      <p><span class="ikone" style="margin-left: 10px;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-fill" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M4 4a4 4 0 1 1 4.5 3.969V13.5a.5.5 0 0 1-1 0V7.97A4 4 0 0 1 4 3.999zm2.493 8.574a.5.5 0 0 1-.411.575c-.712.118-1.28.295-1.655.493a1.3 1.3 0 0 0-.37.265.3.3 0 0 0-.057.09V14l.002.008.016.033a.6.6 0 0 0 .145.15c.165.13.435.27.813.395.751.25 1.82.414 3.024.414s2.273-.163 3.024-.414c.378-.126.648-.265.813-.395a.6.6 0 0 0 .146-.15l.015-.033L12 14v-.004a.3.3 0 0 0-.057-.09 1.3 1.3 0 0 0-.37-.264c-.376-.198-.943-.375-1.655-.493a.5.5 0 1 1 .164-.986c.77.127 1.452.328 1.957.594C12.5 13 13 13.4 13 14c0 .426-.26.752-.544.977-.29.228-.68.413-1.116.558-.878.293-2.059.465-3.34.465s-2.462-.172-3.34-.465c-.436-.145-.826-.33-1.116-.558C3.26 14.752 3 14.426 3 14c0-.599.5-1 .961-1.243.505-.266 1.187-.467 1.957-.594a.5.5 0 0 1 .575.411"/>
+                      </svg></span> <strong>Lokacioni:</strong> <span class="lokacioni" style="margin-left: 0px;">Pejë</span></p>
+                      <p style="margin: 10px; size: 1em;">Kompania "Ndërtimi Peja" në Pejë kërkon inxhinier për mbikëqyrje dhe implementim të projekteve të ndërtimit.</p>
+                      <p style="margin-left: 10px;"><strong>Afati i aplikimit:</strong> 01/03/2025</p>
+                      <a href="/job/vacancy-engineering?role=inxhinier&location=peje" class="btn btn-primary" target="_blank" style="margin-left: 215px; margin-bottom: 10px;">Apliko Këtu</a>
                   </div>
               </div>
           </div>
@@ -137,16 +159,25 @@
           <!-- Pozita 4 -->
           <div class="col-md-4">
               <div class="card">
-                  <img src="IT Solution Gjilan.jpg" class="card-img-top" alt="Pozitë e Lirë - IT Specialist">
+                  <img src="foto/IT Solution Gjilan.jpg" class="card-img-top" alt="Pozitë e Lirë - IT Specialist">
                   <div class="card-body">
                       <h4 class="card-title">Pozitë e Lirë - IT Specialist</h4>
                       <p class="date"><i class="fas fa-calendar-alt icon"></i>Shpallur: 23/06/2024</p>
-                      <p><i class="fas fa-briefcase icon"></i>Kategori: IT</p>
-                      <p><i class="fas fa-briefcase icon"></i>Paga: 600€</p>
-                      <p><i class="fas fa-map-marker-alt icon"></i>Lokacioni: Gjilan</p>
-                      <p>Kompania "IT Solution Gjilan" në Gjilan kërkon një IT Specialist për mirëmbajtjen dhe zhvillimin e infrastrukturës teknologjike.</p>
-                      <p><strong>Afati i aplikimit:</strong> 10/03/2025</p>
-                      <a href="/job/vacancy-it?role=it-specialist&location=gjilan" class="btn btn-primary" target="_blank">Apliko Këtu</a>
+                      <p><span class="ikone" style="margin-left: 10px;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-journal" viewBox="0 0 16 16">
+                        <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2"/>
+                        <path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1z"/>
+          
+                      </svg></span> <strong>Kategoria:</strong> <span class="kategoria" style="margin-left: 0px;">IT</span></p>
+                      <p><span class="ikone" style="margin-left: 10px;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cash-stack" viewBox="0 0 16 16">
+                        <path d="M1 3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1zm7 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4"/>
+                        <path d="M0 5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm3 0a2 2 0 0 1-2 2v4a2 2 0 0 1 2 2h10a2 2 0 0 1 2-2V7a2 2 0 0 1-2-2z"/>
+                      </svg></span > <strong>Paga:</strong> <span class="paga" style="margin-left: 0px;">€600</span></p>
+                      <p><span class="ikone" style="margin-left: 10px;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-fill" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M4 4a4 4 0 1 1 4.5 3.969V13.5a.5.5 0 0 1-1 0V7.97A4 4 0 0 1 4 3.999zm2.493 8.574a.5.5 0 0 1-.411.575c-.712.118-1.28.295-1.655.493a1.3 1.3 0 0 0-.37.265.3.3 0 0 0-.057.09V14l.002.008.016.033a.6.6 0 0 0 .145.15c.165.13.435.27.813.395.751.25 1.82.414 3.024.414s2.273-.163 3.024-.414c.378-.126.648-.265.813-.395a.6.6 0 0 0 .146-.15l.015-.033L12 14v-.004a.3.3 0 0 0-.057-.09 1.3 1.3 0 0 0-.37-.264c-.376-.198-.943-.375-1.655-.493a.5.5 0 1 1 .164-.986c.77.127 1.452.328 1.957.594C12.5 13 13 13.4 13 14c0 .426-.26.752-.544.977-.29.228-.68.413-1.116.558-.878.293-2.059.465-3.34.465s-2.462-.172-3.34-.465c-.436-.145-.826-.33-1.116-.558C3.26 14.752 3 14.426 3 14c0-.599.5-1 .961-1.243.505-.266 1.187-.467 1.957-.594a.5.5 0 0 1 .575.411"/>
+                      </svg></span> <strong>Lokacioni:</strong> <span class="lokacioni" style="margin-left: 0px;">Gjilan</span></p>
+                      <p style="margin: 10px; size: 1em;">Kompania "IT Solution Gjilan" në Gjilan kërkon një IT Specialist për mirëmbajtjen dhe zhvillimin e infrastrukturës teknologjike.</p>
+                      <p style="margin-left: 10px;"><strong>Afati i aplikimit:</strong> 10/03/2025</p>
+                      <a href="/job/vacancy-it?role=it-specialist&location=gjilan" class="btn btn-primary" target="_blank" style="margin-left: 215px; margin-bottom: 10px;">Apliko Këtu</a>
                   </div>
               </div>
           </div>
@@ -154,41 +185,72 @@
           <!-- Pozita 5 -->
           <div class="col-md-4">
               <div class="card">
-                  <img src="Tradita Kaçanik.jpg" class="card-img-top" alt="Pozitë e Lirë - Kuzhinier">
+                  <img src="foto/Tradita Kaçanik.jpg" class="card-img-top" alt="Pozitë e Lirë - Kuzhinier">
                   <div class="card-body">
                       <h4 class="card-title">Pozitë e Lirë - KUZHINIER</h4>
                       <p class="date"><i class="fas fa-calendar-alt icon"></i>Shpallur: 24/06/2024</p>
-                      <p><i class="fas fa-briefcase icon"></i>Kategori: Hoteleri</p>
-                      <p><i class="fas fa-briefcase icon"></i>Paga: 400€</p>
-                      <p><i class="fas fa-map-marker-alt icon"></i>Lokacioni: Kaçanik</p>
-                      <p>Restoranti "Tradita Kaçanik" në Kaçanik kërkon kuzhinier me përvojë për ushqime tradicionale dhe moderne.</p>
-                      <p><strong>Afati i aplikimit:</strong> 15/02/2025</p>
-                      <a href="/job/vacancy-hospitality?role=kuzhinier&location=kacanik" class="btn btn-primary" target="_blank">Apliko Këtu</a>
+                      <p><span class="ikone" style="margin-left: 10px;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-journal" viewBox="0 0 16 16">
+                        <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2"/>
+                        <path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1z"/>
+          
+                      </svg></span> <strong>Kategoria:</strong> <span class="kategoria" style="margin-left: 0px;">Hoteleri</span></p>
+                      <p><span class="ikone" style="margin-left: 10px;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cash-stack" viewBox="0 0 16 16">
+                        <path d="M1 3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1zm7 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4"/>
+                        <path d="M0 5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm3 0a2 2 0 0 1-2 2v4a2 2 0 0 1 2 2h10a2 2 0 0 1 2-2V7a2 2 0 0 1-2-2z"/>
+                      </svg></span > <strong>Paga:</strong> <span class="paga" style="margin-left: 0px;">€600</span></p>
+                      <p><span class="ikone" style="margin-left: 10px;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-fill" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M4 4a4 4 0 1 1 4.5 3.969V13.5a.5.5 0 0 1-1 0V7.97A4 4 0 0 1 4 3.999zm2.493 8.574a.5.5 0 0 1-.411.575c-.712.118-1.28.295-1.655.493a1.3 1.3 0 0 0-.37.265.3.3 0 0 0-.057.09V14l.002.008.016.033a.6.6 0 0 0 .145.15c.165.13.435.27.813.395.751.25 1.82.414 3.024.414s2.273-.163 3.024-.414c.378-.126.648-.265.813-.395a.6.6 0 0 0 .146-.15l.015-.033L12 14v-.004a.3.3 0 0 0-.057-.09 1.3 1.3 0 0 0-.37-.264c-.376-.198-.943-.375-1.655-.493a.5.5 0 1 1 .164-.986c.77.127 1.452.328 1.957.594C12.5 13 13 13.4 13 14c0 .426-.26.752-.544.977-.29.228-.68.413-1.116.558-.878.293-2.059.465-3.34.465s-2.462-.172-3.34-.465c-.436-.145-.826-.33-1.116-.558C3.26 14.752 3 14.426 3 14c0-.599.5-1 .961-1.243.505-.266 1.187-.467 1.957-.594a.5.5 0 0 1 .575.411"/>
+                      </svg></span> <strong>Lokacioni:</strong> <span class="lokacioni" style="margin-left: 0px;">Kaçanik</span></p>
+                      <p style="margin: 10px; size: 1em;">Restoranti "Tradita Kaçanik" në Kaçanik kërkon kuzhinier me përvojë për ushqime tradicionale dhe moderne.</p>
+                      <p style="margin-left: 10px;"><strong>Afati i aplikimit:</strong> 15/02/2025</p>
+                      <a href="/job/vacancy-hospitality?role=kuzhinier&location=kacanik" class="btn btn-primary" target="_blank" style="margin-left: 215px; margin-bottom: 10px;">Apliko Këtu</a>
                   </div>
               </div>
           </div>
 
           <!-- Pozita 6 -->
-          <div class="col-md-4">
+          <div class="col-md-4" >
               <div class="card">
+<<<<<<< HEAD
                   <img src="foto/Transporti_Ferizaj.jpg" class="card-img-top" alt="Pozitë e Lirë - Shofer">
+=======
+                  <img src="foto/Transport Ferizaj.jpg" class="card-img-top" alt="Pozitë e Lirë - Shofer">
+>>>>>>> 4eae7dd3208d7691b117a677bd48e4bfb8639105
                   <div class="card-body">
                       <h4 class="card-title">Pozitë e Lirë - Shofer</h4>
                       <p class="date"><i class="fas fa-calendar-alt icon"></i>Shpallur: 25/06/2024</p>
-                      <p><i class="fas fa-briefcase icon"></i>Kategori: Transport</p>
-                      <p><i class="fas fa-briefcase icon"></i>Paga: 350€</p>
-                      <p><i class="fas fa-map-marker-alt icon"></i>Lokacioni: Ferizaj</p>
-                      <p>Kompania "Transport Ferizaj" në Ferizaj kërkon shofer me kategori B për transport dhe shpërndarje.</p>
-                      <p><strong>Afati i aplikimit:</strong> 01/03/2025</p>
-                      <a href="/job/vacancy-transport?role=shofer&location=ferizaj" class="btn btn-primary" target="_blank">Apliko Këtu</a>
+                      <p><span class="ikone" style="margin-left: 10px;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-journal" viewBox="0 0 16 16">
+                        <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2"/>
+                        <path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1z"/>
+          
+                      </svg></span> <strong>Kategoria:</strong> <span class="kategoria" style="margin-left: 0px;">Transport</span></p>
+                      <p><span class="ikone" style="margin-left: 10px;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cash-stack" viewBox="0 0 16 16">
+                        <path d="M1 3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1zm7 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4"/>
+                        <path d="M0 5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm3 0a2 2 0 0 1-2 2v4a2 2 0 0 1 2 2h10a2 2 0 0 1 2-2V7a2 2 0 0 1-2-2z"/>
+                      </svg></span > <strong>Paga:</strong> <span class="paga" style="margin-left: 0px;">€350</span></p>
+                      <p><span class="ikone" style="margin-left: 10px;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-fill" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M4 4a4 4 0 1 1 4.5 3.969V13.5a.5.5 0 0 1-1 0V7.97A4 4 0 0 1 4 3.999zm2.493 8.574a.5.5 0 0 1-.411.575c-.712.118-1.28.295-1.655.493a1.3 1.3 0 0 0-.37.265.3.3 0 0 0-.057.09V14l.002.008.016.033a.6.6 0 0 0 .145.15c.165.13.435.27.813.395.751.25 1.82.414 3.024.414s2.273-.163 3.024-.414c.378-.126.648-.265.813-.395a.6.6 0 0 0 .146-.15l.015-.033L12 14v-.004a.3.3 0 0 0-.057-.09 1.3 1.3 0 0 0-.37-.264c-.376-.198-.943-.375-1.655-.493a.5.5 0 1 1 .164-.986c.77.127 1.452.328 1.957.594C12.5 13 13 13.4 13 14c0 .426-.26.752-.544.977-.29.228-.68.413-1.116.558-.878.293-2.059.465-3.34.465s-2.462-.172-3.34-.465c-.436-.145-.826-.33-1.116-.558C3.26 14.752 3 14.426 3 14c0-.599.5-1 .961-1.243.505-.266 1.187-.467 1.957-.594a.5.5 0 0 1 .575.411"/>
+                      </svg></span> <strong>Lokacioni:</strong> <span class="lokacioni" style="margin-left: 0px;">Ferizaj</span></p>
+                      <p style="margin: 10px; size: 1em;">Kompania "Transport Ferizaj" në Ferizaj kërkon shofer me kategori B për transport dhe shpërndarje.</p>
+                      <p style="margin-left: 10px;"><strong>Afati i aplikimit:</strong> 01/03/2025</p>
+                      <a href="/job/vacancy-transport?role=shofer&location=ferizaj" class="btn btn-primary" target="_blank" style="margin-left: 215px; margin-bottom: 10px;">Apliko Këtu</a>
                   </div>
               </div>
           </div>
       </div>
   </div>
-    
-    
   </main>
   <script src="shpalljet.js"></script>
+  <div id="footer-container"></div>
+    <script>
+      // JavaScript per ngarkim i footer-it nga file-i i jashtëm
+      fetch('footer.html')
+          .then(response => response.text())
+          .then(data => {
+              // Vendos pjese e footer-it ne div-in me id="footer-container"
+              document.getElementById('footer-container').innerHTML = data;
+          })
+          .catch(err => console.error('Gabim gjatë ngarkimit të footer-it:', err));
+    </script>
 </body>
 </html>

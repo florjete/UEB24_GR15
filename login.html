@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="loginstyle.css">
     </head>
     <body>
+        <div class="login">
             <div class="form-box">
                 <div class="button-box">
                     <div id="btn"></div>
@@ -33,24 +34,8 @@
                     <button type="submit" class="submit-btn"  id="btn2" onclick="audio.play();">Regjistrohu</button>
                 </form>
             </div>
-
+        </div>
      
     </body>
-    <script>
-        // Funksioni për hapjen dhe mbylljen e modal-it
-        const loginLink = document.getElementById('loginLink');
-        const loginModal = document.getElementById('loginModal');
-
-        loginLink.addEventListener('click', (e) => {
-            e.preventDefault(); // Parandalon ndërrimin e faqes
-            loginModal.style.display = 'flex'; // Tregon modal-in
-        });
-
-        // Klikimi jashtë modal-it e mbyll atë
-        window.addEventListener('click', (e) => {
-            if (e.target === loginModal) {
-                loginModal.style.display = 'none';
-            }
-        });
-    </script>
+     <script src="login.js"></script>
 </html>
