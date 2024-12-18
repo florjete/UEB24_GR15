@@ -83,13 +83,21 @@
     .footer-contact a{
         text-decoration: none;
         color: #E9C46A;
-        transition: color 0.3s ease;
-
+        transition: color 0.3s ease;    
     }
+    
     @media (max-width: 768px) {
         .footer-container {
             grid-template-columns: 1fr;
         }
+    }
+    .contact-form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 60%;
+        margin-right: 10px;
+
     }
     
 </style>
@@ -97,24 +105,20 @@
 
 <footer>
     <div class="footer-container">
-        <!-- About Section -->
-        <div class="footer-about">
-            <h3>Rreth nesh</h3>
-            <p>Ne jemi t&#235; dedikuar t&#235; ndihmojm&#235; individ&#235;t t&#235; zbulojn&#235; pasionet dhe aft&#235;sit&#235; e tyre p&#235;r t&#235; nd&#235;rtuar nj&#235; karrier&#235; t&#235; suksesshme q&#235; p&#235;rputhet me &#235;ndrrat e tyre.</p>
-        </div>
-
-        <!-- Navigation Links -->
-        <div class="footer-nav">
-            <h3>Linqe te shpejta</h3>
-            <ul>
-                <li><a href="home.html">Ballina</a></li>
-                <li><a href="about.html">Rreth nesh</a></li>
-                <li><a href="gallery.html">Shpallje</a></li>
-                <li><a href="keshilla.html">K&#235shilla</a></li>
-                <li><a href="faqjakryesore.html">Ky&#231u</a></li>
-            </ul>
-        </div>
-
+    <form action="#" method="POST" class="contact-form" style="margin-left: 10px;">
+        <fieldset class="form-group">
+            <h3>Na kontaktoni</h3>
+        </fieldset>
+        <fieldset class="form-group">
+            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Sh&#235no">
+        </fieldset>
+        <fieldset class="form-group">
+            <textarea class="form-control" id="exampleMessage" placeholder="Mesazhi juaj.."></textarea>
+        </fieldset>
+        <fieldset class="form-group text-xs-right">
+            <button type="button" class="btn btn-secondary-outline">D&#235rgo</button>
+        </fieldset>
+    </form>
         <!-- Social Media Links -->
         <div class="footer-social">
             <h3>Na ndiqni ne rrjete sociale</h3>
@@ -134,7 +138,7 @@
             <i>Adresa: </i><a href="https://maps.app.goo.gl/8Hw7bdG147Xg8SWv7" target="_blank"><abbr title="Fakulteti i Inxhinieris&#235 Elektrike dhe Kompjuterike">FIEK</abbr>, Bregu i Diellit, Prishtine</a>
         </address>
     </div>
-
+</div>
     <div class="footer-bottom ">
         <p>&copy; 2024 Find Your Way. Te drejtat e rezervuara.</p>
     </div>
