@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detajet e Profesionit - Mësuese</title>
+    <title>Detajet e Profesionit - Inxhinier Ndërtimi</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -36,7 +36,7 @@
 
         .profession-details {
             position: relative;
-            background-image: url('foto/Shkolla e Mesme Alpbach.jpg'); /* Ndryshoni për foton e mësuese */
+            background-image: url('foto/Ndertimi.webp'); 
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -118,22 +118,6 @@
             border-radius: 20px;
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
         }
-        .btn {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 12px 25px;
-            background-color: #264653;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-size: 16px;
-            transition: background-color 0.3s, transform 0.2s;
-        }
-
-        .btn:hover {
-            background-color: #21867a;
-            transform: scale(1.05);
-        }
 
         .form-section {
             margin-top: 40px;
@@ -173,7 +157,6 @@
             background-color: #21867a;
         }
 
-        /* Shigjetë për butonin Apliko Tani dhe butonin për kthim */
         .back-btn {
             display: inline-block;
             margin-top: 20px;
@@ -193,11 +176,10 @@
         }
 
         .back-btn::before {
-            content: "←"; /* Shigjeta e kthimit */
+            content: "←"; 
             font-size: 18px;
         }
 
-        /* Shigjeta flotuese në cepin e djathtë të faqes */
         .back-btn-floating {
             position: fixed;
             bottom: 20px;
@@ -218,7 +200,7 @@
         }
 
         .back-btn-floating::before {
-            content: "←"; /* Shigjeta e kthimit */
+            content: "←"; 
             font-size: 18px;
         }
     </style>
@@ -226,71 +208,66 @@
 <body>
 
 <main>
-    <!-- Titulli Kryesor -->
     <div class="profession-title">
-        Detajet e Profesionit - Mësuese
+        Detajet e Profesionit - Inxhinier Ndërtimi
     </div>
 
-    <!-- Seksioni i Detajeve -->
     <div class="profession-details">
-        <!-- Nuk është nevoja për seksionin e fotos më vete pasi është background i seksionit -->
     </div>
 
-    <!-- Seksioni i Profilit -->
     <div class="profilit">
         <h1>
-            Profili i Mësueses
+            Profili i Inxhinierit të Ndërtimit
         </h1>
         <h3>
-            Mësimi dhe udhëzimi i studentëve në përvetësimin e njohurive dhe zhvillimin e aftësive.
+            Projektimi, mbikëqyrja dhe ekzekutimi i strukturave ndërtimore, duke siguruar qëndrueshmëri dhe siguri në çdo projekt.
         </h3>
     </div>
 
-    <!-- Seksioni i Kërkesave -->
     <div class="requirements">
         <h2>Kërkesat Kryesore</h2>
         <ul>
-            <li>Diplomë e lartë në fushën përkatëse (p.sh., edukim, shkenca, letërsi, etj.).</li>
-            <li>Eksperiencë mësimdhënieje ose praktika mësimore.</li>
-            <li>Aftësi të shkëlqyera komunikimi dhe udhëheqjeje të klasës.</li>
-            <li>Njohuri të forta të metodologjisë mësimore dhe përdorimi i mjeteve edukative.</li>
+            <li>Diplomë në Inxhinieri Ndërtimi ose fusha të ngjashme.</li>
+            <li>Aftësi për të punuar me software profesional (AutoCAD, SAP2000, ETABS, etj.).</li>
+            <li>Njohuri mbi standardet dhe kodet e ndërtimit ndërkombëtare.</li>
+            <li>Aftësi për të menaxhuar ekipe dhe resurse në projekte komplekse.</li>
         </ul>
     </div>
 
-    <!-- Seksioni i Përfitimeve -->
     <h2>Përfitimet</h2>
     <p>
-        Duke punuar si mësuese, mund të përfitoni:
+        Duke punuar si inxhinier ndërtimi, mund të përfitoni:
     </p>
     <ul>
-        <li>Stabilitet profesional dhe mundësi për zhvillim të vazhdueshëm.</li>
-        <li>Pushime verore dhe periudha të tjera pushimi.</li>
-        <li>Fleksibilitet në orarin e punës dhe mundësi për krijimin e materiale mësimore kreative.</li>
+        <li>Paga të larta dhe stabilitet në karrierë.</li>
+        <li>Mundësi për të qenë pjesë e projekteve që lënë gjurmë në komunitet.</li>
+        <li>Punë dinamike dhe sfiduese në një mjedis profesional.</li>
     </ul>
- <!-- Seksioni i Aplikimit -->
- <div class="form-section">
-    <h3>Aplikoni për këtë Pozitë</h3>
-    <form action="submit_application.php" method="POST" enctype="multipart/form-data">
-        <label for="first-name">Emri</label>
-        <input type="text" id="first-name" name="first-name" required>
 
-        <label for="last-name">Mbiemri</label>
-        <input type="text" id="last-name" name="last-name" required>
+    
+    <div class="form-section">
+        <h3>Aplikoni për këtë Pozitë</h3>
+        <form action="submit_application.php" method="POST" enctype="multipart/form-data">
+            <label for="first-name">Emri</label>
+            <input type="text" id="first-name" name="first-name" required>
 
-        <label for="phone-or-email">Numri i Telefonit ose Email</label>
-        <input type="text" id="phone-or-email" name="phone-or-email" required placeholder=" ">
+            <label for="last-name">Mbiemri</label>
+            <input type="text" id="last-name" name="last-name" required>
 
-        <label for="cv">Ngarkoni CV-në tuaj</label>
-        <input type="file" id="cv" name="cv" accept=".pdf, .docx" required>
+            <label for="phone-or-email">Numri i Telefonit ose Email</label>
+            <input type="text" id="phone-or-email" name="phone-or-email" required>
 
-        <label for="cover-letter">Letër Motivimi (opsionale)</label>
-        <textarea id="cover-letter" name="cover-letter" rows="5" placeholder="Shkruani një letër motivimi për aplikimin tuaj (opsionale)"></textarea>
+            <label for="cv">Ngarkoni CV-në tuaj</label>
+            <input type="file" id="cv" name="cv" accept=".pdf, .docx" required>
 
-        <button type="submit">Apliko</button>
-    </form>
-</div>
+            <label for="cover-letter">Letër Motivimi (opsionale)</label>
+            <textarea id="cover-letter" name="cover-letter" rows="5" placeholder="Shkruani një letër motivimi për aplikimin tuaj (opsionale)"></textarea>
+
+            <button type="submit">Apliko</button>
+        </form>
+    </div>
 </main>
-<!-- Shigjeta flotuese për kthim -->
+
 <a href="index.html" class="back-btn-floating"></a>
 </body>
 </html>
