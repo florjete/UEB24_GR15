@@ -118,6 +118,109 @@
             border-radius: 20px;
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
         }
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 25px;
+            background-color: #264653;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #21867a;
+            transform: scale(1.05);
+        }
+
+        .form-section {
+            margin-top: 40px;
+            background-color: hwb(210 97% 0%);
+            padding: 20px;
+            border-radius: 10px;
+            color: #333;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .form-section label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .form-section input, .form-section textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .form-section button {
+            padding: 12px 25px;
+            background-color: #264653;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .form-section button:hover {
+            background-color: #21867a;
+        }
+
+        /* Shigjetë për butonin Apliko Tani dhe butonin për kthim */
+        .back-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 25px;
+            background-color: #264653;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 16px;
+            text-align: center;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .back-btn:hover {
+            background-color: #21867a;
+            transform: scale(1.05);
+        }
+
+        .back-btn::before {
+            content: "←"; /* Shigjeta e kthimit */
+            font-size: 18px;
+        }
+
+        /* Shigjeta flotuese në cepin e djathtë të faqes */
+        .back-btn-floating {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 100;
+            padding: 12px 25px;
+            background-color: #264653;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .back-btn-floating:hover {
+            background-color: #21867a;
+            transform: scale(1.05);
+        }
+
+        .back-btn-floating::before {
+            content: "←"; /* Shigjeta e kthimit */
+            font-size: 18px;
+        }
     </style>
 </head>
 <body>
@@ -166,8 +269,30 @@
     </ul>
 
     <!-- Butoni -->
-    <a href="index.html" class="btn">Kthehu te Faqja Kryesore</a>
+   
+    <div class="form-section">
+        <h3>Aplikoni për këtë Pozitë</h3>
+        <form action="submit_application.php" method="POST" enctype="multipart/form-data">
+            <label for="first-name">Emri</label>
+            <input type="text" id="first-name" name="first-name" required>
+    
+            <label for="last-name">Mbiemri</label>
+            <input type="text" id="last-name" name="last-name" required>
+    
+            <label for="phone-or-email">Numri i Telefonit ose Email</label>
+            <input type="text" id="phone-or-email" name="phone-or-email" required placeholder=" ">
+    
+            <label for="cv">Ngarkoni CV-në tuaj</label>
+            <input type="file" id="cv" name="cv" accept=".pdf, .docx" required>
+    
+            <label for="cover-letter">Letër Motivimi (opsionale)</label>
+            <textarea id="cover-letter" name="cover-letter" rows="5" placeholder="Shkruani një letër motivimi për aplikimin tuaj (opsionale)"></textarea>
+    
+            <button type="submit">Apliko</button>
+        </form>
+    </div>
 </main>
-
+<!-- Shigjeta flotuese për kthim -->
+<a href="index.html" class="back-btn-floating"></a>
 </body>
 </html>

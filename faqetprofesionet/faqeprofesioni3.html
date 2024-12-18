@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detajet e Profesionit - Shofer</title>
+    <title>Detajet e Profesionit - Mësuese</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -18,9 +18,9 @@
             padding: 20px;
             max-width: 900px;
             margin: 30px auto;
-            background: hsla(0, 0%, 100%, 0.902);
+            background: rgba(255, 255, 255, 0.9);
             border-radius: 15px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
             overflow: hidden;
         }
 
@@ -36,7 +36,7 @@
 
         .profession-details {
             position: relative;
-            background-image: url('foto/Transporti_Ferizaj.jpg');
+            background-image: url('foto/Shkolla e Mesme Alpbach.jpg'); /* Ndryshoni për foton e mësuese */
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -90,6 +90,34 @@
             flex-shrink: 0;
         }
 
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 25px;
+            background-color: #264653;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #21867a;
+            transform: scale(1.05);
+        }
+
+        .image-section {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .image-section img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
         .btn {
             display: inline-block;
             margin-top: 20px;
@@ -200,65 +228,69 @@
 <main>
     <!-- Titulli Kryesor -->
     <div class="profession-title">
-        Detajet e Profesionit - Shofer
+        Detajet e Profesionit - Mësuese
     </div>
 
     <!-- Seksioni i Detajeve -->
-    <div class="profession-details"></div>
+    <div class="profession-details">
+        <!-- Nuk është nevoja për seksionin e fotos më vete pasi është background i seksionit -->
+    </div>
 
     <!-- Seksioni i Profilit -->
     <div class="profilit">
-        <h1>Profili i Shoferit</h1>
-        <h3>Transportimi i mallrave ose udhëtarëve në mënyrë të sigurt dhe të përgjegjshme.</h3>
+        <h1>
+            Profili i Mësueses
+        </h1>
+        <h3>
+            Mësimi dhe udhëzimi i studentëve në përvetësimin e njohurive dhe zhvillimin e aftësive.
+        </h3>
     </div>
 
     <!-- Seksioni i Kërkesave -->
     <div class="requirements">
         <h2>Kërkesat Kryesore</h2>
         <ul>
-            <li>Patentë shoferi valide e kategorisë përkatëse.</li>
-            <li>Eksperiencë në drejtimin e automjeteve.</li>
-            <li>Njohuri mbi mirëmbajtjen bazë të automjetit.</li>
-            <li>Aftësi të mira komunikimi dhe sjellje profesionale.</li>
+            <li>Diplomë e lartë në fushën përkatëse (p.sh., edukim, shkenca, letërsi, etj.).</li>
+            <li>Eksperiencë mësimdhënieje ose praktika mësimore.</li>
+            <li>Aftësi të shkëlqyera komunikimi dhe udhëheqjeje të klasës.</li>
+            <li>Njohuri të forta të metodologjisë mësimore dhe përdorimi i mjeteve edukative.</li>
         </ul>
     </div>
 
     <!-- Seksioni i Përfitimeve -->
     <h2>Përfitimet</h2>
-    <p>Duke punuar si shofer, mund të përfitoni:</p>
+    <p>
+        Duke punuar si mësuese, mund të përfitoni:
+    </p>
     <ul>
-        <li>Paga konkurruese dhe bonuse.</li>
-        <li>Mundësi për të udhëtuar dhe njohur vende të reja.</li>
-        <li>Fleksibilitet në orarin e punës.</li>
+        <li>Stabilitet profesional dhe mundësi për zhvillim të vazhdueshëm.</li>
+        <li>Pushime verore dhe periudha të tjera pushimi.</li>
+        <li>Fleksibilitet në orarin e punës dhe mundësi për krijimin e materiale mësimore kreative.</li>
     </ul>
+ <!-- Seksioni i Aplikimit -->
+ <div class="form-section">
+    <h3>Aplikoni për këtë Pozitë</h3>
+    <form action="submit_application.php" method="POST" enctype="multipart/form-data">
+        <label for="first-name">Emri</label>
+        <input type="text" id="first-name" name="first-name" required>
 
-    <!-- Seksioni i Aplikimit -->
-    <div class="form-section">
-        <h3>Aplikoni për këtë Pozitë</h3>
-        <form action="submit_application.php" method="POST" enctype="multipart/form-data">
-            <label for="first-name">Emri</label>
-            <input type="text" id="first-name" name="first-name" required>
+        <label for="last-name">Mbiemri</label>
+        <input type="text" id="last-name" name="last-name" required>
 
-            <label for="last-name">Mbiemri</label>
-            <input type="text" id="last-name" name="last-name" required>
+        <label for="phone-or-email">Numri i Telefonit ose Email</label>
+        <input type="text" id="phone-or-email" name="phone-or-email" required placeholder=" ">
 
-            <label for="phone-or-email">Numri i Telefonit ose Email</label>
-            <input type="text" id="phone-or-email" name="phone-or-email" required placeholder="Numri i telefonit ose emaili">
+        <label for="cv">Ngarkoni CV-në tuaj</label>
+        <input type="file" id="cv" name="cv" accept=".pdf, .docx" required>
 
-            <label for="cv">Ngarkoni CV-në tuaj</label>
-            <input type="file" id="cv" name="cv" accept=".pdf, .docx" required>
+        <label for="cover-letter">Letër Motivimi (opsionale)</label>
+        <textarea id="cover-letter" name="cover-letter" rows="5" placeholder="Shkruani një letër motivimi për aplikimin tuaj (opsionale)"></textarea>
 
-            <label for="cover-letter">Letër Motivimi (opsionale)</label>
-            <textarea id="cover-letter" name="cover-letter" rows="5" placeholder="Shkruani një letër motivimi për aplikimin tuaj (opsionale)"></textarea>
-
-            <button type="submit">Apliko</button>
-        </form>
-    </div>
+        <button type="submit">Apliko</button>
+    </form>
+</div>
 </main>
-
 <!-- Shigjeta flotuese për kthim -->
 <a href="index.html" class="back-btn-floating"></a>
-
 </body>
 </html>
-
