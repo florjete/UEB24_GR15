@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap');
 
-*{
+/* *{
     box-sizing: border-box;
     font-family: 'Popins' sans-serif;
    
-}
+} */
 ::-webkit-scrollbar{
     width: 10px;
 }
@@ -138,7 +138,6 @@ body {
     margin: 30px 0;
     bottom: 250px;
     color: #264653;
-    font-family: 'Roboto', sans-serif;
     position: relative; 
     z-index: 100;
     font-size: 30px;
@@ -158,6 +157,7 @@ table td{
     border: 3px solid #264653;
     text-align: center;
     font-weight: 500;
+    font-size: 12px;
     background:  rgb(244, 244, 244);
     width: 0px;
    
@@ -278,6 +278,6 @@ table th{
 }
 body{
     height:70%;
-    font-family: "Nunito Sans", sans-serif;
+    /* font-family: "Nunito Sans", sans-serif; */
     -webkit-font-smoothing: antialiased;
 }
