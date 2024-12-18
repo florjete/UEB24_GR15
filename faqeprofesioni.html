@@ -25,22 +25,22 @@
         }
 
         .profession-title {
-            background-color: #2a9d87;
+            background-color: #264653;
             color: white;
             padding: 15px 20px;
             text-align: center;
             font-size: 24px;
             font-weight: bold;
-            margin: 0;
+            margin-bottom: 10px;
         }
 
         .profession-details {
             position: relative;
-            background-image: url('foto/Transport\ Ferizaj.jpg');
+            background-image: url('foto/Transporti_Ferizaj.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            height: 300px;
+            height: 400px; /* Rrit lartësinë për të shfaqur më shumë foto */
             border-radius: 10px;
             overflow: hidden;
         }
@@ -49,18 +49,19 @@
             position: absolute;
             bottom: 20px;
             left: 20px;
-            background: rgba(42, 157, 135, 0.7);
-            padding: 10px;
+            background: rgba(38, 70, 83, 0.8);
+            padding: 12px;
             border-radius: 8px;
             color: white;
-            font-size: 14px;
+            font-size: 16px;
             text-align: left;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
 
         .requirements {
             margin-top: 20px;
             padding: 20px;
-            border-top: 1px solid #2a9d87;
+            border-top: 1px solid #264653;
         }
 
         h2 {
@@ -83,7 +84,7 @@
             content: "";
             width: 10px;
             height: 10px;
-            background-color: #2a9d87;
+            background-color: #264653;
             border-radius: 50%;
             margin-right: 10px;
             flex-shrink: 0;
@@ -93,7 +94,7 @@
             display: inline-block;
             margin-top: 20px;
             padding: 12px 25px;
-            background-color: #2a9d87;
+            background-color: #264653;
             color: white;
             text-decoration: none;
             border-radius: 8px;
@@ -114,7 +115,7 @@
         .image-section img {
             max-width: 100%;
             height: auto;
-            border-radius: 10px;
+            border-radius: 20px;
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
         }
     </style>
@@ -122,19 +123,25 @@
 <body>
 
 <main>
-    <!-- Titulli Kryesor -->
+    <!-- Titulli Kryesore -->
     <div class="profession-title">
         Detajet e Profesionit - Shofer
     </div>
+
     <!-- Seksioni i Detajeve -->
     <div class="profession-details">
-        <div class="info">
-            <h3>Profili i Shoferit</h3>
-            <p>Transportimi i mallrave ose udhëtarëve në mënyrë të sigurt dhe të përgjegjshme.</p>
-        </div>
+        <!-- Nuk është nevoja për seksionin e fotos më vete pasi është background i seksionit -->
     </div>
+<!------seksioni i profilit---->
+<div class ="profilit----">
+    <h1>
+        Profili i shoferit
+    </h1>
+    <h3>
+        Transportimi i mallrave ose udhëtarëve në mënyrë të sigurt dhe të përgjegjshme.
+    </h3>
 
-   
+</div>
 
     <!-- Seksioni i Kërkesave -->
     <div class="requirements">
