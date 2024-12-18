@@ -5,9 +5,9 @@ document.getElementById("myInput").onclick = function(event) {
 document.getElementById("myInput2").onclick = function(event) {
   event.stopPropagation();
 };
-document.getElementById("myInput3").onclick = function(event) {
-  event.stopPropagation();
-};
+function resetFilters() {
+  location.reload(); // Rifreskon faqen
+}
 function filterFunction2() {
   var input, filter, ul, li, a, i;
   input = document.getElementById("myInput");
@@ -38,21 +38,7 @@ function filterFunction2() {
       }
     }
   }
-  function filterFunction3() {
-    var input, filter, ul, li, a, i;
-    input = document.getElementById("myInput3");
-    filter = input.value.toUpperCase();
-    div = document.getElementById("myDropdown3");
-    a = div.getElementsByTagName("a");
-    for (i = 0; i < a.length; i++) {
-      txtValue = a[i].textContent || a[i].innerText;
-      if (txtValue.toUpperCase().indexOf(filter) > -1) {
-        a[i].style.display = "";
-      } else {
-        a[i].style.display = "none";
-      }
-    }
-  }
+ 
  window.onclick = function(event) {
         if (!event.target.matches('.dropbtn') && !event.target.matches('.dropbtn *')) {
             var dropdowns = document.getElementsByClassName("dropdown-content");
@@ -92,42 +78,78 @@ function filterFunction2() {
         });
     });
   });
-  function filterByCity(element) {
-    let zgjedhur = element.innerText.trim(); // Merr qytetin nga dropdown
-    let punet = document.querySelectorAll('.puna'); // Merr të gjitha punët
 
-    punet.forEach(puna => {
-        let lokacioni = puna.querySelector('.lokacioni').innerText.trim(); // Lexo përmbajtjen e spanit
-        if (zgjedhur === "Të gjitha" || zgjedhur === lokacioni) {
-            puna.style.display = "block"; // Shfaq punën
-        } else {
-            puna.style.display = "none"; // Fshi punën
-        }
-    });
-}
-function filterByCategory(element) {
-  let zgjedhur = element.innerText.trim(); // Merr qytetin nga dropdown
-  let punet = document.querySelectorAll('.puna'); // Merr të gjitha punët
-
-  punet.forEach(puna => {
-      let kategoria = puna.querySelector('.kategoria').innerText.trim(); // Lexo përmbajtjen e spanit
-      if (zgjedhur === "Të gjitha" || zgjedhur === kategoria) {
-          puna.style.display = "block"; // Shfaq punën
-      } else {
-          puna.style.display = "none"; // Fshi punën
-      }
-  });
-}
 function filterByCity(element) {
   let zgjedhur = element.innerText.trim(); // Merr qytetin nga dropdown
-  let punet = document.querySelectorAll('.puna'); // Merr të gjitha punët
+  console.log("Qyteti i zgjedhur:", zgjedhur);
 
-  punet.forEach(puna => {
-      let lokacioni = puna.querySelector('.lokacioni').innerText.trim(); // Lexo përmbajtjen e spanit
-      if (zgjedhur === "Të gjitha" || zgjedhur === lokacioni) {
-          puna.style.display = "block"; // Shfaq punën
-      } else {
-          puna.style.display = "none"; // Fshi punën
-      }
+  let container = document.querySelector('#card-container'); // Container-i që mban kartat
+  let kartat = Array.from(container.getElementsByClassName('card')); // Merr të gjitha kartat me klasën 'card'
+
+  let kaRezultat = false; // Variabël për të kontrolluar nëse ka rezultate
+
+  kartat.forEach(card => {
+    let lokacioniElement = card.querySelector('.lokacioni'); // Merr elementin e lokacionit
+    let lokacioni = lokacioniElement ? lokacioniElement.innerText.trim() : ""; // Kontrollon përmbajtjen
+
+    if (zgjedhur === "Të gjitha" || zgjedhur === lokacioni) {
+      card.style.display = "block"; // Shfaq kartën
+      container.appendChild(card); // Vendos kartën në fund për renditje të re
+      kaRezultat = true; // Gjen rezultat
+    } else {
+      card.style.display = "none"; // Fsheh kartën që nuk përputhet
+    }
   });
+
+  // Kontrollo nëse nuk ka rezultate dhe shfaq një mesazh informues
+  let noResultsMessage = document.getElementById('no-results');
+  if (!kaRezultat) {
+    if (!noResultsMessage) {
+      noResultsMessage = document.createElement('p');
+      noResultsMessage.id = 'no-results';
+      noResultsMessage.style.color = 'grey';
+      noResultsMessage.innerText = "Nuk u gjetën rezultate për këtë qytet.";
+      container.appendChild(noResultsMessage);
+    }
+  } else {
+    if (noResultsMessage) noResultsMessage.remove(); // Fshij mesazhin nëse ka rezultate
+  }
 }
+
+function filterByCategory(element) {
+  let zgjedhur = element.innerText.trim(); // Merr qytetin nga dropdown
+  console.log("kategoria e zgjedhur:", zgjedhur);
+
+  let container = document.querySelector('#card-container'); // Container-i që mban kartat
+  let kartat = Array.from(container.getElementsByClassName('card')); // Merr të gjitha kartat me klasën 'card'
+
+  let kaRezultat = false; // Variabël për të kontrolluar nëse ka rezultate
+
+  kartat.forEach(card => {
+    let kategoriaElement = card.querySelector('.kategoria'); // Merr elementin e lokacionit
+    let kategoria = kategoriaElement ? kategoriaElement.innerText.trim() : ""; // Kontrollon përmbajtjen
+
+    if (zgjedhur === "Të gjitha" || zgjedhur === kategoria) {
+      card.style.display = "block"; // Shfaq kartën
+      container.appendChild(card); // Vendos kartën në fund për renditje të re
+      kaRezultat = true; // Gjen rezultat
+    } else {
+      card.style.display = "none"; // Fsheh kartën që nuk përputhet
+    }
+  });
+
+  // Kontrollo nëse nuk ka rezultate dhe shfaq një mesazh informues
+  let noResultsMessage = document.getElementById('no-results');
+  if (!kaRezultat) {
+    if (!noResultsMessage) {
+      noResultsMessage = document.createElement('p');
+      noResultsMessage.id = 'no-results';
+      noResultsMessage.style.color = 'grey';
+      noResultsMessage.innerText = "Nuk u gjetën rezultate për këtë kategori.";
+      container.appendChild(noResultsMessage);
+    }
+  } else {
+    if (noResultsMessage) noResultsMessage.remove(); // Fshij mesazhin nëse ka rezultate
+  }
+}
+
