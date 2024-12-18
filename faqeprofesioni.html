@@ -196,8 +196,19 @@
     </style>
 </head>
 <body>
-
+    <div id="header-container"></div>
+    <script>
+      // JavaScript për të ngarkuar header-in nga file-i i jashtëm
+      fetch('nav.html')
+          .then(response => response.text())
+          .then(data => {
+              // Vendos përmbajtjen e header-it në div-in me id="header-container"
+              document.getElementById('header-container').innerHTML = data;
+          })
+          .catch(err => console.error('Gabim gjatë ngarkimit të header-it:', err));
+    </script>
 <main>
+    
     <!-- Titulli Kryesor -->
     <div class="profession-title">
         Detajet e Profesionit - Shofer
