@@ -6,100 +6,148 @@
     <title>Detajet e Profesionit - Shofer</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #eef2f3;
             color: #333;
             line-height: 1.6;
         }
 
         main {
             padding: 20px;
-            max-width: 800px;
-            margin: 20px auto;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 900px;
+            margin: 30px auto;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+        }
+
+        .profession-title {
+            background-color: #2a9d87;
+            color: white;
+            padding: 15px 20px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin: 0;
         }
 
         .profession-details {
+            position: relative;
+            background-image: url('foto/Transport\ Ferizaj.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 300px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .profession-details .info {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(42, 157, 135, 0.7);
+            padding: 10px;
+            border-radius: 8px;
+            color: white;
+            font-size: 14px;
+            text-align: left;
+        }
+
+        .requirements {
+            margin-top: 20px;
             padding: 20px;
-            border: 1px solid #f4a261;
-            border-radius: 10px;
-            background-color: #fff5e1;
-            margin-bottom: 20px;
+            border-top: 1px solid #2a9d87;
         }
 
-        .profession-details h2 {
-            color: #f4a261;
+        h2 {
+            color: #264653;
+            margin-bottom: 15px;
+        }
+
+        ul {
+            padding-left: 20px;
+            list-style: none;
+        }
+
+        ul li {
             margin-bottom: 10px;
-            text-align: center; /* Kjo linjë përqendron titullin */
+            display: flex;
+            align-items: center;
         }
 
-        .profession-details p {
-            margin: 10px 0;
-        }
-
-        .profession-details .image {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .profession-details .image img {
-            width: 80%;
-            max-width: 400px;
-            border-radius: 10px;
+        ul li::before {
+            content: "";
+            width: 10px;
+            height: 10px;
+            background-color: #2a9d87;
+            border-radius: 50%;
+            margin-right: 10px;
+            flex-shrink: 0;
         }
 
         .btn {
             display: inline-block;
             margin-top: 20px;
-            padding: 10px 20px;
-            background-color: #f4a261;
+            padding: 12px 25px;
+            background-color: #2a9d87;
             color: white;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 8px;
             font-size: 16px;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, transform 0.2s;
         }
 
         .btn:hover {
-            background-color: #c79850;
+            background-color: #21867a;
+            transform: scale(1.05);
+        }
+
+        .image-section {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .image-section img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
         }
     </style>
 </head>
 <body>
 
-    <div id="header-container"></div>
-    <script>
-      fetch('nav.html')
-          .then(response => response.text())
-          .then(data => {
-              document.getElementById('header-container').innerHTML = data;
-          })
-          .catch(err => console.error('Gabim gjatë ngarkimit të header-it:', err));
-    </script>
-
 <main>
+    <!-- Titulli Kryesor -->
+    <div class="profession-title">
+        Detajet e Profesionit - Shofer
+    </div>
+    <!-- Seksioni i Detajeve -->
     <div class="profession-details">
-        <h2>Rreth Profesionit</h2>
-        <div class="image">
-            <img src="foto/Transport Ferizaj.jpg" alt="Shoferi">
+        <div class="info">
+            <h3>Profili i Shoferit</h3>
+            <p>Transportimi i mallrave ose udhëtarëve në mënyrë të sigurt dhe të përgjegjshme.</p>
         </div>
-        <p>
-            Profili i shoferit përfshin transportimin e mallrave ose udhëtarëve në mënyrë të sigurt dhe të përgjegjshme. Shoferi është përgjegjës për mirëmbajtjen e automjetit, respektimin e rregullave të trafikut dhe ofrimin e shërbimeve të cilësisë së lartë.
-        </p>
     </div>
 
-    <h2>Kërkesat Kryesore</h2>
-    <ul>
-        <li>Patentë shoferi valide e kategorisë përkatëse.</li>
-        <li>Eksperiencë në drejtimin e automjeteve.</li>
-        <li>Njohuri mbi mirëmbajtjen bazë të automjetit.</li>
-        <li>Aftësi të mira komunikimi dhe sjellje profesionale.</li>
-    </ul>
+   
 
+    <!-- Seksioni i Kërkesave -->
+    <div class="requirements">
+        <h2>Kërkesat Kryesore</h2>
+        <ul>
+            <li>Patentë shoferi valide e kategorisë përkatëse.</li>
+            <li>Eksperiencë në drejtimin e automjeteve.</li>
+            <li>Njohuri mbi mirëmbajtjen bazë të automjetit.</li>
+            <li>Aftësi të mira komunikimi dhe sjellje profesionale.</li>
+        </ul>
+    </div>
+
+    <!-- Seksioni i Përfitimeve -->
     <h2>Përfitimet</h2>
     <p>
         Duke punuar si shofer, mund të përfitoni:
@@ -110,6 +158,7 @@
         <li>Fleksibilitet në orarin e punës.</li>
     </ul>
 
+    <!-- Butoni -->
     <a href="index.html" class="btn">Kthehu te Faqja Kryesore</a>
 </main>
 
