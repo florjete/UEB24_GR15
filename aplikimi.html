@@ -1,13 +1,35 @@
-<div id="success-message" style="display: block; margin: 50px auto; padding: 30px; max-width: 600px; background-color: #264653; border-radius: 15px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); text-align: center; color: white; font-family: Arial, sans-serif;">
+<div id="success-message" style="display: block; margin: 50px auto; padding: 30px; max-width: 600px; background-color: white; border: 2px solid #2a9d8f; border-radius: 15px; box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); text-align: center; color: black; font-family: Arial, sans-serif; font-style: italic;">
     <div style="font-size: 50px; margin-bottom: 20px;">🎉</div>
     <h1 style="font-size: 24px; font-weight: bold; margin-bottom: 15px;">Faleminderit për aplikimin tuaj!</h1>
     <p style="font-size: 18px; line-height: 1.5; margin-bottom: 20px;">
-        Aplikimi juaj është pranuar me sukses. Ne do ta shqyrtojmë me kujdes dhe do t'ju kontaktojmë sa më shpejt të jetë e mundur. 
+        Aplikimi juaj është pranuar me sukses. Ne do ta shqyrtojmë me kujdes dhe do t'ju kontaktojmë sa më shpejt të jetë e mundur.
     </p>
-    <p style="font-size: 16px; font-style: italic; color: #d9e9ea;">
+    <p style="font-size: 16px; color: #555; margin-bottom: 20px;">
         Ju urojmë suksese në hapat e ardhshëm të karrierës suaj!
     </p>
-    <a href="index.html" style="display: inline-block; margin-top: 20px; padding: 12px 30px; background-color: #2a9d8f; color: white; text-decoration: none; font-size: 16px; border-radius: 8px; transition: background-color 0.3s; font-weight: bold;">
-        Kthehu në faqen kryesore
-    </a>
+    <a href="index.html" class="btn">Kthehu</a>
 </div>
+
+<style>
+    #success-message {
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Hijë e lehtë për kutinë */
+    }
+
+    .btn {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 12px 30px;
+        background-color: #2a9d8f;
+        color: white;
+        text-decoration: none;
+        font-size: 16px;
+        border-radius: 8px;
+        font-weight: bold;
+        transition: background-color 0.3s, transform 0.2s;
+    }
+
+    .btn:hover {
+        background-color: #1d6d5f; /* Ngjyrë më e errët kur afrohet miu */
+        transform: scale(1.1); /* Zgjerimi i butonit */
+    }
+</style>
