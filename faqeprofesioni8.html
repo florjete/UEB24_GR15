@@ -253,28 +253,85 @@
         <li>Orë fleksibile dhe mundësi për të udhëtuar në vende të ndryshme.</li>
         <li>Rrjetëzim me profesionistë dhe klientë të ndryshëm.</li>
     </ul>
+<!-- Seksioni i Aplikimit -->
+<div class="form-section">
+    <h3>Aplikoni për këtë Pozitë</h3>
+    <form id="application-form" action="submit_application.php" method="POST" enctype="multipart/form-data">
+        <label for="first-name">Emri</label>
+        <input type="text" id="first-name" name="first-name" required>
+        <span id="first-name-error" class="error-message"></span>
 
-    <div class="form-section">
-        <h3>Aplikoni për këtë Pozitë</h3>
-        <form action="submit_application.php" method="POST" enctype="multipart/form-data">
-            <label for="first-name">Emri</label>
-            <input type="text" id="first-name" name="first-name" required>
+        <label for="last-name">Mbiemri</label>
+        <input type="text" id="last-name" name="last-name" required>
+        <span id="last-name-error" class="error-message"></span>
 
-            <label for="last-name">Mbiemri</label>
-            <input type="text" id="last-name" name="last-name" required>
+        <label for="phone-or-email">Numri i Telefonit ose Email</label>
+        <input type="text" id="phone-or-email" name="phone-or-email" required placeholder=" ">
+        <span id="phone-or-email-error" class="error-message"></span>
 
-            <label for="phone-or-email">Numri i Telefonit ose Email</label>
-            <input type="text" id="phone-or-email" name="phone-or-email" required>
+        <label for="cv">Ngarkoni CV-në tuaj</label>
+        <input type="file" id="cv" name="cv" accept=".pdf, .docx" required>
+        <span id="cv-error" class="error-message"></span>
 
-            <label for="portfolio">Ngarkoni Portfolio-n tuaj</label>
-            <input type="file" id="portfolio" name="portfolio" accept=".pdf, .docx, .zip" required>
+        <label for="cover-letter">Letër Motivimi (opsionale)</label>
+        <textarea id="cover-letter" name="cover-letter" rows="5" placeholder="Shkruani një letër motivimi për aplikimin tuaj (opsionale)"></textarea>
 
-            <label for="cover-letter">Letër Motivimi (opsionale)</label>
-            <textarea id="cover-letter" name="cover-letter" rows="5" placeholder="Shkruani një letër motivimi për aplikimin tuaj (opsionale)"></textarea>
+        <button type="button" onclick="validateForm()">Apliko</button>
+    </form>
+</div>
 
-            <button type="submit">Apliko</button>
-        </form>
-    </div>
+<script>
+    function validateForm() {
+        // Fshij mesazhet e mëparshme të gabimit
+        document.querySelectorAll('.error-message').forEach(function(message) {
+            message.textContent = '';
+        });
+
+        // Merr të gjitha inputet e formularit
+        var firstName = document.getElementById('first-name').value;
+        var lastName = document.getElementById('last-name').value;
+        var phoneOrEmail = document.getElementById('phone-or-email').value;
+        var cv = document.getElementById('cv').value;
+
+        var isValid = true;
+
+        // Kontrollo nëse të gjitha fushat janë mbushur dhe shfaq mesazhin përkatës pranë fushës
+        if (!firstName) {
+            document.getElementById('first-name-error').textContent = 'Kjo fushë nuk mund të jetë e zbrazët.';
+            isValid = false;
+        }
+
+        if (!lastName) {
+            document.getElementById('last-name-error').textContent = 'Kjo fushë nuk mund të jetë e zbrazët.';
+            isValid = false;
+        }
+
+        if (!phoneOrEmail) {
+            document.getElementById('phone-or-email-error').textContent = 'Kjo fushë nuk mund të jetë e zbrazët.';
+            isValid = false;
+        }
+
+        if (!cv) {
+            document.getElementById('cv-error').textContent = 'Kjo fushë nuk mund të jetë e zbrazët.';
+            isValid = false;
+        }
+
+        // Nëse të gjitha fushat janë të mbushura, drejto te faqja tjetër
+        if (isValid) {
+            window.location.href = 'aplikimi.html'; // Faqja ku do të drejtohet përdoruesi
+        }
+    }
+</script>
+
+<style>
+    .error-message {
+        color: red;
+        font-size: 12px;
+        margin-top: 5px;
+        display: block;
+    }
+</style>
+
 </main>
 <!-- Shigjeta flotuese për kthim -->
 <a href="#" class="back-btn-floating" onclick="shkoTeFaqja();"></a>
