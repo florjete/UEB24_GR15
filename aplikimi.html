@@ -1,3 +1,16 @@
+
+<div id="header-container"></div>
+    <script>
+      // JavaScript për të ngarkuar header-in nga file-i i jashtëm
+      fetch('nav.html')
+          .then(response => response.text())
+          .then(data => {
+              // Vendos përmbajtjen e header-it në div-in me id="header-container"
+              document.getElementById('header-container').innerHTML = data;
+          })
+          .catch(err => console.error('Gabim gjatë ngarkimit të header-it:', err));
+    </script>
+
 <div id="success-message" style="display: block; margin: 50px auto; padding: 30px; max-width: 600px; background-color: white; border: 2px solid #2a9d8f; border-radius: 15px; box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); text-align: center; color: black; font-family: Arial, sans-serif; font-style: italic;">
     <div style="font-size: 50px; margin-bottom: 20px;">🎉</div>
     <h1 style="font-size: 24px; font-weight: bold; margin-bottom: 15px;">Faleminderit për aplikimin tuaj!</h1>
@@ -7,7 +20,8 @@
     <p style="font-size: 16px; color: #555; margin-bottom: 20px;">
         Ju urojmë suksese në hapat e ardhshëm të karrierës suaj!
     </p>
-    <a href="index.html" class="btn">Kthehu</a>
+    <a href="shpalljet.html" class="btn">Kthehu</a>
+
 </div>
 
 <style>
@@ -33,3 +47,14 @@
         transform: scale(1.1); /* Zgjerimi i butonit */
     }
 </style>
+<div id="footer-container"></div>
+    <script>
+      // JavaScript per ngarkim i footer-it nga file-i i jashtëm
+      fetch('footer.html')
+          .then(response => response.text())
+          .then(data => {
+              // Vendos pjese e footer-it ne div-in me id="footer-container"
+              document.getElementById('footer-container').innerHTML = data;
+          })
+          .catch(err => console.error('Gabim gjatë ngarkimit të footer-it:', err));
+    </script>
