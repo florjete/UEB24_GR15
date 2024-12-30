@@ -302,17 +302,22 @@
     </div>
 </main>
 <!-- Shigjeta flotuese për kthim -->
-<a href="index.html" class="back-btn-floating"></a>
+<a href="#" class="back-btn-floating" onclick="shkoTeFaqja();"></a>
+
 <div id="footer-container"></div>
-    <script>
-      // JavaScript per ngarkim i footer-it nga file-i i jashtëm
-      fetch('footer.html')
-          .then(response => response.text())
-          .then(data => {
-              // Vendos pjese e footer-it ne div-in me id="footer-container"
-              document.getElementById('footer-container').innerHTML = data;
-          })
-          .catch(err => console.error('Gabim gjatë ngarkimit të footer-it:', err));
-    </script>
+<script>
+    // JavaScript për ngarkimin e footer-it nga file-i i jashtëm
+    fetch('footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer-container').innerHTML = data;
+        })
+        .catch(err => console.error('Gabim gjatë ngarkimit të footer-it:', err));
+
+    // Funksioni për navigim te faqja e re
+    function shkoTeFaqja() {
+        window.location.href = "shpalljet.html"; // Këtu vendos destinacionin tënd
+    }
+</script>
 </body>
 </html>
