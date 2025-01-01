@@ -196,7 +196,9 @@
                 <li><a href="about.html">Rreth nesh</a></li>
                 <li><a href="shpalljet.html">Shpallje</a></li>
                 <li><a href="keshilla.html">K&#235shilla</a></li>
-                <li><a href="#" id="loginIcon"><img src="foto/user-icon.svg" alt="user icon"></a></li>
+                <li><button id="loginIcon" style="background: none; border: none; cursor: pointer;">
+                    <img src="foto/user-icon.svg" alt="user icon">
+                </button></li>
             </ul>
 
             <div class="hamburger">&#9776;</div>
@@ -233,7 +235,7 @@
         });
 
         loginIcon.addEventListener('click', (e) => {
-            e.preventDefault();
+            e.preventDefault(); // Prevents page navigation
             loginModal.style.display = 'flex';
         });
 
@@ -249,3 +251,4 @@
     </script>
 </body>
 </html>
+
