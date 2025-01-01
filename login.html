@@ -1,41 +1,239 @@
-<!DOCTYPE html> 
-<html><head>
-    <title>
-        Forma e regjistrimit dhe hyrjes
-    </title>
-    <link rel="stylesheet" href="loginstyle.css">
-    </head>
-    <body>
-        <div class="login">
-            <div class="form-box">
-                <div class="button-box">
-                    <div id="btn"></div>
-                    <button type="button" class="toggle-btn" onclick="login()" >Hyr</button>
-                    <button type="button" class="toggle-btn" onclick="register()">Regjistrohu</button>
-                </div>
-            
-                <form id="login" class="input-group">
-                    <input type="text" class="input-field" placeholder="Perdoruesi" required>
-                    <input type="password" class="input-field" placeholder="Fjalkalimi" required>
-                    <input type="checkbox" class="check-box"><span>Kujto Fjalekalimin</span> 
-                    <button type="submit" class="submit-btn"  id="btn2" onclick="audio.play();">Hyr</button>
-                       <p>Nuk keni llogari?</p>
-                     <div id="button" class="toggle-btn" onclick="register()"> 
-                       <ul style="list-style-position: inside; padding: 0; margin: 0; text-align: left;">
-                         <li>  Regjistrohu </li></ul></div>
-                </form>
-               
-                <form id="register" class="input-group">
-                    <input type="text" class="input-field" placeholder="Emri" required>
-                    <input type="text" class="input-field" placeholder="Mbiemri" required>
-                    <input type="email" class="input-field" placeholder="Email" required>
-                    <input type="password" class="input-field" placeholder="Fjalkalimi" required>
-                    <input type="password" class="input-field" placeholder="Konfirmo Fjalkalimin" required>
-                    <button type="submit" class="submit-btn"  id="btn2" onclick="audio.play();">Regjistrohu</button>
-                </form>
-            </div>
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forma e regjistrimit dhe hyrjes</title>
+    <style>
+        /* Pjesa e përgjithshme për modalin */
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Navbar */
+        nav {
+            position: relative;
+            z-index: 10;
+            background-color: #264653;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-container img {
+            width: 60px;
+            margin-right: 10px;
+            animation: flip 6s infinite linear; /* aplikon infinite spinning animation */
+            transform-style: preserve-3d;
+        }
+
+        .logo-container h3 {
+            margin: 0;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        @keyframes flip {
+            0% {
+                transform: rotateY(0deg);
+            }
+            100% {
+                transform: rotateY(360deg); /* kthim i plote horizontalisht */
+            }
+        }
+
+        /* Pjesa e lidhjeve të navbar-it */
+        .nav-links {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin: 0 15px;
+        }
+
+        .nav-links a {
+            pointer-events: auto;
+            text-decoration: none;
+            color: #FFFAFE;
+            font-size: 18px;
+        }
+
+        .nav-links a:hover {
+            color: #E9C46A;
+        }
+
+        .nav-links img {
+            width: 20px;
+            margin-right: 10px;
+            margin-left: 20px;
+        }
+
+        .hamburger {
+            position: relative;
+            z-index: 1000;
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Dizajn responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color: #264653;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                text-align: center;
+            }
+
+            .nav-links.show {
+                display: flex;
+            }
+
+            .nav-links li {
+                margin: 10px 0;
+            }
+
+            .hamburger {
+                display: block;
+            }
+        }
+
+        /* Pjesa e Modal-it */
+        .modal {
+            display: none; /* Fillimisht modal është i fshehur */
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Background i errët për modal */
+        }
+
+        .modal-content {
+            width: 400px;
+            margin: 100px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Pjesa e formës së login-it brenda modal-it */
+        .input-field {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #45cfbf;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            color: white;
+        }
+
+        .close {
+            color: #fff;
+            font-size: 30px;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .modal-content {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="logo-container">
+            <a href="home.html">
+                <img src="foto/logo.svg" alt="Logo">
+            </a>
+            <h3>Find Your Way</h3>
         </div>
-     
-    </body>
-     <script src="login.js"></script>
+
+        <ul class="nav-links">
+            <li><a href="home.html">Ballina</a></li>
+            <li><a href="about.html">Rreth nesh</a></li>
+            <li><a href="shpalljet.html">Shpallje</a></li>
+            <li><a href="keshilla.html">K&#235shilla</a></li>
+            <!-- Linku i login që hap modalin -->
+            <li><a href="javascript:void(0)" id="loginBtn"><img src="foto/user-icon.svg" alt="user icon"></a></li>
+        </ul>
+
+        <div class="hamburger">&#9776;</div>
+    </nav>
+
+    <!-- Modal për Login -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <form id="loginForm">
+                <input type="text" class="input-field" placeholder="Perdoruesi" required>
+                <input type="password" class="input-field" placeholder="Fjalkalimi" required>
+                <input type="checkbox" class="check-box"><span>Kujto Fjalekalimin</span>
+                <button type="submit" class="submit-btn">Hyr</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript për të hapur dhe mbyllur modalin
+        const loginBtn = document.getElementById('loginBtn');
+        const loginModal = document.getElementById('loginModal');
+        const closeModal = document.getElementById('closeModal');
+
+        // Hap modalin kur klikohet butoni i login-it
+        loginBtn.addEventListener('click', function() {
+            loginModal.style.display = 'block';
+        });
+
+        // Mbyll modalin kur klikohet 'x'
+        closeModal.addEventListener('click', function() {
+            loginModal.style.display = 'none';
+        });
+
+        // Mbyll modalin edhe kur klikoni jashtë kutisë së modal-it
+        window.addEventListener('click', function(event) {
+            if (event.target === loginModal) {
+                loginModal.style.display = 'none';
+            }
+        });
+    </script>
+</body>
 </html>
