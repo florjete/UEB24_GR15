@@ -15,40 +15,11 @@
     box-sizing: border-box;
 }
 
-body {
-    font-family: Arial, sans-serif;
-}
+
 
 .container {
     width: 80%;
     margin: 0 auto;
-}
-
-header {
-    background-color: #264653;
-    color: #FFFFFF;
-    padding: 20px 0;
-}
-
-.navbar ul {
-    list-style: none;
-    text-align: center;
-}
-
-.navbar ul li {
-    display: inline-block;
-    margin: 0 20px;
-}
-
-.navbar ul li a {
-    color: #FFFFFF;
-    text-decoration: none;
-    font-size: 18px;
-    transition: color 0.3s ease;
-}
-
-.navbar ul li a:hover {
-    color: #F4A261;
 }
 
 .hero {
