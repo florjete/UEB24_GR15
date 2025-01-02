@@ -87,6 +87,7 @@ function filterByCity(element) {
   let container = document.querySelector('#card-container'); // Container-i që mban kartat
   let kartat = Array.from(container.getElementsByClassName('card')); // Merr të gjitha kartat me klasën 'card'
 
+  let kartatFiltruara = []; // Lista për kartat që përputhen
   let kaRezultat = false; // Variabël për të kontrolluar nëse ka rezultate
 
   kartat.forEach(card => {
@@ -94,12 +95,19 @@ function filterByCity(element) {
     let lokacioni = lokacioniElement ? lokacioniElement.innerText.trim() : ""; // Kontrollon përmbajtjen
 
     if (zgjedhur === "Të gjitha" || zgjedhur === lokacioni) {
-      card.style.display = "block"; // Shfaq kartën
-      container.appendChild(card); // Vendos kartën në fund për renditje të re
+      kartatFiltruara.push(card); // Shto kartën në listën e filtruar
       kaRezultat = true; // Gjen rezultat
-    } else {
-      card.style.display = "none"; // Fsheh kartën që nuk përputhet
     }
+  });
+
+  // Pastroni të gjitha kartat ekzistuese nga kontejneri
+  container.innerHTML = "";
+
+  // Vendosni kartat e filtruara në mënyrë të renditur
+  kartatFiltruara.forEach(card => {
+    card.style.display = "block"; // Sigurohuni që kartat janë të dukshme
+    card.style.margin = "10px";
+    container.appendChild(card); // Vendosni në kontejner
   });
 
   // Kontrollo nëse nuk ka rezultate dhe shfaq një mesazh informues

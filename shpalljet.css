@@ -152,6 +152,7 @@ body {
   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Kalim i butë për animacion */
   width: 320px;
   height: 550px;
+  overflow: hidden;
   
 
 }
