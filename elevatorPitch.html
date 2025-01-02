@@ -42,6 +42,52 @@
         section {
             margin-bottom: 40px; /* Hapesirë midis seksioneve */
         }
+        .back-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 25px;
+            background-color: #264653;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 16px;
+            text-align: center;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .back-btn:hover {
+            background-color: #21867a;
+            transform: scale(1.05);
+        }
+
+        .back-btn::before {
+            content: "←"; 
+            font-size: 18px;
+        }
+
+        .back-btn-floating {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 100;
+            padding: 12px 25px;
+            background-color: #264653;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .back-btn-floating:hover {
+            background-color: #21867a;
+            transform: scale(1.05);
+        }
+
+        .back-btn-floating::before {
+            content: "←"; 
+            font-size: 18px;
+        }
     </style>
 </head>
 <body class="elevator-body">
@@ -104,6 +150,8 @@
             </p>
         </section>
     </main>
+    <!-- Shigjeta flotuese për kthim -->
+     <a href="#" class="back-btn-floating" onclick="kthehu();"></a>
     <div id="footer-container"></div>
     <script>
       // JavaScript per ngarkim i footer-it nga file-i i jashtëm
@@ -114,6 +162,10 @@
               document.getElementById('footer-container').innerHTML = data;
           })
           .catch(err => console.error('Gabim gjatë ngarkimit të footer-it:', err));
+    // Funksioni për navigim te faqja e re
+     function kthehu() {
+        window.location.href = "keshilla.html"; // Këtu vendos destinacionin tënd
+    }
     </script>
 </body>
 </html>
