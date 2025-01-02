@@ -79,55 +79,28 @@ function filterFunction2() {
         });
     });
   });
-  document.addEventListener('DOMContentLoaded', () => {
-    let qytetiIRuajtur = localStorage.getItem('qytetiIFundit');
-    if (qytetiIRuajtur) {
-      console.log("Aplikimi i filtrit për qytetin:", qytetiIRuajtur);
-      filterByCityName(qytetiIRuajtur);
+
+function filterByCity(element) {
+  let zgjedhur = element.innerText.trim(); // Merr qytetin nga dropdown
+  console.log("Qyteti i zgjedhur:", zgjedhur);
+
+  let container = document.querySelector('#card-container'); // Container-i që mban kartat
+  let kartat = Array.from(container.getElementsByClassName('card')); // Merr të gjitha kartat me klasën 'card'
+
+  let kaRezultat = false; // Variabël për të kontrolluar nëse ka rezultate
+
+  kartat.forEach(card => {
+    let lokacioniElement = card.querySelector('.lokacioni'); // Merr elementin e lokacionit
+    let lokacioni = lokacioniElement ? lokacioniElement.innerText.trim() : ""; // Kontrollon përmbajtjen
+
+    if (zgjedhur === "Të gjitha" || zgjedhur === lokacioni) {
+      card.style.display = "block"; // Shfaq kartën
+      container.appendChild(card); // Vendos kartën në fund për renditje të re
+      kaRezultat = true; // Gjen rezultat
+    } else {
+      card.style.display = "none"; // Fsheh kartën që nuk përputhet
     }
   });
-  
-  function filterByCity(element) {
-    let zgjedhur = element.innerText.trim(); // Merr qytetin e zgjedhur
-    console.log("Qyteti i zgjedhur:", zgjedhur);
-  
-    // Kontrollo nëse është qyteti i parë apo i ndryshëm nga i mëparshmi
-    let qytetiIRuajtur = localStorage.getItem('qytetiIFundit');
-    if (qytetiIRuajtur && qytetiIRuajtur !== zgjedhur) {
-      // Ruaj qytetin e ri në localStorage dhe rifresko faqen
-      localStorage.setItem('qytetiIFundit', zgjedhur);
-      location.reload(); // Rifresko faqen
-      return;
-    }
-  
-    // Përditëso qytetin e ruajtur në localStorage
-    localStorage.setItem('qytetiIFundit', zgjedhur);
-  
-    // Vazhdoni me logjikën normale të filtrimit
-    filterByCityName(zgjedhur);
-  }
-  
-  function filterByCityName(qyteti) {
-    let container = document.querySelector('#card-container'); // Gjej kontejnerin e kartave
-    let kartat = Array.from(document.querySelectorAll('.card')); // Merr të gjitha kartat në DOM
-  
-    // Pastroni kontejnerin përpara aplikimit të filtrit
-    container.innerHTML = "";
-  
-    let kaRezultat = false; // Variabël për të ndjekur rezultatet
-  
-    kartat.forEach(card => {
-      let lokacioniElement = card.querySelector('.lokacioni'); // Gjej elementin e lokacionit
-      let lokacioni = lokacioniElement ? lokacioniElement.innerText.trim() : "";
-  
-      if (qyteti === "Të gjitha" || qyteti === lokacioni) {
-        card.style.display = "block"; // Sigurohu që karta është e dukshme
-        container.appendChild(card); // Shto kartën në kontejner
-        kaRezultat = true; // Përcakto që ka rezultate
-      }
-    });
-  
-    
 
   // Kontrollo nëse nuk ka rezultate dhe shfaq një mesazh informues
   let noResultsMessage = document.getElementById('no-results');
