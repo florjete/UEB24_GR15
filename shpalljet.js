@@ -1,4 +1,5 @@
 
+
 document.getElementById("myInput").onclick = function(event) {
   event.stopPropagation();
 };
@@ -151,5 +152,5 @@ function filterByCategory(element) {
   } else {
     if (noResultsMessage) noResultsMessage.remove(); // Fshij mesazhin nëse ka rezultate
   }
-}
 
+}

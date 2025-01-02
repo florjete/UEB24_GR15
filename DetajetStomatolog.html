@@ -3,8 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detajet e Profesionit - Kontabilist</title>
+    <title>Detajet e Profesionit - Stomatolog</title>
     <style>
+         ::-webkit-scrollbar{
+        width: 10px;
+        }
+        ::-webkit-scrollbar-track{
+        
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb{
+            background:#264653;
+            border-radius: 10px;
+        }
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
@@ -36,7 +47,7 @@
 
         .profession-details {
             position: relative;
-            background-image: url('../foto/kontabilist.webp'); 
+            background-image: url('../foto/ordinanca.webp'); 
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -219,7 +230,7 @@
     </script>
 <main>
     <div class="profession-title">
-        Detajet e Profesionit - Kontabilist
+        Detajet e Profesionit - Stomatolog
     </div>
 
     <div class="profession-details">
@@ -227,31 +238,31 @@
 
     <div class="profilit">
         <h1>
-            Profili i Kontabilistit
+            Profili i Stomatologut
         </h1>
         <h3>
-            Menaxhimi i financave dhe ofrimi i këshillave për bizneset dhe individët.
+            Kujdesi për shëndetin oral dhe ofrimi i trajtimeve dentare për pacientët, duke përfshirë diagnostikimin, parandalimin dhe trajtimin e sëmundjeve të dhëmbëve dhe gojës.
         </h3>
     </div>
 
     <div class="requirements">
         <h2>Kërkesat Kryesore</h2>
         <ul>
-            <li>Njohuri mbi ligjet dhe rregulloret fiskale.</li>
-            <li>Aftësi në përdorimin e software-ve si Excel, QuickBooks dhe të ngjashme.</li>
-            <li>Shkathtësi në analizimin e raporteve financiare dhe planifikimin buxhetor.</li>
-            <li>Aftësi për të komunikuar dhe bashkëpunuar me klientë.</li>
+            <li>Diplomë në Stomatologji dhe licencë e vlefshme për ushtrim të profesionit në Kosovë.</li>
+            <li>Eksperiencë në trajtimin e pacientëve në klinika stomatologjike.</li>
+            <li>Aftësi për të përdorur pajisje moderne stomatologjike dhe teknologji të avancuar.</li>
+            <li>Shkathtësi të shkëlqyera komunikimi dhe aftësi për të ndërtuar marrëdhënie me pacientët.</li>
         </ul>
     </div>
 
     <h2>Përfitimet</h2>
     <p>
-        Duke punuar si kontabilist, mund të përfitoni:
+        Si stomatolog në Pejë, mund të përfitoni:
     </p>
     <ul>
-        <li>Mundësi për të zhvilluar aftësitë në menaxhimin financiar.</li>
-        <li>Siguri dhe stabilitet në punë me rroga konkurruese.</li>
-        <li>Mundësi për ngritje profesionale në fusha të ndryshme.</li>
+        <li>Pagë konkurruese dhe kushte të shkëlqyera pune.</li>
+        <li>Mundësi për të punuar në një klinikë të pajisur me teknologji të reja.</li>
+        <li>Mbështetje për zhvillim profesional dhe pjesëmarrje në trajnime.</li>
     </ul>
 
     
@@ -267,8 +278,8 @@
             <label for="phone-or-email">Numri i Telefonit ose Email</label>
             <input type="text" id="phone-or-email" name="phone-or-email" required>
 
-            <label for="portfolio">Ngarkoni Portfolio-n tuaj</label>
-            <input type="file" id="portfolio" name="portfolio" accept=".pdf, .docx, .zip" required>
+            <label for="cv">Ngarkoni CV-në tuaj</label>
+            <input type="file" id="cv" name="cv" accept=".pdf, .docx" required>
 
             <label for="cover-letter">Letër Motivimi (opsionale)</label>
             <textarea id="cover-letter" name="cover-letter" rows="5" placeholder="Shkruani një letër motivimi për aplikimin tuaj (opsionale)"></textarea>
@@ -278,17 +289,24 @@
     </div>
 </main>
 <!-- Shigjeta flotuese për kthim -->
-<a href="index.html" class="back-btn-floating"></a>
+<a href="#" class="back-btn-floating" onclick="shkoTeFaqja();"></a>
+
 <div id="footer-container"></div>
-    <script>
-      // JavaScript per ngarkim i footer-it nga file-i i jashtëm
-      fetch('footer.html')
-          .then(response => response.text())
-          .then(data => {
-              // Vendos pjese e footer-it ne div-in me id="footer-container"
-              document.getElementById('footer-container').innerHTML = data;
-          })
-          .catch(err => console.error('Gabim gjatë ngarkimit të footer-it:', err));
-    </script>
+<script>
+    // JavaScript per ngarkim te footer-it nga file-i i jashtem
+    fetch('footer.html')
+        .then(response => response.text())
+        .then(data => {
+            // Vendos pjese e footer-it ne div-in me id="footer-container"
+            document.getElementById('footer-container').innerHTML = data;
+        })
+        .catch(err => console.error('Gabim gjat&#235 ngarkimit te footer-it:', err));
+ 
+    // Funksioni për navigim te faqja e re
+    function shkoTeFaqja() {
+        window.location.href = "shpalljet.html"; // Këtu vendos destinacionin tënd
+    }
+</script>
+
 </body>
 </html>
