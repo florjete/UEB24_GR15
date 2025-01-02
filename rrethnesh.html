@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Rreth nesh</title>
+    <link rel="stylesheet" href="rrethnesh.css">
+   
+</head>
+<body>
+    <!-- importo file te html per nav ne div -->
+
+    <div id="header-container"></div>
+    <script>
+      // JavaScript për të ngarkuar header-in nga file-i i jashtëm
+      fetch('nav.html')
+          .then(response => response.text())
+          .then(data => {
+              // Vendos përmbajtjen e header-it në div-in me id="header-container"
+              document.getElementById('header-container').innerHTML = data;
+          })
+          .catch(err => console.error('Gabim gjat&#235 ngarkimit t&#235 header-it:', err));
+    </script>
+
+    <h1 id="rrethnesh">Rreth nesh</h1>
+    <img src="foto/FotoLogo.webp" alt="Logo" id="fotoRrethNesh">
+    <p id="tekstiRrethNesh">
+        Tek Find Your Way, ne besojmë se rruga drejt suksesit fillon me mundësitë e duhura. <br> Ne jemi një platformë inovative që lidh individët e talentuar me punëdhënës të besuar, duke krijuar ura midis ëndrrave dhe realitetit profesional.
+Misioni ynë është të fuqizojmë individët për të gjetur rrugën e tyre drejt karrierës së dëshiruar, duke ofruar një eksperiencë të lehtë, të shpejtë dhe të personalizuar.
+<br>Ne bashkëpunojmë me kompani nga industri të ndryshme, për të siguruar mundësi të ndryshme pune që i përshtaten aftësive dhe ambicieve të secilit përdorues.
+Duke përdorur teknologjinë më të fundit, ne ndihmojmë përdoruesit tanë të zbulojnë dhe të aplikojnë për pozitat që përputhen më së miri me qëllimet e tyre profesionale.
+Na besoni për të qenë udhërrëfyesi juaj në rrugën drejt suksesit. <br> Bashkohuni me Find Your Way dhe filloni udhëtimin tuaj drejt një të ardhmeje më të ndritur.Jemi këtu për të bërë ndryshimin në jetën tuaj profesionale, duke ju mbështetur në çdo hap të rrugës. Nëse jeni duke kërkuar punën e parë, një hap të madh në karrierë ose një ndryshim drejt një fushe të re, Find Your Way është partneri juaj i besuar.
+
+<br><b>Filloni sot dhe gjeni rrugën tuaj drejt suksesit!</b>
+    </p>
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- footer imported -->
+    <div id="footer-container" style="margin-top: 200px;"></div>
+    <script>
+      // JavaScript per ngarkim te footer-it nga file-i i jashtem
+      fetch('footer.html')
+          .then(response => response.text())
+          .then(data => {
+              // Vendos pjese e footer-it ne div-in me id="footer-container"
+              document.getElementById('footer-container').innerHTML = data;
+          })
+          .catch(err => console.error('Gabim gjat&#235 ngarkimit te footer-it:', err));
+    </script>
+
+</body>
+</html>

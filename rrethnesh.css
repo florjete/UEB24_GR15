@@ -1,0 +1,20 @@
+#rrethnesh {
+    size: 50px;
+    margin-top: 40px;
+    margin-left: 60px;
+    color: #264653;
+}
+#fotoRrethNesh{
+    height: 400px;
+    width: 400px;
+    margin-left: 1050px;
+    margin-top: -50px;
+    border-radius: 200px;
+}
+#tekstiRrethNesh{
+    color: #2c4751;
+    width: 820px;
+    margin-left: 180px;
+    margin-top: -300px;
+    line: spacing 2px;
+}
