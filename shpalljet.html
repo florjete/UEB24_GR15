@@ -53,15 +53,18 @@
         <button onclick="toggleDropdown(event, 'myDropdown2')" class="dropbtn">Fushat <span class="glyphicon glyphicon-chevron-down" style="font-size: 10px;" ></span></button>
         <div id="myDropdown2" class="dropdown-content">
           <input type="text" placeholder="Search.." id="myInput2" onkeyup="filterFunction2()">
-          <a href="#" onclick="filterByCategory(this)">Sh&#235;ndet&#235;si</a>
-          <a href="#" onclick="filterByCategory(this)">Inxhinieri dhe Teknologji</a>
-          <a href="#" onclick="filterByCategory(this)">Financ&#235; dhe Ekonomi</a>
-          <a href="#" onclick="filterByCategory(this)">Marketing dhe Shitje</a>
-          <a href="#" onclick="filterByCategory(this)">Shkenc&#235; dhe K&#235;rkim</a>
-          <a href="#" onclick="filterByCategory(this)">Arte dhe Dizajn</a>
-          <a href="#" onclick="filterByCategory(this)">IT dhe Teknologji e Informacionit</a>
-          <a href="#" onclick="filterByCategory(this)">Gjuh&#235; dhe Komunikim</a>
-          <a href="#" onclick="filterByCategory(this)">Arsimi</a>
+          <a href="#" onclick="filterByCategory(this)">Arkitekturë</a>
+          <a href="#" onclick="filterByCategory(this)">Arsim</a>
+          <a href="#" onclick="filterByCategory(this)">Financa</a>
+          <a href="#" onclick="filterByCategory(this)">Hoteleri</a>
+          <a href="#" onclick="filterByCategory(this)">Inxhinieri</a>
+          <a href="#" onclick="filterByCategory(this)">IT</a>
+          <a href="#" onclick="filterByCategory(this)">Marketing</a>
+          <a href="#" onclick="filterByCategory(this)">Media & Art</a>
+          <a href="#" onclick="filterByCategory(this)">Shëndetësi</a>
+          <a href="#" onclick="filterByCategory(this)">Sherbime Juridike</a>
+          <a href="#" onclick="filterByCategory(this)">Teknologji</a>
+          <a href="#" onclick="filterByCategory(this)">Transport</a>
         </div>
       </div>
       </div>
@@ -74,19 +77,20 @@
       </div>
     </section>
     <div class="container" id="card-container">
+      <div class="page active" id="page1">
       <div class="row">
           <!-- Pozita 1 -->
           <div class="col-md-4">
               <div class="card">
                   <img src="foto/Shkolla e Mesme Alpbach.jpg" class="card-img-top" alt="Pozitë e Lirë - Mësuese Matematikë">
-                  <div class="card-body">
+                  <div class="card-body" >
                       <h4 class="card-title">Pozitë e Lirë - Mësuese e Matematikës</h4>
                       <p class="date"><i class="fas fa-calendar-alt icon"></i>Shpallur: 18/06/2024</p>
                       <p><span class="ikone" style="margin-left: 10px; "><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-journal" viewBox="0 0 16 16" style="color: #F4A261;">
                         <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2"/>
                         <path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1z"/>
           
-                      </svg></span> <strong>Kategoria:</strong> <span class="kategoria" style="margin-left: 0px;">Arsimi</span></p>
+                      </svg></span> <strong>Kategoria:</strong> <span class="kategoria" style="margin-left: 0px;">Arsim</span></p>
                       <p><span class="ikone" style="margin-left: 10px;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cash-stack" viewBox="0 0 16 16">
                         <path d="M1 3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1zm7 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4"/>
                         <path d="M0 5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm3 0a2 2 0 0 1-2 2v4a2 2 0 0 1 2 2h10a2 2 0 0 1 2-2V7a2 2 0 0 1-2-2z"/>
@@ -274,6 +278,8 @@
                     </div>
               </div>
           </div>
+        </div>
+          <div class="page" id=" page2" >
           <div class="col-md-4" >
             <div class="card">
                 <img src="foto/ordinanca.webp" class="card-img-top" alt="Pozitë e Lirë - Stomatolog">
@@ -303,6 +309,7 @@
         </div>
   </div>
 </div>
+
 <!-- Pozita 7 -->
 <div class="col-md-4">
   <div class="card">
@@ -454,13 +461,13 @@
         </div>
   </div>
 </div>
-
-
       </div>
   </div>
+ 
   </main>
   <script src="shpalljet.js"></script>
   <div id="footer-container"></div>
+</div>
     <script>
       // JavaScript per ngarkim i footer-it nga file-i i jashtëm
       fetch('footer.html')
