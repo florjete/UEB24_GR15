@@ -293,18 +293,20 @@
 
 <div id="footer-container"></div>
 <script>
-    // JavaScript për ngarkimin e footer-it nga file-i i jashtëm
+    // JavaScript per ngarkim te footer-it nga file-i i jashtem
     fetch('footer.html')
         .then(response => response.text())
         .then(data => {
+            // Vendos pjese e footer-it ne div-in me id="footer-container"
             document.getElementById('footer-container').innerHTML = data;
         })
-        .catch(err => console.error('Gabim gjatë ngarkimit të footer-it:', err));
-
+        .catch(err => console.error('Gabim gjat&#235 ngarkimit te footer-it:', err));
+ 
     // Funksioni për navigim te faqja e re
     function shkoTeFaqja() {
         window.location.href = "shpalljet.html"; // Këtu vendos destinacionin tënd
     }
 </script>
+
 </body>
 </html>
