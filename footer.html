@@ -132,28 +132,29 @@
         
     </form>
     <script>
-        document.getElementById('sendButton').addEventListener('click', function () {
-          const name = document.getElementById('name').value.trim();
-          const message = document.getElementById('message').value.trim();
+        document.querySelector('.btn-dergo').addEventListener('click', function () {
+            const email = document.getElementById('exampleInputEmail1').value.trim();
+            const message = document.getElementById('exampleMessage').value.trim();
     
-          if (name && message) {
-            // Shfaq mesazhin e suksesit
-            const successMessage = document.getElementById('successMessage');
-            successMessage.style.display = 'block';
+            if (email && message) {
+                // Shfaq mesazhin e suksesit
+                const successMessage = document.getElementById('successMessage');
+                successMessage.style.display = 'block';
     
-            // Pastro fushat
-            document.getElementById('name').value = '';
-            document.getElementById('message').value = '';
+                // Pastro fushat
+                document.getElementById('exampleInputEmail1').value = '';
+                document.getElementById('exampleMessage').value = '';
     
-            // Fsheh mesazhin pas 3 sekondave
-            setTimeout(() => {
-              successMessage.style.display = 'none';
-            }, 3000);
-          } else {
-            alert('Ju lutemi plotësoni të gjitha fushat.');
-          }
+                // Fsheh mesazhin pas 3 sekondave
+                setTimeout(() => {
+                    successMessage.style.display = 'none';
+                }, 3000);
+            } else {
+                alert('Ju lutemi plotësoni të gjitha fushat.');
+            }
         });
-      </script>
+    </script>
+    
 
         <!-- Social Media Links -->
         <div class="footer-social">
