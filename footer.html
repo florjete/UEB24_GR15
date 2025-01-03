@@ -118,7 +118,7 @@
             <h3 style="color: #FFFFFF;">Na kontaktoni</h3>
         </fieldset>
         <fieldset class="form-group">
-            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Sh&#235no">
+            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Sh&#235no emailin">
         </fieldset>
         <fieldset class="form-group">
             <textarea class="form-control" id="exampleMessage" placeholder="Mesazhi juaj.."></textarea>
@@ -126,7 +126,35 @@
         <fieldset class="form-group text-xs-right">
             <button type="button" class="btn-dergo">D&#235rgo</button>
         </fieldset>
+        <fieldset class="form-group">
+            <p id="successMessage" style="color: #E9C46A; display: none;">Mesazhi juaj u dergua me sukses.</p>
+        </fieldset>
+        
     </form>
+    <script>
+        document.getElementById('sendButton').addEventListener('click', function () {
+          const name = document.getElementById('name').value.trim();
+          const message = document.getElementById('message').value.trim();
+    
+          if (name && message) {
+            // Shfaq mesazhin e suksesit
+            const successMessage = document.getElementById('successMessage');
+            successMessage.style.display = 'block';
+    
+            // Pastro fushat
+            document.getElementById('name').value = '';
+            document.getElementById('message').value = '';
+    
+            // Fsheh mesazhin pas 3 sekondave
+            setTimeout(() => {
+              successMessage.style.display = 'none';
+            }, 3000);
+          } else {
+            alert('Ju lutemi plotësoni të gjitha fushat.');
+          }
+        });
+      </script>
+
         <!-- Social Media Links -->
         <div class="footer-social">
             <h3 style="color: #FFFFFF;">Na ndiqni ne rrjete sociale</h3>
