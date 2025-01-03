@@ -104,8 +104,31 @@
           .then(data => {
               // Vendos përmbajtjen e header-it në div-in me id="header-container"
               document.getElementById('header-container').innerHTML = data;
-          })
-          .catch(err => console.error('Gabim gjatë ngarkimit të header-it:', err));
+                // Lidh eventet pasi përmbajtja të jetë ngarkuar
+        const loginIcon = document.getElementById('loginIcon');
+        const loginModal = document.getElementById('loginModal');
+        const closeBtn = document.getElementById('closeBtn');
+
+        if (loginIcon) {
+            loginIcon.addEventListener('click', (e) => {
+                e.preventDefault();
+                loginModal.style.display = 'flex';
+            });
+        }
+
+        if (closeBtn) {
+            closeBtn.addEventListener('click', () => {
+                loginModal.style.display = 'none';
+            });
+        }
+
+        window.addEventListener('click', (e) => {
+            if (e.target === loginModal) {
+                loginModal.style.display = 'none';
+            }
+        });
+    })
+          .catch(err => console.error('Gabim gjat&#235 ngarkimit t&#235 header-it:', err));
     </script>
 
     <!-- Main content -->
@@ -178,5 +201,6 @@
         window.location.href = "keshilla.html"; // Këtu vendos destinacionin tënd
     }
     </script>
+    <script src="loginPopup.js"></script>
 </body>
 </html>
