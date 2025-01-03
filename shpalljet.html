@@ -23,6 +23,29 @@
           .then(data => {
               // Vendos përmbajtjen e header-it në div-in me id="header-container"
               document.getElementById('header-container').innerHTML = data;
+                              // Lidh eventet pasi përmbajtja të jetë ngarkuar
+        const loginIcon = document.getElementById('loginIcon');
+        const loginModal = document.getElementById('loginModal');
+        const closeBtn = document.getElementById('closeBtn');
+
+        if (loginIcon) {
+            loginIcon.addEventListener('click', (e) => {
+                e.preventDefault();
+                loginModal.style.display = 'flex';
+            });
+        }
+
+        if (closeBtn) {
+            closeBtn.addEventListener('click', () => {
+                loginModal.style.display = 'none';
+            });
+        }
+
+        window.addEventListener('click', (e) => {
+            if (e.target === loginModal) {
+                loginModal.style.display = 'none';
+            }
+        });
           })
           .catch(err => console.error('Gabim gjatë ngarkimit të header-it:', err));
   </script>
@@ -34,6 +57,7 @@
         <button onclick="toggleDropdown(event, 'myDropdown')" class="dropbtn">Qytetet <span class="glyphicon glyphicon-chevron-down" style="font-size: 10px;" ></span></button>
         <div id="myDropdown" class="dropdown-content">
           <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+
           <a href="#" onclick="filterByCity(this)">Prishtin&#235;</a>
           <a href="#" onclick="filterByCity(this)">Pej&#235;</a>
           <a href="#" onclick="filterByCity(this)">Podujev&#235;</a>
@@ -478,5 +502,6 @@
           })
           .catch(err => console.error('Gabim gjatë ngarkimit të footer-it:', err));
     </script>
+    <script scr="loginPopup.js"></script>
 </body>
 </html>

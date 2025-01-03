@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title>Historia e Elevator Pitch</title>
     <style>
     ::-webkit-scrollbar{
@@ -32,7 +33,7 @@
             margin-bottom: 20px;
             font-style: italic; /* Shtoni stilin italik për të gjitha paragrafët */
         }
-        img {
+        .elevator-img {
             max-width: 100%; /* Siguron që imazhi të mos dalë jashtë dritares */
             height: auto; /* Ruajti raportin origjinal të imazhit */
             margin: 20px 0; /* Hapesirë mbi dhe poshtë imazhit */
@@ -99,14 +100,37 @@
           .then(data => {
               // Vendos përmbajtjen e header-it në div-in me id="header-container"
               document.getElementById('header-container').innerHTML = data;
-          })
-          .catch(err => console.error('Gabim gjatë ngarkimit të header-it:', err));
+                // Lidh eventet pasi përmbajtja të jetë ngarkuar
+        const loginIcon = document.getElementById('loginIcon');
+        const loginModal = document.getElementById('loginModal');
+        const closeBtn = document.getElementById('closeBtn');
+
+        if (loginIcon) {
+            loginIcon.addEventListener('click', (e) => {
+                e.preventDefault();
+                loginModal.style.display = 'flex';
+            });
+        }
+
+        if (closeBtn) {
+            closeBtn.addEventListener('click', () => {
+                loginModal.style.display = 'none';
+            });
+        }
+
+        window.addEventListener('click', (e) => {
+            if (e.target === loginModal) {
+                loginModal.style.display = 'none';
+            }
+        });
+    })
+          .catch(err => console.error('Gabim gjat&#235 ngarkimit t&#235 header-it:', err));
     </script>
     <!-- Main content -->
     <main class="elevator-main">
         <section>
             <h2 class="h2-elevator">Çfarë është Elevator Pitch?</h2>
-            <img src="foto/elevatorpitch.jpeg" alt="Elevator Pitch Image">
+            <img class=elevator-img src="foto/elevatorpitch.jpeg" alt="Elevator Pitch Image">
             <p class="p-elevator">
                 Elevator Pitch është një përshkrim i shkurtër dhe i qartë i një ideje, një projekti ose një personi,
                 i cili mund të komunikohen në një periudhë të shkurtër kohe – zakonisht në kohën që zgjat një udhëtim me lift (për këtë arsye quhet "Elevator Pitch").
@@ -116,7 +140,7 @@
 
         <section>
             <h2 class="h2-elevator">Origjina e Elevator Pitch</h2>
-            <img src="foto/elevatorpitch1.jpg" alt="Origjina e Elevator Pitch">
+            <img class=elevator-img src="foto/elevatorpitch1.jpg" alt="Origjina e Elevator Pitch">
             <p class="p-elevator">
                 Historia e Elevator Pitch fillon në vitet 1980, kur një profesionist i fushës së marketingut dhe komunikimit,
                 genaqsi kërkonte një mënyrë për të prezantuar një produkt ose një ide në mënyrë të shpejtë dhe të fuqishme.
@@ -127,7 +151,7 @@
 
         <section>
             <h2 class="h2-elevator">Si të krijoni një Elevator Pitch</h2>
-            <img src="foto/elevatorpitch2.webp" alt="Si të krijoni Elevator Pitch">
+            <img class=elevator-img src="foto/elevatorpitch2.webp" alt="Si të krijoni Elevator Pitch">
             <p class="p-elevator">
                 Një Elevator Pitch efektiv duhet të përmbajë disa elemente të rëndësishme:
                 <ul>
@@ -142,7 +166,7 @@
 
         <section>
             <h2 class="h2-elevator">Përfundim</h2>
-            <img src="foto/elevatorpitch3.png" alt="Përfundim">
+            <img class=elevator-img src="foto/elevatorpitch3.png" alt="Përfundim">
             <p class="p-elevator">
                 Elevator Pitch është një mjet i fuqishëm komunikimi që mund të përdoret në shumë situata, duke përfshirë takime biznesi,
                 intervista pune, dhe mundësitë për të prezantuar ide në një mënyrë efikase. Kjo teknikë mund të bëjë diferencën në
@@ -167,5 +191,6 @@
         window.location.href = "keshilla.html"; // Këtu vendos destinacionin tënd
     }
     </script>
+    <script src="loginPopup.js"></script>
 </body>
 </html>

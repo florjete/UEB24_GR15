@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title>Detajet e Profesionit - Mësuese</title>
     <style>
          ::-webkit-scrollbar{
@@ -235,17 +236,42 @@
     </style>
 </head>
 <body>
-    <div id="header-container"></div>
-    <script>
-      // JavaScript për të ngarkuar header-in nga file-i i jashtëm
-      fetch('nav.html')
-          .then(response => response.text())
-          .then(data => {
-              // Vendos përmbajtjen e header-it në div-in me id="header-container"
-              document.getElementById('header-container').innerHTML = data;
-          })
-          .catch(err => console.error('Gabim gjatë ngarkimit të header-it:', err));
-    </script>
+   <!-- importo file te html per nav ne div -->
+
+   <div id="header-container"></div>
+   <script>
+     // JavaScript për të ngarkuar header-in nga file-i i jashtëm
+     fetch('nav.html')
+         .then(response => response.text())
+         .then(data => {
+             // Vendos përmbajtjen e header-it në div-in me id="header-container"
+             document.getElementById('header-container').innerHTML = data;
+               // Lidh eventet pasi përmbajtja të jetë ngarkuar
+       const loginIcon = document.getElementById('loginIcon');
+       const loginModal = document.getElementById('loginModal');
+       const closeBtn = document.getElementById('closeBtn');
+
+       if (loginIcon) {
+           loginIcon.addEventListener('click', (e) => {
+               e.preventDefault();
+               loginModal.style.display = 'flex';
+           });
+       }
+
+       if (closeBtn) {
+           closeBtn.addEventListener('click', () => {
+               loginModal.style.display = 'none';
+           });
+       }
+
+       window.addEventListener('click', (e) => {
+           if (e.target === loginModal) {
+               loginModal.style.display = 'none';
+           }
+       });
+   })
+         .catch(err => console.error('Gabim gjat&#235 ngarkimit t&#235 header-it:', err));
+   </script>
 <main>
     <!-- Titulli Kryesor -->
     <div class="profession-title">
@@ -389,5 +415,6 @@
         window.location.href = "shpalljet.html"; // Këtu vendos destinacionin tënd
     }
 </script>
+<script src="loginPopup.js"></script>
 </body>
 </html>
