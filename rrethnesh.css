@@ -231,7 +231,7 @@ body {
 
 #fotoRrethNesh {
   flex: 0 0 250px; /* Gjerësia e fotos është fikse */
-  margin-top: 20px; /* Zhvendosje poshtë */
+  margin-top: 100px; /* Zhvendosje poshtë */
 }
 
 #fotoRrethNesh img {
