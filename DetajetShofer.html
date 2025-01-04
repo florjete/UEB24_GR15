@@ -129,12 +129,12 @@
         }
 
         .form-section label {
-            display: block;
+            
             margin-bottom: 10px;
             font-weight: bold;
         }
 
-        .form-section input, .form-section textarea {
+        .form-section .input, .form-section textarea {
             width: 100%;
             padding: 10px;
             margin-bottom: 20px;
@@ -313,19 +313,30 @@
     <h3>Aplikoni për këtë Pozitë</h3>
     <form id="application-form" action="" method="POST" enctype="multipart/form-data">
         <label for="first-name">Emri</label>
-        <input type="text" id="first-name" name="first-name" required>
+        <input type="text"  class="input" id="first-name" name="first-name" required>
         <span id="first-name-error" class="error-message"></span>
 
         <label for="last-name">Mbiemri</label>
-        <input type="text" id="last-name" name="last-name" required>
+        <input type="text" class="input" id="last-name" name="last-name" required>
         <span id="last-name-error" class="error-message"></span>
 
         <label for="phone-or-email">Numri i Telefonit ose Email</label>
-        <input type="text" id="phone-or-email" name="phone-or-email" required placeholder=" ">
+        <input type="text" class="input" id="phone-or-email" name="phone-or-email" required placeholder=" ">
         <span id="phone-or-email-error" class="error-message"></span>
+        <form>
+            <label for="experience">Keni përvojë të mëparshme në këtë fushë?</label><br>
+          
+            <div class="radio-container" >
+              <input type="radio" id="yes" name="experience" value="yes">
+              <label for="yes">Po</label> <br>
+            
+              <input type="radio" id="no" name="experience" value="no">
+              <label for="no">Jo</label>
+            </div>
+          </form>
 
         <label for="cv">Ngarkoni CV-në tuaj</label>
-        <input type="file" id="cv" name="cv" accept=".pdf, .docx" required>
+        <input type="file" class="input" id="cv" name="cv" accept=".pdf, .docx" required>
         <span id="cv-error" class="error-message"></span>
 
         <label for="cover-letter">Letër Motivimi (opsionale)</label>
