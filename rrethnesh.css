@@ -30,267 +30,226 @@ body {
   border-radius: 50%;
 }
 
-#tekstiRrethNesh,
-#tekstiIgjere {
-  display: inline-block;
-  vertical-align: top; /* Siguron që janë në të njëjtën linjë */
-  margin-right: 20px; /* Hapësirë mes elementeve */
-  line-height: 28px;
-  width: 45%; /* Gjerësia e secilit paragraf */
-}
 
-.reviews-section {
-  text-align: center;
-  padding: 50px 20px;
-  background-color: #fff;
-  margin-top: 70px;
-}
 
-.reviews-section h1 {
-  font-size: 36px;
-  color: #ff9800;
-  margin-bottom: 40px;
-}
 
-.reviews-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 500px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.review-card {
-  background-color: #264653;
-  color: #fff;
-  border-radius: 8px;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: left;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.review-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-
-.review-header {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-}
-
-.review-card img {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  margin-right: 10px;
-  vertical-align: middle;
-}
-
-.review-header .name {
-  font-weight: bold;
-  font-size: 16px;
-}
-
-.review-rating {
-  color: #ffcc00;
-  margin: 10px 0;
-  font-size: 18px;
-}
-
-.review-text {
-  font-size: 14px;
-  line-height: 1.6;
-}
-
-/* Stili për Seksionin e Statistikave */
-#statistics {
-  background-color: #f9f9f9;
-  padding: 40px;
-  text-align: center;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin-top: 40px;
-}
-
-#statistics h2 {
-  font-size: 2rem;
-  color: #333;
-  margin-bottom: 20px;
-}
-
-.stat {
-  display: inline-block;
-  width: 30%;
-  margin: 0 15px;
-  background-color: #ffffff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-}
-
-.stat:hover {
-  transform: scale(1.05);
-}
-
-.stat-number {
-  font-size: 3rem;
-  font-weight: bold;
-  color: #ff9800;
-}
-
-.stat-label {
-  font-size: 1rem;
-  color: #666;
-  margin-top: 10px;
-}
-
-#show-more-stats {
-  background-color: #264653;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  font-size: 1rem;
-  cursor: pointer;
-  margin-top: 20px;
-  transition: background-color 0.3s ease;
-}
-
-#show-more-stats:hover {
-  background-color: #2c4751;
-}
-
-/* Responsivitet për ekranet më të vogla */
-@media screen and (max-width: 1000px) {
-  .stat {
-    width: 100%;
-    margin-bottom: 20px;
-  }
-
-  #show-more-stats {
-    width: 100%;
-    padding: 12px;
-  }
-}
-
-/* Shtimi i stilit për pjesën e re që shtohet dinamikisht */
-.extra-stat {
-  font-size: 1.2rem;
-  color: #fff;
-  background: linear-gradient(45deg, #264653, #404a4e);
-  padding: 15px 25px;
-  border-left: 8px solid #fff;
-  margin-top: 15px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.extra-stat:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-  cursor: pointer;
-}
-
-.extra-stat p {
-  font-weight: bold;
-  letter-spacing: 1px;
-  line-height: 1.5;
-}
-
-/* Për të bërë seksionin responsiv */
-@media screen and (max-width: 768px) {
-  .extra-stat {
-    font-size: 1rem;
-    padding: 10px 20px;
-    border-left: 6px solid #fff;
-  }
-}
-
-/* Stil për desktop */
-#rrethNesh {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-}
-
-#tekstiRrethNesh {
-  flex: 1; /* Teksti zë hapësirën kryesore */
-  margin-right: 20px; /* Hapësirë midis tekstit dhe fotos */
-}
-
-#fotoRrethNesh {
-  flex: 0 0 250px; /* Gjerësia e fotos është fikse */
-  margin-top: 100px; /* Zhvendosje poshtë */
-}
-
-#fotoRrethNesh img {
-  width: 100%; /* Bën foton të përshtatet me div-in */
-  height: auto;
-}
-
-/* Stil për pajisje më të vogla */
-@media screen and (max-width: 1200px) {
-  #rrethNesh {
-    flex-direction: column; /* Vendos foton nën tekst */
-    align-items: center; /* Qendron të dyja elementet */
-  }
-
-  #tekstiRrethNesh {
-    margin-right: 3; /* Hiq hapësirën anësore */
-    text-align: center; /* Qendro tekstin për pamje më të mirë */
-  }
-
-  #fotoRrethNesh {
-    margin-top: 20px; /* Ruaj hapësirën sipër fotos */
-  }
-}
-
-/* Për të optimizuar fleksibilitetin dhe responsivitetin */
-#rrethNesh {
-  display: flex;
-  flex-wrap: wrap; /* Lejon që elementët të mbështillen dhe të kenë hapësirë mes tyre */
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px; /* Hapësirë mes elementëve */
-}
-
-#tekstiRrethNesh {
-  flex: 1 1 45%; /* Zgjeron dhe kontrakton sipas hapësirës, maksimalisht 45% */
-  line-height: 28px;
-  margin-right: 20px;
-  text-align: left;
-}
-
-#fotoRrethNesh {
-  flex: 1 1 250px; /* Fotoja është me gjerësi të fiksuar për ekranet më të mëdhenj */
-  max-width: 100%;
-  margin-top: 50px;
-}
-
-#fotoRrethNesh img {
-  width: 100%;
-  height: auto;
-  border-radius: 50%; /* Bën foton me formë rrethore */
-}
-
-/* Responsiviteti për ekranet më të vogla */
-@media screen and (max-width: 768px) {
-  #rrethNesh {
-    flex-direction: column; /* Elementët shkojnë në një kolonë për ekranet më të vogla */
-    align-items: center;
-  }
-
-  #tekstiRrethNesh {
-    text-align: center; /* Qendro tekstin për pajisje më të vogla */
-    margin-right: 0;
-  }
-
-  #fotoRrethNesh {
-    margin-top: 20px; /* Ruaj hapësirën sipër fotos */
-  }
-}
+        #tekstiRrethNesh,
+        #tekstiIgjere {
+            display: inline-block;
+            vertical-align: top; /* Siguron që janë në të njëjtën linjë */
+            margin-right: 20px; /* Hapësirë mes elementeve */
+            line-height: 28px;
+            width: 45%; /* Gjerësia e secilit paragraf */
+        }
+    
+        .reviews-section {
+          text-align: center;
+          padding: 50px 20px;
+          background-color: #fff;
+          margin-top: 70px;
+        }
+        
+        .reviews-section h1 {
+          font-size: 36px;
+          color: #ff9800;
+          margin-bottom: 40px;
+        }
+        
+        .reviews-container {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Kjo do të sigurojë 3 kolona nga 300px çdo një */
+          gap: 30px; /* Reduktojmë hapësirën mes kartave */
+          max-width: 1200px;
+          margin: 0 auto;
+        }
+        
+        .review-card {
+          background-color: #264653;
+          color: #fff;
+          border-radius: 8px;
+          padding: 20px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          text-align: left;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .review-card:hover {
+          transform: translateY(-10px);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .review-header {
+          display: flex;
+          align-items: center;
+          margin-bottom: 10px;
+        }
+        
+        .review-card img {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          margin-right: 10px;
+          vertical-align: middle;
+        }
+        
+        .review-header .name {
+          font-weight: bold;
+          font-size: 16px;
+        }
+        
+        .review-rating {
+          color: #ffcc00;
+          margin: 10px 0;
+          font-size: 18px;
+        }
+        
+        .review-text {
+          font-size: 14px;
+          line-height: 1.6;
+        }
+        
+        /* Stili për Seksionin e Statistikave */
+        #statistics {
+          background-color: #f9f9f9;
+          padding: 40px;
+          text-align: center;
+          border-radius: 8px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          margin-top: 40px;
+        }
+        
+        #statistics h2 {
+          font-size: 2rem;
+          color: #333;
+          margin-bottom: 20px;
+        }
+        
+        .stat {
+          display: inline-block;
+          width: 30%;
+          margin: 0 15px;
+          background-color: #ffffff;
+          padding: 20px;
+          border-radius: 8px;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          transition: transform 0.3s ease;
+        }
+        
+        .stat:hover {
+          transform: scale(1.05);
+        }
+        
+        .stat-number {
+          font-size: 3rem;
+          font-weight: bold;
+          color: #ff9800;
+        }
+        
+        .stat-label {
+          font-size: 1rem;
+          color: #666;
+          margin-top: 10px;
+        }
+        
+        #show-more-stats {
+          background-color: #264653;
+          color: white;
+          padding: 10px 20px;
+          border: none;
+          border-radius: 5px;
+          font-size: 1rem;
+          cursor: pointer;
+          margin-top: 20px;
+          transition: background-color 0.3s ease;
+        }
+        
+        #show-more-stats:hover {
+          background-color: #2c4751;
+        }
+        
+        /* Responsivitet për ekranet më të vogla */
+        @media screen and (max-width: 1000px) {
+          .stat {
+              width: 100%;
+              margin-bottom: 20px;
+          }
+        
+          #show-more-stats {
+              width: 100%;
+              padding: 12px;
+          }
+        }
+        
+        /* Shtimi i stilit për pjesën e re që shtohet dinamikisht */
+        .extra-stat {
+          font-size: 1.2rem;
+          color: #fff;
+          background: linear-gradient(45deg, #264653, #404a4e);
+          padding: 15px 25px;
+          border-left: 8px solid #fff;
+          margin-top: 15px;
+          border-radius: 10px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .extra-stat:hover {
+          transform: scale(1.05);
+          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+          cursor: pointer;
+        }
+        
+        .extra-stat p {
+          font-weight: bold;
+          letter-spacing: 1px;
+          line-height: 1.5;
+        }
+        
+        /* Për të bërë seksionin responsiv */
+        @media screen and (max-width: 768px) {
+          .extra-stat {
+              font-size: 1rem;
+              padding: 10px 20px;
+              border-left: 6px solid #fff;
+          }
+        }
+        
+        /* Stil për desktop */
+        #rrethNesh {
+          display: flex;
+          flex-direction: row;
+          align-items: flex-start;
+        }
+        
+        #tekstiRrethNesh {
+          flex: 1; /* Teksti zë hapësirën kryesore */
+          margin-right: 20px; /* Hapësirë midis tekstit dhe fotos */
+        }
+        
+        #fotoRrethNesh {
+          flex: 0 0 250px; /* Gjerësia e fotos është fikse */
+          margin-top: 100px; /* Zhvendosje poshtë */
+        }
+        
+        #fotoRrethNesh img {
+          width: 100%; /* Bën foton të përshtatet me div-in */
+          height: auto;
+        }
+        
+        /* Stil për pajisje më të vogla */
+        @media screen and (max-width: 1200px) {
+          #rrethNesh {
+            flex-direction: column; /* Vendos foton nën tekst */
+            align-items: center; /* Qendron të dyja elementet */
+          }
+        
+          #tekstiRrethNesh {
+            margin-right: 0; /* Hiq hapësirën anësore */
+            text-align: center; /* Qendro tekstin për pamje më të mirë */
+          }
+        
+          #fotoRrethNesh {
+            margin-top: 20px; /* Ruaj hapësirën sipër fotos */
+          }
+        }
+        
