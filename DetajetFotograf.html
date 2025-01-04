@@ -216,198 +216,275 @@
             font-size: 18px;
         }
     </style>
-    <script>
-        function calculateMatch() {
-            const totalSkills = 5; // Numri total i aftësive të kërkuara
-            const selectedSkills = document.querySelectorAll('input[type="checkbox"]:checked').length;
-            const matchPercentage = (selectedSkills / totalSkills) * 100;
-            document.getElementById('matchOutput').value = matchPercentage.toFixed(0) + "%";
-        }
-    </script>
+   </style>
+   <script>
+       function calculateMatch() {
+           const totalSkills = 5; // Numri total i aftësive të kërkuara
+           const selectedSkills = document.querySelectorAll('input[type="checkbox"]:checked').length;
+           const matchPercentage = (selectedSkills / totalSkills) * 100;
+           document.getElementById('matchOutput').value = matchPercentage.toFixed(0) + "%";
+       }
+   </script>
 </head>
 <body>
    <!-- importo file te html per nav ne div -->
 
    <div id="header-container"></div>
    <script>
-    // JavaScript për të ngarkuar header-in nga file-i i jashtëm
-    fetch('nav.html')
-    .then(response => response.text())
-    .then(data => {
-        // Vendos përmbajtjen e header-it në div-in me id="header-container"
-        document.getElementById('header-container').innerHTML = data;
-        // Lidh eventet pasi përmbajtja të jetë ngarkuar
-        const loginIcon = document.getElementById('loginIcon');
-        const loginModal = document.getElementById('loginModal');
-        const closeBtn = document.getElementById('closeBtn');
-        const initialPosition = { top: 50, left: 50 }; // Pozita fillestare e modalit
-
-        //hap modalin
-        if (loginIcon) {
-            loginIcon.addEventListener('click', () => {
-                loginModal.style.display = 'block';
-                loginModal.style.top = `${initialPosition.top}px`;
-                loginModal.style.left = `${initialPosition.left}px`;
-            });
-        }
-        //mbyll modalin
-        if (closeBtn) {
-            closeBtn.addEventListener('click', () => {
-                loginModal.style.display = 'none';
-            });
-        }
-       // Kthimi i modalit në pozitën fillestare
-        loginModal.addEventListener('dblclick', () => {
-            loginModal.style.top = `${initialPosition.top}px`;
-            loginModal.style.left = `${initialPosition.left}px`;
-        });
-        <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aplikimi - Fotograf</title>
-    <style>
-        .error-message {
-            color: red;
-            font-size: 12px;
-            margin-top: 5px;
-            display: block;
-        }
-    </style>
-</head>
-<body>
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        // Kodet për modalin, drag-and-drop, dhe validimin mbeten të njëjta.
-    });
-</script>
+       // JavaScript për të ngarkuar header-in nga file-i i jashtëm
+       fetch('nav.html')
+       .then(response => response.text())
+       .then(data => {
+           // Vendos përmbajtjen e header-it në div-in me id="header-container"
+           document.getElementById('header-container').innerHTML = data;
+           // Lidh eventet pasi përmbajtja të jetë ngarkuar
+           const loginIcon = document.getElementById('loginIcon');
+           const loginModal = document.getElementById('loginModal');
+           const closeBtn = document.getElementById('closeBtn');
+           const initialPosition = { top: 50, left: 50 }; // Pozita fillestare e modalit
+ 
+           //hap modalin
+           if (loginIcon) {
+               loginIcon.addEventListener('click', () => {
+                   loginModal.style.display = 'block';
+                   loginModal.style.top = `${initialPosition.top}px`;
+                   loginModal.style.left = `${initialPosition.left}px`;
+               });
+           }
+           //mbyll modalin
+           if (closeBtn) {
+               closeBtn.addEventListener('click', () => {
+                   loginModal.style.display = 'none';
+               });
+           }
+          // Kthimi i modalit në pozitën fillestare
+           loginModal.addEventListener('dblclick', () => {
+               loginModal.style.top = `${initialPosition.top}px`;
+               loginModal.style.left = `${initialPosition.left}px`;
+           });
+           //mbyllja kur klikohet jasht modalit
+           window.addEventListener('click', (e) => {
+               if (e.target === loginModal) {
+                   loginModal.style.display = 'none';
+               }
+           });
+           // Drag and drop
+           let offsetX = 0, offsetY = 0;
+ 
+           loginModal.addEventListener('dragstart', (e) => {
+               const rect = loginModal.getBoundingClientRect();
+               offsetX = e.clientX - rect.left;
+               offsetY = e.clientY - rect.top;
+           });
+ 
+           document.addEventListener('dragover', (e) => {
+               e.preventDefault();
+           });
+ 
+           document.addEventListener('drop', (e) => {
+               e.preventDefault();
+               const x = e.clientX - offsetX;
+               const y = e.clientY - offsetY;
+               loginModal.style.top = `${y}px`;
+               loginModal.style.left = `${x}px`;
+           });        
+       })
+       .catch(err => console.error('Gabim gjat&#235 ngarkimit t&#235 header-it:', err));
+   </script>
 <main>
-    <div class="profession-title">
-        <b>Detajet e Profesionit - Fotograf</b>
-    </div>
+   
+   <!-- Titulli Kryesor -->
+   <div class="profession-title">
+  <b>     Detajet e Profesionit - Shofer</b>
+   </div>
 
-    <div class="profession-details"></div>
+   <!-- Seksioni i Detajeve -->
+   <div class="profession-details"></div>
 
-    <div class="profilit">
-        <h1>Profili i Fotografit</h1>
-        <h3>Kapja e momenteve unike dhe krijimi i imazheve artistike për klientë dhe projekte të ndryshme.</h3>
-    </div>
+   <!-- Seksioni i Profilit -->
+   <div class="profilit">
+       <h1>Profili i Shoferit</h1>
+       <h3>Transportimi i mallrave ose udhëtarëve në mënyrë të sigurt dhe të përgjegjshme.</h3>
+   </div>
 
-    <div class="requirements">
-        <h2>Kërkesat Kryesore</h2>
-        <ul class="requirement-list">
-            <li>Njohuri mbi përdorimin e kamerave profesionale dhe lenteve të ndryshme.</li>
-            <li>Aftësi për të përpunuar fotografi duke përdorur software si Adobe Photoshop dhe Lightroom.</li>
-            <li>Kreativitet dhe sy për detaje në kompozimin e fotografive.</li>
-            <li>Aftësi për të punuar me klientë dhe për të menaxhuar projekte të shumta njëkohësisht.</li>
-        </ul>
-    </div>
+   <!-- Seksioni i Kërkesave -->
+   <div class="requirements">
+       <h2>Kërkesat Kryesore</h2>
+       <ul>
+           <li>Patentë shoferi valide e kategorisë përkatëse.</li>
+           <li>Eksperiencë në drejtimin e automjeteve.</li>
+           <li>Njohuri mbi mirëmbajtjen bazë të automjetit.</li>
+           <li>Aftësi të mira komunikimi dhe sjellje profesionale.</li>
+       </ul>
+   </div>
 
-    <h2>Përfitimet</h2>
-    <p>Duke punuar si fotograf, mund të përfitoni:</p>
-    <ul class="benefit-list">
-        <li>Mundësi për të shprehur kreativitetin tuaj në projekte të ndryshme.</li>
-        <li>Orë fleksibile dhe mundësi për të udhëtuar në vende të ndryshme.</li>
-        <li>Rrjetëzim me profesionistë dhe klientë të ndryshëm.</li>
-    </ul>
+   <!-- Seksioni i Përfitimeve -->
+   <h2>Përfitimet</h2>
+   <p>Duke punuar si shofer, mund të përfitoni:</p>
+   <ul>
+       <li>Paga konkurruese dhe bonuse.</li>
+       <li>Mundësi për të udhëtuar dhe njohur vende të reja.</li>
+       <li>Fleksibilitet në orarin e punës.</li>
+   </ul>
 
-    <!-- Seksioni i Aplikimit -->
-    <div class="form-section">
-        <h3>Aplikoni për këtë Pozitë</h3>
-        <form id="application-form" action="" method="POST" enctype="multipart/form-data">
-            <label for="first-name">Emri</label>
-            <input type="text" class="input" id="first-name" name="first-name" required>
-            <span id="first-name-error" class="error-message"></span>
+<!-- Seksioni i Aplikimit -->
+<div class="form-section">
+   <h3>Aplikoni për këtë Pozitë</h3>
+   <form id="application-form" action="" method="POST" enctype="multipart/form-data">
+       <label for="first-name">Emri</label>
+       <input type="text"  class="input" id="first-name" name="first-name" required>
+       <span id="first-name-error" class="error-message"></span>
 
-            <label for="last-name">Mbiemri</label>
-            <input type="text" class="input" id="last-name" name="last-name" required>
-            <span id="last-name-error" class="error-message"></span>
+       <label for="last-name">Mbiemri</label>
+       <input type="text" class="input" id="last-name" name="last-name" required>
+       <span id="last-name-error" class="error-message"></span>
 
-            <label for="phone-or-email">Numri i Telefonit ose Email</label>
-            <input type="text" class="input" id="phone-or-email" name="phone-or-email" required placeholder=" ">
-            <span id="phone-or-email-error" class="error-message"></span>
+       <label for="phone-or-email">Numri i Telefonit ose Email</label>
+       <input type="text" class="input" id="phone-or-email" name="phone-or-email" required placeholder=" ">
+       <span id="phone-or-email-error" class="error-message"></span>
+       <label for="age">Mosha:</label>
+           <input type="number" id="age" name="age" min="18" max="65" required><br>
+           <small id="age-warning" style="color: red; display: none;">Ju lutemi zgjidhni një moshë mes 18 dhe 65.</small>
+       <br>
 
-            <label for="age">Mosha:</label>
-            <input type="number" id="age" name="age" min="18" max="65" required><br>
-            <small id="age-warning" style="color: red; display: none;">Ju lutemi zgjidhni një moshë mes 18 dhe 65.</small>
-            <br>
+       <label for="qyteti">Zgjedh qytetin:</label>
+       <input list="qyteti"  class="input" id="qytetet" name="qyteti" />
+       
+       <datalist id="qyteti">
+         <option value="Prishtinë"></option>
+         <option value="Pejë"></option>
+         <option value="Podujevë"></option>
+         <option value="Mitrovicë"></option>
+         <option value="Fushë Kosovë"></option>
+         <option value="Klinë"></option>
+         <option value="Viti"></option>
+         <option value="Deçan"></option>
+         <option value="Gjilan"></option>
+         <option value="Prizren"></option>
+         <option value="Vushtrri"></option>
+         <option value="Malishevë"></option>
+         <option value="Drenas"></option>
+       </datalist>
+       
+       <br>
+       <form>
+           <label for="experience">Keni përvojë të mëparshme në këtë fushë?</label><br>
+         
+           <div class="radio-container" >
+             <input type="radio" id="yes" name="experience" value="yes">
+             <label for="yes">Po</label> <br>
+           
+             <input type="radio" id="no" name="experience" value="no">
+             <label for="no">Jo</label>
+           </div>
+         </form>
 
-            <label for="qyteti">Zgjedh qytetin:</label>
-            <input list="qyteti" class="input" id="qytetet" name="qyteti">
+       <label for="cv">Ngarkoni CV-në tuaj</label>
+       <input type="file" class="input" id="cv" name="cv" accept=".pdf, .docx" required>
+       <span id="cv-error" class="error-message"></span>
 
-            <datalist id="qyteti" class="city-list">
-                <option value="Prishtinë"></option>
-                <option value="Pejë"></option>
-                <option value="Podujevë"></option>
-                <option value="Mitrovicë"></option>
-                <option value="Fushë Kosovë"></option>
-                <option value="Klinë"></option>
-                <option value="Viti"></option>
-                <option value="Deçan"></option>
-                <option value="Gjilan"></option>
-                <option value="Prizren"></option>
-                <option value="Vushtrri"></option>
-                <option value="Malishevë"></option>
-                <option value="Drenas"></option>
-            </datalist>
+       <label for="cover-letter">Letër Motivimi (opsionale)</label>
+       <textarea id="cover-letter" name="cover-letter" rows="5" placeholder="Shkruani një letër motivimi për aplikimin tuaj (opsionale)"></textarea>
+       <h1>Vlerësimi i Përshtatshmërisë për Pozicionin</h1>
+           <form oninput="calculateMatch()">
+               <p>Zgjidhni aftësitë që zotëroni:</p>
+               <label><input type="checkbox" name="skill" value="1"> Patenta</label><br>
+               <label><input type="checkbox" name="skill" value="2"> Përvoja</label><br>
+               <label><input type="checkbox" name="skill" value="3"> Njohuri mbi Sigurinë në Rrugë dhe Pjesët e Automjetit</label><br>
+               <label><input type="checkbox" name="skill" value="4"> Aftësi Komunikimi dhe Puna me Klientët</label><br>
+               <label><input type="checkbox" name="skill" value="5"> Aftësi për Të Punuar në Ndryshime Kohore dhe Shkallë të Larta Stresi</label><br><br>
+       
+               <label for="matchOutput">Përputhshmëria juaj me pozicionin:</label>
+               <output id="matchOutput">0%</output>
+           </form>
+       </form>
+       <button type="button"  form="application-form"   onclick="validateForm()">Apliko</button>
+</div>
+<script>
+   const ageInput = document.getElementById('age');
+   const ageWarning = document.getElementById('age-warning');
 
-            <br>
-            <form>
-                <label for="experience">Keni përvojë të mëparshme në këtë fushë?</label><br>
+   ageInput.addEventListener('input', function() {
+       if (ageInput.value < 18 || ageInput.value > 65) {
+           ageWarning.style.display = 'inline'; // Shfaq paralajmërimin
+       } else {
+           ageWarning.style.display = 'none'; // Fshih paralajmërimin
+       }
+   });</script>
+<script>
+   function validateForm() {
+       // Fshij mesazhet e mëparshme të gabimit
+       document.querySelectorAll('.error-message').forEach(function(message) {
+           message.textContent = '';
+       });
 
-                <div class="radio-container">
-                    <input type="radio" id="yes" name="experience" value="yes">
-                    <label for="yes">Po</label> <br>
+       // Merr të gjitha inputet e formularit
+       var firstName = document.getElementById('first-name').value;
+       var lastName = document.getElementById('last-name').value;
+       var phoneOrEmail = document.getElementById('phone-or-email').value;
+       var cv = document.getElementById('cv').value;
 
-                    <input type="radio" id="no" name="experience" value="no">
-                    <label for="no">Jo</label>
-                </div>
-            </form>
+       var isValid = true;
 
-            <label for="cv">Ngarkoni CV-në tuaj</label>
-            <input type="file" class="input" id="cv" name="cv" accept=".pdf, .docx" required>
-            <span id="cv-error" class="error-message"></span>
+       // Kontrollo nëse të gjitha fushat janë mbushur dhe shfaq mesazhin përkatës pranë fushës
+       if (!firstName) {
+           document.getElementById('first-name-error').textContent = 'Kjo fushë nuk mund të jetë e zbrazët.';
+           isValid = false;
+       }
 
-            <label for="cover-letter">Letër Motivimi (opsionale)</label>
-            <textarea id="cover-letter" name="cover-letter" rows="5" placeholder="Shkruani një letër motivimi për aplikimin tuaj (opsionale)"></textarea>
+       if (!lastName) {
+           document.getElementById('last-name-error').textContent = 'Kjo fushë nuk mund të jetë e zbrazët.';
+           isValid = false;
+       }
 
-            <h1>Vlerësimi i Përshtatshmërisë për Pozicionin</h1>
-            <form oninput="calculateMatch()">
-                <p>Zgjidhni aftësitë që zotëroni:</p>
-                <ul class="skill-list">
-                    <li><label><input type="checkbox" name="skill" value="1"> Eksperiencë dhe Portofol Fotografik</label></li>
-                    <li><label><input type="checkbox" name="skill" value="2"> Aftësi në Përdorimin e Pajisjeve dhe Software-ve Fotografikë</label></li>
-                    <li><label><input type="checkbox" name="skill" value="3"> Aftësi për Përshtatjen dhe Menaxhimin e Dritës</label></li>
-                    <li><label><input type="checkbox" name="skill" value="4"> Përshtatshmëri dhe Aftësi për Punë në Ambient të Lëvizshëm</label></li>
-                    <li><label><input type="checkbox" name="skill" value="5"> Aftësi për Të Komunikur dhe Kuptuar Kërkesat e Klientëve</label></li>
-                </ul>
+       if (!phoneOrEmail) {
+           document.getElementById('phone-or-email-error').textContent = 'Kjo fushë nuk mund të jetë e zbrazët.';
+           isValid = false;
+       }
 
-                <label for="matchOutput">Përputhshmëria juaj me pozicionin:</label>
-                <output id="matchOutput">0%</output>
-            </form>
-        </form>
-        <button type="button" form="application-form" onclick="validateForm()">Apliko</button>
-    </div>
+       if (!cv) {
+           document.getElementById('cv-error').textContent = 'Kjo fushë nuk mund të jetë e zbrazët.';
+           isValid = false;
+       }
+
+       // Nëse të gjitha fushat janë të mbushura, drejto te faqja tjetër
+       if (isValid) {
+           window.location.href = 'aplikimi.html'; // Faqja ku do të drejtohet përdoruesi
+       }
+   }
+</script>
+
+<style>
+   .error-message {
+       color: red;
+       font-size: 12px;
+       margin-top: 5px;
+       display: block;
+   }
+</style>
+
+
 </main>
+
 <!-- Shigjeta flotuese për kthim -->
 <a href="#" class="back-btn-floating" onclick="shkoTeFaqja();"></a>
 
 <div id="footer-container"></div>
 <script>
-    // JavaScript për ngarkimin e footer-it nga file-i i jashtëm
-    fetch('footer.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('footer-container').innerHTML = data;
-        })
-        .catch(err => console.error('Gabim gjatë ngarkimit të footer-it:', err));
+   // JavaScript për ngarkimin e footer-it nga file-i i jashtëm
+   fetch('footer.html')
+       .then(response => response.text())
+       .then(data => {
+           document.getElementById('footer-container').innerHTML = data;
+       })
+       .catch(err => console.error('Gabim gjatë ngarkimit të footer-it:', err));
 
-    // Funksioni për navigim te faqja e re
-    function shkoTeFaqja() {
-        window.location.href = "shpalljet.html"; // Këtu vendos destinacionin tënd
-    }
+   // Funksioni për navigim te faqja e re
+   function shkoTeFaqja() {
+       window.location.href = "shpalljet.html"; // Këtu vendos destinacionin tënd
+   }
 </script>
 <script src="loginPopup.js"></script>
 </body>
 </html>
+
