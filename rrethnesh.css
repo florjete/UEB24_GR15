@@ -90,3 +90,113 @@ body {
     font-size: 14px;
     line-height: 1.6;
 }
+/* Stili për Seksionin e Statistikave */
+#statistics {
+    background-color: #f9f9f9;
+    padding: 40px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 40px;
+  }
+  
+  #statistics h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .stat {
+    display: inline-block;
+    width: 30%;
+    margin: 0 15px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .stat:hover {
+    transform: scale(1.05);
+  }
+  
+  .stat-number {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #ff9800; 
+  }
+  
+  .stat-label {
+    font-size: 1rem;
+    color: #666;
+    margin-top: 10px;
+  }
+  
+  #show-more-stats {
+    background-color: #264653;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+    
+  }
+  
+  #show-more-stats:hover {
+    background-color: #2c4751;
+  }
+  
+  /* Responsivitet për ekranet më të vogla */
+  @media screen and (max-width: 768px) {
+    .stat {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  
+    #show-more-stats {
+      width: 100%;
+      padding: 12px;
+    }
+  }/* Shtimi i stilit për pjesën e re që shtohet dinamikisht */
+
+  
+  
+/* Shtimi i stilit për pjesën e re që shtohet dinamikisht */
+.extra-stat {
+    font-size: 1.2rem;
+    color: #fff;
+    background: linear-gradient(45deg, #264653, #404a4e); /* Gradient nga blu në blu të hapur */
+    padding: 15px 25px;
+    border-left: 8px solid #fff; /* Rrethim më i gjerë dhe më i dukshëm */
+    margin-top: 15px;
+   
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Hije e butë për efekt 3D */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efekt kalimi për animacione */
+  }
+  
+  .extra-stat:hover {
+    transform: scale(1.05); /* Rritje e përmasave kur kalon miu */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Hije më e theksuar në hover */
+    cursor: pointer; /* Ndryshimi i kursorit në hover */
+  }
+  
+  .extra-stat p {
+    font-weight: bold; /* Rëndësi për tekstin */
+    letter-spacing: 1px; /* Hapësirë mes shkronjash për t’i dhënë një stil modern */
+    line-height: 1.5; /* Rritje e hapësirës midis rreshtave për lehtësinë e leximit */
+  }
+  
+  /* Për të bërë seksionin responsiv */
+  @media screen and (max-width: 768px) {
+    .extra-stat {
+      font-size: 1rem;
+      padding: 10px 20px;
+      border-left: 6px solid #fff; /* Rrethim i holluar për ekranet më të vogla */
+    }
+  }
+  
