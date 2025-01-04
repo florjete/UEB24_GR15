@@ -14,15 +14,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font: 'Montserrat' normal;
 }
 
-@font-face {
-    font-family: 'Montserrat';
-    src: url('fonts/Montserrat-Regular.ttf') format('ttf');
-    font-weight: normal;
-    font-style: normal;
-}
 
 
 .container {
