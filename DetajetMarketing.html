@@ -343,6 +343,11 @@
         <label for="phone-or-email">Numri i Telefonit ose Email</label>
         <input type="text" class="input" id="phone-or-email" name="phone-or-email" required placeholder=" ">
         <span id="phone-or-email-error" class="error-message"></span>
+        <label for="age">Mosha:</label>
+            <input type="number" id="age" name="age" min="18" max="65" required><br>
+            <small id="age-warning" style="color: red; display: none;">Ju lutemi zgjidhni një moshë mes 18 dhe 65.</small>
+        <br>
+
         <label for="qyteti">Zgjedh qytetin:</label>
         <input list="qyteti"  class="input" id="qytetet" name="qyteti" />
         
@@ -392,11 +397,22 @@
             <label for="matchOutput">Përputhshmëria juaj me pozicionin:</label>
             <output id="matchOutput">0%</output>
         </form>
-        <button type="button" onclick="validateForm()">Apliko</button>
     </form>
+    <button type="button"  form="application-form"   onclick="validateForm()">Apliko</button>
 </div>
-
 <script>
+    const ageInput = document.getElementById('age');
+    const ageWarning = document.getElementById('age-warning');
+
+    ageInput.addEventListener('input', function() {
+        if (ageInput.value < 18 || ageInput.value > 65) {
+            ageWarning.style.display = 'inline'; // Shfaq paralajmërimin
+        } else {
+            ageWarning.style.display = 'none'; // Fshih paralajmërimin
+        }
+    });</script>
+<script>
+
     function validateForm() {
         // Fshij mesazhet e mëparshme të gabimit
         document.querySelectorAll('.error-message').forEach(function(message) {
