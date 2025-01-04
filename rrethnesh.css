@@ -54,7 +54,12 @@ body {
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Kalim i butë për animacion */
 }
+.review-card:hover {
+    transform: translateY(-10px); /* Lëvizja e kartës lart kur kalohet me miun */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Hija më e theksuar kur kalon miu */
+  }
 
 .review-header {
     display: flex;
