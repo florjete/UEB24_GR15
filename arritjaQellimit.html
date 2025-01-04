@@ -47,11 +47,54 @@
         section {
             margin-bottom: 40px;
         }
-        .qellimi-ul {
-            list-style-type: disc;
-            margin-left: 40px;
-            font-size: 1.1em;
-        }
+        .qellimi-li {
+    position: relative;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeIn 0.8s forwards;
+}
+
+.qellimi-li::before {
+   
+    position: absolute;
+    left: -30px;
+    
+    font-size: 24px;
+    display: inline-block;
+    opacity: 0;
+    transform: scale(0);
+    animation: bulletAnim 0.8s forwards;
+}
+
+.qellimi-li:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.qellimi-li:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.qellimi-li:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes bulletAnim {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
         .back-btn {
             display: inline-block;
             margin-top: 20px;
@@ -104,37 +147,65 @@
 <body>
     <div id="header-container"></div>
     <script>
-      // JavaScript për të ngarkuar header-in nga file-i i jashtëm
-      fetch('nav.html')
-          .then(response => response.text())
-          .then(data => {
-              // Vendos përmbajtjen e header-it në div-in me id="header-container"
-              document.getElementById('header-container').innerHTML = data;
-                // Lidh eventet pasi përmbajtja të jetë ngarkuar
-        const loginIcon = document.getElementById('loginIcon');
-        const loginModal = document.getElementById('loginModal');
-        const closeBtn = document.getElementById('closeBtn');
-
-        if (loginIcon) {
-            loginIcon.addEventListener('click', (e) => {
-                e.preventDefault();
-                loginModal.style.display = 'flex';
-            });
-        }
-
-        if (closeBtn) {
-            closeBtn.addEventListener('click', () => {
-                loginModal.style.display = 'none';
-            });
-        }
-
-        window.addEventListener('click', (e) => {
-            if (e.target === loginModal) {
-                loginModal.style.display = 'none';
+        // JavaScript për të ngarkuar header-in nga file-i i jashtëm
+        fetch('nav.html')
+        .then(response => response.text())
+        .then(data => {
+            // Vendos përmbajtjen e header-it në div-in me id="header-container"
+            document.getElementById('header-container').innerHTML = data;
+            // Lidh eventet pasi përmbajtja të jetë ngarkuar
+            const loginIcon = document.getElementById('loginIcon');
+            const loginModal = document.getElementById('loginModal');
+            const closeBtn = document.getElementById('closeBtn');
+            const initialPosition = { top: 50, left: 50 }; // Pozita fillestare e modalit
+  
+            //hap modalin
+            if (loginIcon) {
+                loginIcon.addEventListener('click', () => {
+                    loginModal.style.display = 'block';
+                    loginModal.style.top = `${initialPosition.top}px`;
+                    loginModal.style.left = `${initialPosition.left}px`;
+                });
             }
-        });
-    })
-          .catch(err => console.error('Gabim gjat&#235 ngarkimit t&#235 header-it:', err));
+            //mbyll modalin
+            if (closeBtn) {
+                closeBtn.addEventListener('click', () => {
+                    loginModal.style.display = 'none';
+                });
+            }
+           // Kthimi i modalit në pozitën fillestare
+            loginModal.addEventListener('dblclick', () => {
+                loginModal.style.top = `${initialPosition.top}px`;
+                loginModal.style.left = `${initialPosition.left}px`;
+            });
+            //mbyllja kur klikohet jasht modalit
+            window.addEventListener('click', (e) => {
+                if (e.target === loginModal) {
+                    loginModal.style.display = 'none';
+                }
+            });
+            // Drag and drop
+            let offsetX = 0, offsetY = 0;
+  
+            loginModal.addEventListener('dragstart', (e) => {
+                const rect = loginModal.getBoundingClientRect();
+                offsetX = e.clientX - rect.left;
+                offsetY = e.clientY - rect.top;
+            });
+  
+            document.addEventListener('dragover', (e) => {
+                e.preventDefault();
+            });
+  
+            document.addEventListener('drop', (e) => {
+                e.preventDefault();
+                const x = e.clientX - offsetX;
+                const y = e.clientY - offsetY;
+                loginModal.style.top = `${y}px`;
+                loginModal.style.left = `${x}px`;
+            });        
+        })
+        .catch(err => console.error('Gabim gjat&#235 ngarkimit t&#235 header-it:', err));
     </script>
 
     <!-- Main content -->

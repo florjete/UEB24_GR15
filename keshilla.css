@@ -237,10 +237,11 @@ table th{
     font-size: 16px;
     color: #fff;
     font-weight: bold;
-    list-style: disc;
+    list-style-image: url(foto/check-solid.svg);
     color: #E9C46A;
-    
+  
 }
+
 #link-movie{
     color:#E9C46A ;
     text-decoration: none;
