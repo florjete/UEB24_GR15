@@ -127,17 +127,18 @@ function filterByCategory(element) {
   let kaRezultat = false; // Variabël për të kontrolluar nëse ka rezultate
 
   kartat.forEach(card => {
-    let kategoriaElement = card.querySelector('.kategoria'); // Merr elementin e lokacionit
+    let kategoriaElement = card.querySelector('.kategoria'); // Merr elementin e kategorisë
     let kategoria = kategoriaElement ? kategoriaElement.innerText.trim() : ""; // Kontrollon përmbajtjen
 
-    if (zgjedhur === "Të gjitha" || qyteti.match(new RegExp(zgjedhur, 'i'))) { 
-      card.style.display = "block"; // Shfaq kartën
-      container.appendChild(card); // Vendos kartën në fund për renditje të re
-      kaRezultat = true; // Gjen rezultat
+    // Përdor match() për të kontrolluar përputhjen midis zgjedhur dhe kategoria
+    if (zgjedhur === "Të gjitha" || zgjedhur.match(new RegExp(kategoria, 'i'))) {
+        card.style.display = "block"; // Shfaq kartën
+        container.appendChild(card); // Vendos kartën në fund për renditje të re
+        kaRezultat = true; // Gjen rezultat
     } else {
-      card.style.display = "none"; // Fsheh kartën që nuk përputhet
+        card.style.display = "none"; // Fsheh kartën që nuk përputhet
     }
-  });
+});
 
   // Kontrollo nëse nuk ka rezultate dhe shfaq një mesazh informues
   let noResultsMessage = document.getElementById('no-results');
