@@ -30,19 +30,13 @@ body {
   border-radius: 50%;
 }
 
-#tekstiRrethNesh {
-  color: #2c4751;
-  width: 820px;
-  margin-left: 60px;
-  margin-top: 70px;
-  line-height: 28px;
-  font-family: 'FontIkrijuar';
-  display: inline-block;
-  vertical-align: top;
-}
-
+#tekstiRrethNesh,
 #tekstiIgjere {
-  width: 1000px;
+  display: inline-block;
+  vertical-align: top; /* Siguron që janë në të njëjtën linjë */
+  margin-right: 20px; /* Hapësirë mes elementeve */
+  line-height: 28px;
+  width: 45%; /* Gjerësia e secilit paragraf */
 }
 
 .reviews-section {
@@ -61,7 +55,7 @@ body {
 .reviews-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
+  gap: 500px;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -173,13 +167,13 @@ body {
 /* Responsivitet për ekranet më të vogla */
 @media screen and (max-width: 1000px) {
   .stat {
-      width: 100%;
-      margin-bottom: 20px;
+    width: 100%;
+    margin-bottom: 20px;
   }
 
   #show-more-stats {
-      width: 100%;
-      padding: 12px;
+    width: 100%;
+    padding: 12px;
   }
 }
 
@@ -211,9 +205,9 @@ body {
 /* Për të bërë seksionin responsiv */
 @media screen and (max-width: 768px) {
   .extra-stat {
-      font-size: 1rem;
-      padding: 10px 20px;
-      border-left: 6px solid #fff;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border-left: 6px solid #fff;
   }
 }
 
@@ -247,8 +241,53 @@ body {
   }
 
   #tekstiRrethNesh {
-    margin-right: 0; /* Hiq hapësirën anësore */
+    margin-right: 3; /* Hiq hapësirën anësore */
     text-align: center; /* Qendro tekstin për pamje më të mirë */
+  }
+
+  #fotoRrethNesh {
+    margin-top: 20px; /* Ruaj hapësirën sipër fotos */
+  }
+}
+
+/* Për të optimizuar fleksibilitetin dhe responsivitetin */
+#rrethNesh {
+  display: flex;
+  flex-wrap: wrap; /* Lejon që elementët të mbështillen dhe të kenë hapësirë mes tyre */
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px; /* Hapësirë mes elementëve */
+}
+
+#tekstiRrethNesh {
+  flex: 1 1 45%; /* Zgjeron dhe kontrakton sipas hapësirës, maksimalisht 45% */
+  line-height: 28px;
+  margin-right: 20px;
+  text-align: left;
+}
+
+#fotoRrethNesh {
+  flex: 1 1 250px; /* Fotoja është me gjerësi të fiksuar për ekranet më të mëdhenj */
+  max-width: 100%;
+  margin-top: 50px;
+}
+
+#fotoRrethNesh img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%; /* Bën foton me formë rrethore */
+}
+
+/* Responsiviteti për ekranet më të vogla */
+@media screen and (max-width: 768px) {
+  #rrethNesh {
+    flex-direction: column; /* Elementët shkojnë në një kolonë për ekranet më të vogla */
+    align-items: center;
+  }
+
+  #tekstiRrethNesh {
+    text-align: center; /* Qendro tekstin për pajisje më të vogla */
+    margin-right: 0;
   }
 
   #fotoRrethNesh {
