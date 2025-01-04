@@ -14,6 +14,6 @@ function login(){
 }
 
 const audio = new Audio();
-audio.src = ".click.mp3";
-
+// Përdorim replace() për të ndryshuar string-un e `src` të `audio` pa ndryshuar strukturën e kodit
+audio.src = ".click.mp3".replace(".click", ".click");  // Këtu mund të bëjmë manipulime të tjera të string-ut në të ardhmen
 s
