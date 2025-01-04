@@ -3,16 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="language" content="sq">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title>Rreth nesh</title>
     <link rel="stylesheet" href="rrethnesh.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="js/jquery-3.6.0.min.js"></script>
    
 </head>
 <body>
     <!-- importo file te html per nav ne div -->
-
     <div id="header-container"></div>
     <script>
         // JavaScript për të ngarkuar header-in nga file-i i jashtëm
@@ -41,7 +40,7 @@
                     loginModal.style.display = 'none';
                 });
             }
-           // Kthimi i modalit në pozitën fillestare
+            // Kthimi i modalit në pozitën fillestare
             loginModal.addEventListener('dblclick', () => {
                 loginModal.style.top = `${initialPosition.top}px`;
                 loginModal.style.left = `${initialPosition.left}px`;
@@ -75,22 +74,25 @@
         })
         .catch(err => console.error('Gabim gjat&#235 ngarkimit t&#235 header-it:', err));
     </script>
+<h1 id="rrethnesh">Rreth nesh</h1>
+<div style="text-align: center; margin-top: 80px;">
+    <img src="foto/FotoLogo.webp" alt="Logo" id="fotoRrethNesh" style="width: 200px; height: auto;">
+</div>
 
-    <h1 id="rrethnesh">Rreth nesh</h1>
-    <img src="foto/FotoLogo.webp" alt="Logo" id="fotoRrethNesh">
-    <p id="tekstiRrethNesh">
-       Tek Find Your Way, ne besojmë se rruga drejt suksesit fillon me mundësitë e duhura. <br> Ne jemi një platformë inovative që lidh individët e talentuar me punëdhënës të besuar, duke krijuar ura midis ëndrrave dhe realitetit profesional.
-Misioni ynë është të fuqizojmë individët për të gjetur rrugën e tyre drejt karrierës së dëshiruar, duke ofruar një eksperiencë të lehtë, të shpejtë dhe të personalizuar.
-<br>Ne bashkëpunojmë me kompani nga industri të ndryshme, për të siguruar mundësi të ndryshme pune që i përshtaten aftësive dhe ambicieve të secilit përdorues.
-Duke përdorur teknologjinë më të fundit, ne ndihmojmë përdoruesit tanë të zbulojnë dhe të aplikojnë për pozitat që përputhen më së miri me qëllimet e tyre profesionale.
-Na besoni për të qenë udhërrëfyesi juaj në rrugën drejt suksesit. <br></p><p  id="tekstiIgjere" style="   color: #2c4751;
-width: 820px;
-margin-left: 140px;
-line-height: 28px;"> Bashkohuni me Find Your Way dhe filloni udhëtimin tuaj drejt një të ardhmeje më të ndritur.Jemi këtu për të bërë ndryshimin në jetën tuaj profesionale, duke ju mbështetur në çdo hap të rrugës. Nëse jeni duke kërkuar punën e parë, një hap të madh në karrierë ose një ndryshim drejt një fushe të re, Find Your Way është partneri juaj i besuar.
 
-<br><b>Filloni sot dhe gjeni rrugën tuaj drejt suksesit!</b>
-    </p>
-    
+<p id="tekstiRrethNesh">
+    Tek Find Your Way, ne besojmë se rruga drejt suksesit fillon me mundësitë e duhura. <br> Ne jemi një platformë inovative që lidh individët e talentuar me punëdhënës të besuar, duke krijuar ura midis ëndrrave dhe realitetit profesional.
+    Misioni ynë është të fuqizojmë individët për të gjetur rrugën e tyre drejt karrierës së dëshiruar, duke ofruar një eksperiencë të lehtë, të shpejtë dhe të personalizuar.
+    <br>Ne bashkëpunojmë me kompani nga industri të ndryshme, për të siguruar mundësi të ndryshme pune që i përshtaten aftësive dhe ambicieve të secilit përdorues.
+    Duke përdorur teknologjinë më të fundit, ne ndihmojmë përdoruesit tanë të zbulojnë dhe të aplikojnë për pozitat që përputhen më së miri me qëllimet e tyre profesionale.
+    Na besoni për të qenë udhërrëfyesi juaj në rrugën drejt suksesit. <br>
+</p>
+<p id="tekstiIgjere" style="color: #2c4751;width: 820px;margin-left: 140px;line-height: 28px;">
+    Bashkohuni me Find Your Way dhe filloni udhëtimin tuaj drejt një të ardhmeje më të ndritur.Jemi këtu për të bërë ndryshimin në jetën tuaj profesionale, duke ju mbështetur në çdo hap të rrugës. Nëse jeni duke kërkuar punën e parë, një hap të madh në karrierë ose një ndryshim drejt një fushe të re, Find Your Way është partneri juaj i besuar.
+    <br><b>Filloni sot dhe gjeni rrugën tuaj drejt suksesit!</b>
+</p>
+
+
     <section class="reviews-section">
         <h1><mark style="color: #ff9800;">Çfarë thonë klientët tanë?</mark></h1>
         <div class="reviews-container">
@@ -122,8 +124,8 @@ line-height: 28px;"> Bashkohuni me Find Your Way dhe filloni udhëtimin tuaj dre
             </div>
         </div>
     </section>
+    
     <section class="reviews-section" style="margin-top: -50px;">
-       
         <div class="reviews-container">
             <div class="review-card">
                 <div class="review-header">
@@ -131,9 +133,7 @@ line-height: 28px;"> Bashkohuni me Find Your Way dhe filloni udhëtimin tuaj dre
                     <div class="name"> Chris N.</div>
                 </div>
                 <div class="review-rating">★★★★☆</div>
-                <div class="review-text">"Kam aplikuar për disa pozita nëpërmjet kësaj platforme dhe brenda një muaji mora disa oferta! Mund të përmirësojnë më tej mënyrën e krijimit të profilit, por në përgjithësi jam shumë e kënaqur."
-
-                </div>
+                <div class="review-text">"Kam aplikuar për disa pozita nëpërmjet kësaj platforme dhe brenda një muaji mora disa oferta! Mund të përmirësojnë më tej mënyrën e krijimit të profilit, por në përgjithësi jam shumë e kënaqur."</div>
             </div>
 
             <div class="review-card">
@@ -144,7 +144,6 @@ line-height: 28px;"> Bashkohuni me Find Your Way dhe filloni udhëtimin tuaj dre
                 <div class="review-rating">★★★★★</div>
                 <div class="review-text">"Platforma është shumë e dobishme për rekrutuesit. Gjetëm disa kandidatë të shkëlqyer për pozitat që kishim të hapura. Sistemi i komunikimit të brendshëm është një veçori që na ka kursyer shumë kohë."</div>
             </div>
-        
 
             <div class="review-card">
                 <div class="review-header">
@@ -155,64 +154,60 @@ line-height: 28px;"> Bashkohuni me Find Your Way dhe filloni udhëtimin tuaj dre
                 <div class="review-text">Një mjet shumë i dobishëm për profesionistët financiarë. Filtrat e kërkimit janë shumë të detajuar dhe të saktë. Do të ishte mirë nëse do të shtonin më shumë artikuj për karrierën.</div>
             </div>
         </div>
-       
     </section>
+
     <section id="statistics">
         <h2 style="color: #ff9800;">Statistikat tona</h2>
         <div class="stat" id="stat1">
-          <p class="stat-number">500</p>
-          <p class="stat-label">Përdorues të regjistruar</p>
+            <p class="stat-number">500</p>
+            <p class="stat-label">Përdorues të regjistruar</p>
         </div>
         <div class="stat" id="stat2">
-          <p class="stat-number">95</p>
-          <p class="stat-label">Përqindja e kënaqësisë së përdoruesve</p>
+            <p class="stat-number">95</p>
+            <p class="stat-label">Përqindja e kënaqësisë së përdoruesve</p>
         </div>
         <div class="stat" id="stat3">
-          <p class="stat-number">200</p>
-          <p class="stat-label">Kompanitë që bashkëpunojnë me ne</p>
+            <p class="stat-number">200</p>
+            <p class="stat-label">Kompanitë që bashkëpunojnë me ne</p>
         </div>
         <button id="show-more-stats">Shfaq më shumë</button>
-      </section>
-      
- 
-    
+    </section>
 
     <!-- footer imported -->
-    <div id="footer-container" ></div>
+    <div id="footer-container"></div>
     <script>
-      // JavaScript per ngarkim te footer-it nga file-i i jashtem
-      fetch('footer.html')
-          .then(response => response.text())
-          .then(data => {
-              // Vendos pjese e footer-it ne div-in me id="footer-container"
-              document.getElementById('footer-container').innerHTML = data;
-          })
-          .catch(err => console.error('Gabim gjat&#235 ngarkimit te footer-it:', err));
+        // JavaScript per ngarkim te footer-it nga file-i i jashtem
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                // Vendos pjese e footer-it ne div-in me id="footer-container"
+                document.getElementById('footer-container').innerHTML = data;
+            })
+            .catch(err => console.error('Gabim gjat&#235 ngarkimit te footer-it:', err));
     </script>
-    <script scr="loginPopup.js"></script>
+
     <script>
         $(document).ready(function () {
-    // Inicializimi i statistikave me animacion për t'u shfaqur gradualisht
-    $(".stat-number").each(function () {
-      $(this).prop("Counter", 0).animate({
-        Counter: $(this).text()
-      }, {
-        duration: 2000,
-        easing: "swing",
-        step: function (now) {
-          $(this).text(Math.ceil(now));
-        }
-      });
-    });
-  
-    // Shfaqja e më shumë statistikave me një animacion slide
-    $("#show-more-stats").click(function () {
-    $(this).hide(); // Fshih butonin pasi është klikuar
-    $("<p class='extra-stat'>Ne kemi ndihmuar mbi 5000 individë të gjejnë mundësi pune!</p>").hide().appendTo("#statistics").fadeIn(1000);
-    $("<p class='extra-stat'>Platforma jonë ka më shumë se 30 partnerë globalë!</p>").hide().appendTo("#statistics").fadeIn(1000);
-  });
-});
-  
+            // Inicializimi i statistikave me animacion për t'u shfaqur gradualisht
+            $(".stat-number").each(function () {
+                $(this).prop("Counter", 0).animate({
+                    Counter: $(this).text()
+                }, {
+                    duration: 2000,
+                    easing: "swing",
+                    step: function (now) {
+                        $(this).text(Math.ceil(now));
+                    }
+                });
+            });
+
+            // Shfaqja e më shumë statistikave me një animacion slide
+            $("#show-more-stats").click(function () {
+                $(this).hide(); // Fshih butonin pasi është klikuar
+                $("<p class='extra-stat'>Ne kemi ndihmuar mbi 5000 individë të gjejnë mundësi pune!</p>").hide().appendTo("#statistics").fadeIn(1000);
+                $("<p class='extra-stat'>Platforma jonë ka më shumë se 30 partnerë globalë!</p>").hide().appendTo("#statistics").fadeIn(1000);
+            });
+        });
     </script>
 </body>
 </html>
