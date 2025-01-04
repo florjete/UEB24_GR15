@@ -130,7 +130,7 @@ function filterByCategory(element) {
     let kategoriaElement = card.querySelector('.kategoria'); // Merr elementin e lokacionit
     let kategoria = kategoriaElement ? kategoriaElement.innerText.trim() : ""; // Kontrollon përmbajtjen
 
-    if (zgjedhur === "Të gjitha" || zgjedhur === kategoria) {
+    if (zgjedhur === "Të gjitha" || qyteti.match(new RegExp(zgjedhur, 'i'))) { 
       card.style.display = "block"; // Shfaq kartën
       container.appendChild(card); // Vendos kartën në fund për renditje të re
       kaRezultat = true; // Gjen rezultat
