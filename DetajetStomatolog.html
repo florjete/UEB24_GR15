@@ -216,6 +216,14 @@
             font-size: 18px;
         }
     </style>
+    <script>
+        function calculateMatch() {
+            const totalSkills = 5; // Numri total i aftësive të kërkuara
+            const selectedSkills = document.querySelectorAll('input[type="checkbox"]:checked').length;
+            const matchPercentage = (selectedSkills / totalSkills) * 100;
+            document.getElementById('matchOutput').value = matchPercentage.toFixed(0) + "%";
+        }
+    </script>
 </head>
 <body>
     <!-- importo file te html per nav ne div -->
@@ -325,7 +333,7 @@
         <form action="" method="POST" enctype="multipart/form-data">
             <label for="first-name">Emri</label>
             <input type="text" class="input" id="first-name" name="first-name" required>
-
+        
             <label for="last-name">Mbiemri</label>
             <input type="text" class="input" id="last-name" name="last-name" required>
 
@@ -351,6 +359,7 @@
         </datalist>
         
         <br>
+
             <form>
                 <label for="experience">Keni përvojë të mëparshme në këtë fushë?</label><br>
               
@@ -364,9 +373,23 @@
               </form>
             <label for="cv">Ngarkoni CV-në tuaj</label>
             <input type="file" class="input" id="cv" name="cv" accept=".pdf, .docx" required>
+   
             
             <label for="cover-letter">Letër Motivimi (opsionale)</label>
             <textarea id="cover-letter" name="cover-letter" rows="5" placeholder="Shkruani një letër motivimi për aplikimin tuaj (opsionale)"></textarea>
+             
+            <h1>Vlerësimi i Përshtatshmërisë për Pozicionin</h1>
+            <form oninput="calculateMatch()">
+                <p>Zgjidhni aftësitë që zotëroni:</p>
+                <label><input type="checkbox" name="skill" value="1"> Diplomë dhe Licencë Profesionale</label><br>
+                <label><input type="checkbox" name="skill" value="2"> Përvoja Klinike</label><br>
+                <label><input type="checkbox" name="skill" value="3"> Njohuri të Aparateve dhe Teknikave Moderne</label><br>
+                <label><input type="checkbox" name="skill" value="4"> Aftësi Komunikimi dhe Kujdesi ndaj Pacientëve</label><br>
+                <label><input type="checkbox" name="skill" value="5"> Disponueshmëria për Orë Pune Fleksibël</label><br><br>
+        
+                <label for="matchOutput">Përputhshmëria juaj me pozicionin:</label>
+                <output id="matchOutput">0%</output>
+            </form>
 
             <button type="submit">Apliko</button>
         </form>

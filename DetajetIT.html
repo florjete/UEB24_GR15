@@ -234,6 +234,14 @@
             font-size: 18px;
         }
     </style>
+    <script>
+        function calculateMatch() {
+            const totalSkills = 5; // Numri total i aftësive të kërkuara
+            const selectedSkills = document.querySelectorAll('input[type="checkbox"]:checked').length;
+            const matchPercentage = (selectedSkills / totalSkills) * 100;
+            document.getElementById('matchOutput').value = matchPercentage.toFixed(0) + "%";
+        }
+    </script>
 </head>
 <body>
     <!-- importo file te html per nav ne div -->
@@ -395,7 +403,18 @@
 
         <label for="cover-letter">Letër Motivimi (opsionale)</label>
         <textarea id="cover-letter" name="cover-letter" rows="5" placeholder="Shkruani një letër motivimi për aplikimin tuaj (opsionale)"></textarea>
-
+        <h1>Vlerësimi i Përshtatshmërisë për Pozicionin</h1>
+        <form oninput="calculateMatch()">
+            <p>Zgjidhni aftësitë që zotëroni:</p>
+            <label><input type="checkbox" name="skill" value="1"> Eksperiencë në Mbështetje Teknike dhe Zgjidhje të Problemeve</label><br>
+            <label><input type="checkbox" name="skill" value="2"> Njohuri të Avancuara të Sistemeve Operative dhe Rrjetave</label><br>
+            <label><input type="checkbox" name="skill" value="3"> Aftësi për Menaxhimin e Sigurisë të IT-së dhe Mbrojtjes së të Dhënave</label><br>
+            <label><input type="checkbox" name="skill" value="4"> Aftësi për Zhvillimin dhe Implementimin e Software-ve dhe Aplikacioneve</label><br>
+            <label><input type="checkbox" name="skill" value="5"> Aftësi për Menaxhimin e Projekteve IT dhe Koordinimin e Ekipit</label><br><br>
+    
+            <label for="matchOutput">Përputhshmëria juaj me pozicionin:</label>
+            <output id="matchOutput">0%</output>
+        </form>
         <button type="button" onclick="validateForm()">Apliko</button>
     </form>
 </div>
