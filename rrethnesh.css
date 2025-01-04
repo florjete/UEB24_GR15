@@ -1,8 +1,18 @@
+@font-face {
+    font-family: 'FontIkrijuar';
+    src: url('fonts/mycustomfont.woff2') format('woff2'),
+         url('fonts/mycustomfont.woff') format('woff'),   
+         url('fonts/mycustomfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 #rrethnesh {
     size: 50px;
     margin-top: 70px;
     margin-left: 60px;
     color: #264653;
+    
 }
 #fotoRrethNesh{
     height: 400px;
@@ -10,7 +20,6 @@
     margin-left: 1050px;
     margin-top: -30px;
     border-radius: 200px;
-   
     
 }
 #tekstiRrethNesh{
@@ -20,6 +29,7 @@
     margin-top: -350px;
     line-height: 28px;
     background-origin: content-box;
+    font-family: 'FontIkrijuar';
 }
 
 @media (max-width: 1000px) {
