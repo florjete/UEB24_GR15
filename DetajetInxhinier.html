@@ -448,6 +448,10 @@
             isValid = false;
         }
 
+        // Alert për përdoruesin që t'i plotësojë të gjitha fushat nëse ndodhin gabime
+        if (!isValid) {
+            alert('Ju lutem plotësoni të gjitha fushat!');
+        }
         // Nëse të gjitha fushat janë të mbushura, drejto te faqja tjetër
         if (isValid) {
             window.location.href = 'aplikimi.html'; // Faqja ku do të drejtohet përdoruesi
