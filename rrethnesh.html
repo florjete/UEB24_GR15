@@ -8,64 +8,7 @@
     <title>Rreth nesh</title>
     <link rel="stylesheet" href="rrethnesh.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <style>
-        
-        .content {
-            padding: 30px;
-            background: linear-gradient(145deg,  #204d5fd2, #264653);
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            max-width: 600px;
-            margin: 50px auto;
-            color: white;
-        }
-
-        .h1 {
-            text-align: center;
-            font-size: 2.5em;
-            font-weight: bold;
-            letter-spacing: 1px;
-        }
-
-        p {
-            font-size: 1.1em;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-
-        button {
-            padding: 12px 20px;
-            font-size: 1.1em;
-            background-color: #ff9800;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin-left: 130px;
-        }
-
-        button:hover {
-            background-color: #ff99007e;
-        }
-
-        #details {
-            font-size: 1.2em;
-            font-weight: 400;
-            margin-top: 20px;
-            background-color: rgba(255, 255, 255, 0.8);
-            padding: 15px;
-            border-radius: 5px;
-        }
-
-        .content p, .content button {
-            transition: all 0.3s ease;
-        }
-
-        .content p:hover, .content button:hover {
-            transform: scale(1.05);
-        }
-    </style>
+    
    
 </head>
 <body>
@@ -248,13 +191,15 @@
     </div>
 
     <script>
-        // Objekt që përmban të dhënat e historisë
-        const companyHistory = {
-            yearFounded: 2005,
-            achievements: "projekti i parë në teknologji dhe design",
-            slogan: "Inovacion, Kreativitet, Succes"
-        };
+        
+        function CompanyHistory(yearFounded, achievements, slogan) {
+            this.yearFounded = yearFounded;
+            this.achievements = achievements;
+            this.slogan = slogan;
+        }
 
+        // Krijimi i një instance të objektit për historinë e kompanisë
+        const companyHistory = new CompanyHistory(2005, "projekti i parë në teknologji dhe design", "Inovacion, Kreativitet, Succes");
         // Funksioni që përdor 'replace' dhe 'match'
         function modifyHistory() {
             let historyText = `Ne filluam në vitin ${companyHistory.yearFounded} dhe kemi punuar me ${companyHistory.achievements}.`;
