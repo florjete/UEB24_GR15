@@ -273,7 +273,7 @@ body {
             letter-spacing: 1px;
         }
 
-        p {
+        .p {
             font-size: 1.1em;
             line-height: 1.6;
             margin-bottom: 20px;
@@ -321,7 +321,7 @@ body {
         margin-top: 30px;
        
        }
-       .canvas h3 {
+       .h3 {
         text-align: center;
         color:#ff9800 ;
        }
