@@ -148,7 +148,7 @@ a{
     cursor:pointer;
     display: block;
     margin:auto;
-    background:  linear-gradient(to right, #45cfbf, #2A9D8F);
+    background:  linear-gradient(to right, #45cfbf 50%, #2A9D8F 80%);
     border:0;
     outline: none;
     border-radius: 30px;
