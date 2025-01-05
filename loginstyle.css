@@ -6,10 +6,15 @@
 .login{
     height: 100%;
     width: 100% ;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4)),url(foto/background.webp);
-    background-position: left;
-    background-size:cover ;
-    position:absolute;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4)),
+    url(foto/b1.jpg),
+    url(foto/b2.jpg),
+    url(foto/b3.jpg),
+    url(foto/b4.jpg);
+    background-position: center, top left, top right, bottom left, bottom right; /* Pozicionimi për secilin sfond */
+    background-size: 50%, 50%, 50%, 50%; /* Përmasat për secilin sfond */
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat ; /* Përsëritja për secilin sfond */
+    position: absolute;
 }
 .form-box{
     width: 430px;

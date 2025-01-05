@@ -32,7 +32,7 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url('foto/foto.png'); /* Ensure image URL is correct */
+    background-image: url('foto/foto.png');
     background-size: cover;
     background-position: center center;
     position: relative;
