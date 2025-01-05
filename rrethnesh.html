@@ -160,21 +160,29 @@
 
     <section id="statistics">
         <h2 style="color: #ff9800;">Statistikat tona</h2>
-        <div class="stat" id="stat1">
-            <p class="stat-number">500</p>
-            <p class="stat-label">Përdorues të regjistruar</p>
-        </div>
-        <div class="stat" id="stat2">
-            <p class="stat-number">95</p>
-            <p class="stat-label">Përqindja e kënaqësisë së përdoruesve</p>
-        </div>
-        <div class="stat" id="stat3">
-            <p class="stat-number">200</p>
-            <p class="stat-label">Kompanitë që bashkëpunojnë me ne</p>
-        </div>
+        <div id="stats-container"></div>
         <button id="show-more-stats">Shfaq më shumë</button>
     </section>
-
+    
+    <script>
+        const stats = [
+            { number: 500, label: "Përdorues të regjistruar" },
+            { number: 95, label: "Përqindja e kënaqësisë së përdoruesve" },
+            { number: 200, label: "Kompanitë që bashkëpunojnë me ne" }
+        ];
+    
+        const statsHTML = stats.reduce((html, stat) => {
+            return html + `
+                <div class="stat">
+                    <p class="stat-number">${stat.number}</p>
+                    <p class="stat-label">${stat.label}</p>
+                </div>
+            `;
+        }, "");
+    
+        document.getElementById("stats-container").innerHTML = statsHTML;
+    </script>
+    
     <!-- footer imported -->
     <div id="footer-container"></div>
     <script>
