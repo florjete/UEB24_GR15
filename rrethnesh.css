@@ -44,15 +44,7 @@ body {
 
 
 
-        #tekstiRrethNesh,
-        #tekstiIgjere {
-            display: inline-block;
-            vertical-align: top; /* Siguron që janë në të njëjtën linjë */
-            margin-right: 20px; /* Hapësirë mes elementeve */
-            line-height: 28px;
-            width: 45%; /* Gjerësia e secilit paragraf */
-        }
-    
+       
         .reviews-section {
           text-align: center;
           padding: 50px 20px;
@@ -319,4 +311,17 @@ body {
         .content p:hover, .content button:hover {
             transform: scale(1.05);
         }
+       .canvas {
+       
+        position: relative;
+
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.08);
+        margin-top: 30px;
+       }
+       .canvas h3 {
+        text-align: center;
+        color:#ff9800 ;
         
+       }

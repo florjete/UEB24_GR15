@@ -80,7 +80,7 @@
     <img src="foto/FotoLogo.webp" alt="Logo" id="fotoRrethNesh" style="width: 310px; height: auto; float: left; margin-right: 20px;">
 </div>
 
-<p style="text-align: justify; padding: 0 10px; max-width: 800px; margin-left: 30px; margin-right: auto;">
+<p style="text-align: justify; padding: 0 10px; max-width: 800px; margin-left: 30px; margin-right: auto;margin-bottom: 30px;">
     Tek Find Your Way, ne besojmë se rruga drejt suksesit fillon me mundësitë e duhura. <br>
     Ne jemi një platformë inovative që lidh individët e talentuar me punëdhënës të besuar, duke krijuar ura midis ëndrrave dhe realitetit profesional.
     Misioni ynë është të fuqizojmë individët për të gjetur rrugën e tyre drejt karrierës së dëshiruar, duke ofruar një eksperiencë të lehtë, të shpejtë dhe të personalizuar.
@@ -90,10 +90,80 @@
 
     Bashkohuni me Find Your Way dhe filloni udhëtimin tuaj drejt një të ardhmeje më të ndritur. Jemi këtu për të bërë ndryshimin në jetën tuaj profesionale, duke ju mbështetur në çdo hap të rrugës. Nëse jeni duke kërkuar punën e parë, një hap të madh në karrierë ose një ndryshim drejt një fushe të re, Find Your Way është partneri juaj i besuar.
     <br><b>Filloni sot dhe gjeni rrugën tuaj drejt suksesit!</b>
+    <br>
+    <br>
 </p>
 
+<div class="canvas" style="padding-top: 30px; margin-top: 50px;">
+<h3>Rruga jonë drejt suksesit.</h3>
+<canvas id="timelineCanvas" width="1400" height="300" style="margin-left: 20px;"></canvas>
+</div>
+<script>
+    const canvas = document.getElementById('timelineCanvas');
+    const ctx = canvas.getContext('2d');
 
+    const events = [
+        { year: 2018, title: "Fillimi i Kompanisë" },
+        { year: 2020, title: "Zhvillimi i Shërbimeve të Reja" },
+        { year: 2021, title: "Marrëveshje me Partnerë të Njohur" },
+        { year: 2024, title: "Lider në\nPunësimin e\n të rinjëve" } // Shembull me "\n"
+    ];
 
+    let currentEvent = 0;
+
+    function drawTimeline() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height); // Pastrimi i canvas-it
+
+        // Vizatimi i vijës së kohës
+        ctx.beginPath();
+        ctx.moveTo(50, 150);
+        ctx.lineTo(canvas.width - 50, 150);
+        ctx.strokeStyle = '#264653';
+        ctx.lineWidth = 2;
+        ctx.stroke();
+
+        // Vizatimi i pikave dhe viteve
+        for (let i = 0; i <= currentEvent; i++) {
+            const xPosition = 50 + (i * ((canvas.width - 100) / (events.length - 1)));
+            const yPosition = 150;
+
+            // Vizato rrethin për ngjarjen
+            ctx.beginPath();
+            ctx.arc(xPosition, yPosition, 8, 0, Math.PI * 2);
+            ctx.fillStyle = '#ff9800';
+            ctx.fill();
+
+            // Shfaq vitin mbi ngjarjen
+            ctx.fillStyle = '#333';
+            ctx.font = '14px Arial';
+            ctx.fillText(events[i].year, xPosition - 15, yPosition - 20);
+        }
+
+        // Shfaq titullin e ngjarjes së fundit (me thyerje teksti)
+        if (currentEvent >= 0 && currentEvent < events.length) {
+            const xTextPos = 50 + (currentEvent * ((canvas.width - 100) / (events.length - 1))) - 50;
+            const yTextPos = 180;
+
+            const title = events[currentEvent].title.split("\n"); // Ndaje tekstin në linja
+            ctx.fillStyle = '#333';
+            ctx.font = '16px Arial';
+
+            title.forEach((line, index) => {
+                ctx.fillText(line, xTextPos, yTextPos + index * 20); // Çdo linjë më poshtë me 20px
+            });
+        }
+    }
+
+    function animateTimeline() {
+        if (currentEvent < events.length) {
+            drawTimeline();
+            currentEvent++;
+            setTimeout(animateTimeline, 1500); // Animimi çdo 1.5 sekondë për ngjarje
+        }
+    }
+
+    animateTimeline(); // Fillimi i animimit
+</script>
 
 
     <section class="reviews-section">
@@ -180,6 +250,7 @@
                 </div>
             `;
         }, "");
+        
     
         document.getElementById("stats-container").innerHTML = statsHTML;
     </script>
