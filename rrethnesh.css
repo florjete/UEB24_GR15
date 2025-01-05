@@ -279,7 +279,7 @@ body {
             margin-bottom: 20px;
         }
 
-        button {
+        .content button {
             padding: 12px 20px;
             font-size: 1.1em;
             background-color: #ff9800;
@@ -291,7 +291,7 @@ body {
             margin-left: 130px;
         }
 
-        button:hover {
+        .content button:hover {
             background-color: #ff99007e;
         }
 
