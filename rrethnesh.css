@@ -312,7 +312,7 @@ body {
             transform: scale(1.05);
         }
        .canvas {
-       
+        height: 100vh;
         position: relative;
 
         background-color: #f9f9f9;
@@ -323,5 +323,11 @@ body {
        .canvas h3 {
         text-align: center;
         color:#ff9800 ;
-        
+       }
+       #timelineCanvas {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin: 0;
        }
