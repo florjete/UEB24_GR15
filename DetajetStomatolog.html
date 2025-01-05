@@ -327,26 +327,29 @@
         <li class="li">Mbështetje për zhvillim profesional dhe pjesëmarrje në trajnime.</li>
     </ul>
 
-    
-    <div class="form-section">
-        <h3>Aplikoni për këtë Pozitë</h3>
-        <form action="" method="POST" enctype="multipart/form-data">
-            <label for="first-name">Emri</label>
-            <input type="text" class="input" id="first-name" name="first-name" required>
-        
-            <label for="last-name">Mbiemri</label>
-            <input type="text" class="input" id="last-name" name="last-name" required>
+   <!-- Seksioni i Aplikimit për Stomatolog -->
+<div class="form-section">
+    <h3>Aplikoni për Pozitën e Stomatologut</h3>
+    <form id="application-form" action="" method="POST" enctype="multipart/form-data">
+        <label for="first-name">Emri</label>
+        <input type="text" class="input" id="first-name" name="first-name" required>
+        <span id="first-name-error" class="error-message"></span>
 
-            <label for="phone-or-email">Numri i Telefonit ose Email</label>
-            <input type="text" class="input" id="phone-or-email" name="phone-or-email" required>
-            <label for="age">Mosha:</label>
-            <input type="number" id="age" name="age" min="18" max="65" required><br>
-            <small id="age-warning" style="color: red; display: none;">Ju lutemi zgjidhni një moshë mes 18 dhe 65.</small>
+        <label for="last-name">Mbiemri</label>
+        <input type="text" class="input" id="last-name" name="last-name" required>
+        <span id="last-name-error" class="error-message"></span>
+
+        <label for="phone-or-email">Numri i Telefonit ose Email</label>
+        <input type="text" class="input" id="phone-or-email" name="phone-or-email" required placeholder=" ">
+        <span id="phone-or-email-error" class="error-message"></span>
+
+        <label for="age">Mosha:</label>
+        <input type="number" id="age" name="age" min="18" max="65" required><br>
+        <small id="age-warning" style="color: red; display: none;">Ju lutemi zgjidhni një moshë mes 18 dhe 65.</small>
         <br>
 
-            <label for="qyteti">Zgjedh qytetin:</label>
-        <input list="qyteti"  class="input" id="qytetet" name="qyteti" />
-        
+        <label for="qyteti">Zgjedh qytetin:</label>
+        <input list="qyteti" class="input" id="qytetet" name="qyteti" />
         <datalist id="qyteti">
           <option value="Prishtinë"></option>
           <option value="Pejë"></option>
@@ -362,42 +365,40 @@
           <option value="Malishevë"></option>
           <option value="Drenas"></option>
         </datalist>
-        
         <br>
 
-            <form>
-                <label for="experience">Keni përvojë të mëparshme në këtë fushë?</label><br>
-              
-                <div class="radio-container" >
-                  <input type="radio" id="yes" name="experience" value="yes">
-                  <label for="yes">Po</label> <br>
-                
-                  <input type="radio" id="no" name="experience" value="no">
-                  <label for="no">Jo</label>
-                </div>
-              </form>
-            <label for="cv">Ngarkoni CV-në tuaj</label>
-            <input type="file" class="input" id="cv" name="cv" accept=".pdf, .docx" required>
-   
-            
-            <label for="cover-letter">Letër Motivimi (opsionale)</label>
-            <textarea id="cover-letter" name="cover-letter" rows="5" placeholder="Shkruani një letër motivimi për aplikimin tuaj (opsionale)"></textarea>
-             
-            <h1>Vlerësimi i Përshtatshmërisë për Pozicionin</h1>
-            <form oninput="calculateMatch()">
-                <p>Zgjidhni aftësitë që zotëroni:</p>
-                <label><input type="checkbox" name="skill" value="1"> Diplomë dhe Licencë Profesionale</label><br>
-                <label><input type="checkbox" name="skill" value="2"> Përvoja Klinike</label><br>
-                <label><input type="checkbox" name="skill" value="3"> Njohuri të Aparateve dhe Teknikave Moderne</label><br>
-                <label><input type="checkbox" name="skill" value="4"> Aftësi Komunikimi dhe Kujdesi ndaj Pacientëve</label><br>
-                <label><input type="checkbox" name="skill" value="5"> Disponueshmëria për Orë Pune Fleksibël</label><br><br>
-        
-                <label for="matchOutput">Përputhshmëria juaj me pozicionin:</label>
-                <output id="matchOutput">0%</output>
-            </form>
+        <label for="experience">Keni përvojë të mëparshme si stomatolog?</label><br>
+        <div class="radio-container">
+          <input type="radio" id="yes" name="experience" value="yes">
+          <label for="yes">Po</label><br>
+          <input type="radio" id="no" name="experience" value="no">
+          <label for="no">Jo</label>
+        </div>
+
+        <label for="cv">Ngarkoni CV-në tuaj</label>
+        <input type="file" class="input" id="cv" name="cv" accept=".pdf, .docx" required>
+        <span id="cv-error" class="error-message"></span>
+
+        <label for="cover-letter">Letër Motivimi (opsionale)</label>
+        <textarea id="cover-letter" name="cover-letter" rows="5" placeholder="Shkruani një letër motivimi për aplikimin tuaj (opsionale)"></textarea>
+
+        <h1>Vlerësimi i Përshtatshmërisë për Pozicionin e Stomatologut</h1>
+        <form oninput="calculateMatch()">
+            <p>Zgjidhni aftësitë që zotëroni:</p>
+            <label><input type="checkbox" name="skill" value="1"> Diplomë në Stomatologji</label><br>
+            <label><input type="checkbox" name="skill" value="2"> Përvoja Klinike në Stomatologji</label><br>
+            <label><input type="checkbox" name="skill" value="3"> Njohuri të Aparateve dhe Teknikave të Avancuara të Stomatologjisë</label><br>
+            <label><input type="checkbox" name="skill" value="4"> Aftësi për Kujdesin ndaj Pacientëve dhe Komunikimin Efektiv</label><br>
+            <label><input type="checkbox" name="skill" value="5"> Disponueshmëria për Orë Fleksibile</label><br><br>
+
+            <label for="matchOutput">Përputhshmëria juaj me pozicionin e stomatologut:</label>
+            <output id="matchOutput">0%</output>
         </form>
-        <button type="button"  form="application-form"   onclick="validateForm()">Apliko</button>
+
+        <button type="button" form="application-form" onclick="validateForm()">Apliko</button>
+    </form>
 </div>
+
 <script>
     const ageInput = document.getElementById('age');
     const ageWarning = document.getElementById('age-warning');
@@ -408,8 +409,8 @@
         } else {
             ageWarning.style.display = 'none'; // Fshih paralajmërimin
         }
-    });</script>
-<script>
+    });
+
     function validateForm() {
         // Fshij mesazhet e mëparshme të gabimit
         document.querySelectorAll('.error-message').forEach(function(message) {
@@ -449,12 +450,14 @@
         if (!isValid) {
             alert('Ju lutem plotësoni të gjitha fushat!');
         }
+
         // Nëse të gjitha fushat janë të mbushura, drejto te faqja tjetër
         if (isValid) {
             window.location.href = 'aplikimi.html'; // Faqja ku do të drejtohet përdoruesi
         }
     }
 </script>
+
 <style>
     .error-message {
         color: red;
@@ -464,21 +467,19 @@
     }
 </style>
 </main>
-    </main>
 <!-- Shigjeta flotuese për kthim -->
 <a href="#" class="back-btn-floating" onclick="shkoTeFaqja();"></a>
 
 <div id="footer-container"></div>
 <script>
-    // JavaScript per ngarkim te footer-it nga file-i i jashtem
+    // JavaScript për ngarkimin e footer-it nga file-i i jashtëm
     fetch('footer.html')
         .then(response => response.text())
         .then(data => {
-            // Vendos pjese e footer-it ne div-in me id="footer-container"
             document.getElementById('footer-container').innerHTML = data;
         })
-        .catch(err => console.error('Gabim gjat&#235 ngarkimit te footer-it:', err));
- 
+        .catch(err => console.error('Gabim gjatë ngarkimit të footer-it:', err));
+
     // Funksioni për navigim te faqja e re
     function shkoTeFaqja() {
         window.location.href = "shpalljet.html"; // Këtu vendos destinacionin tënd
