@@ -6,7 +6,7 @@
 .login{
     height: 100%;
     width: 100% ;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4)),
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(124, 79, 79, 0.4)),
     url(foto/b1.jpg),
     url(foto/b2.jpg),
     url(foto/b3.jpg),
@@ -79,7 +79,7 @@
     cursor:pointer;
     display: block;
     margin:20px;
-    background:  linear-gradient(to right, #45cfbf, #2A9D8F);
+    background:  radial-gradient(ellipse farthest-corner, #45cfbf, #2A9D8F);
     border:0;
     outline: none;
     border-radius: 30px;
