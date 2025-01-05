@@ -312,13 +312,14 @@ body {
             transform: scale(1.05);
         }
        .canvas {
-        height: 100vh;
+        height: 300px;
         position: relative;
 
         background-color: #f9f9f9;
         border-radius: 8px;
         box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.08);
         margin-top: 30px;
+       
        }
        .canvas h3 {
         text-align: center;
@@ -330,4 +331,7 @@ body {
         left: 50%;
         transform: translate(-50%, -50%);
         margin: 0;
+       }
+       canvas{
+        margin-top: 40px;
        }
