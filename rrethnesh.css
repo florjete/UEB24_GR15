@@ -273,12 +273,6 @@ body {
             letter-spacing: 1px;
         }
 
-        .p {
-            font-size: 1.1em;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-
         .content button {
             padding: 12px 20px;
             font-size: 1.1em;
@@ -324,19 +318,6 @@ body {
        .h3 {
         text-align: center;
         color:#ff9800 ;
-       }
-       .p1 {
-        font-family: 'Georgia', serif; 
-        font-size: 20px; /* Madhësi e lehtë për lexueshmëri */
-        color: white; 
-        background: #264653; 
-        margin: 15px; 
-        border-radius: 10px; 
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-        line-height: 1.3; 
-        text-align: justify; 
-        width: 700px; 
-        text-align: center;
        }
        #timelineCanvas {
         position: absolute;
