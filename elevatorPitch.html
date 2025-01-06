@@ -17,12 +17,19 @@
             border-radius: 10px;
         }
         section {
-            background-color: #ffffff; /* Ngjyra e sfondit */
-            border-radius: 12px; /* Këndet e zbutura */
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Hija për t'i dhënë thellësi */
-            padding: 20px; /* Hapësira e brendshme */
-            margin-bottom: 40px; /* Hapësira midis seksioneve */
+            background: #264653;
+            color: white;
+            border-radius: 12px; 
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+            padding: 20px; 
+            margin-bottom: 40px; 
+            transition: transform 0.5s, background 0.5s;
         }
+        section:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 4px 15px rgb(38, 70, 83.2);
+            background-color: #264653
+        }         
 
         section h2 {
             font-weight: bold;
@@ -36,8 +43,8 @@
 
         section ul {
             padding: 15px;
-            background: #f9f9f9;
             border-radius: 8px;
+            color: white;
         }
 
         section ul li {
@@ -56,9 +63,9 @@
         }
         .p-elevator {
             font-size: 1.2em;
-            color: #333;
+            color:white;
             margin-bottom: 20px;
-            font-style: italic; /* Shtoni stilin italik për të gjitha paragrafët */
+            font-style: italic;
         }
         .elevator-img {
             max-width: 100%; /* Siguron që imazhi të mos dalë jashtë dritares */
@@ -183,7 +190,7 @@
     </script>
     <!-- Main content -->
     <main class="elevator-main">
-        <section>
+        <section id="section1">
             <h2 class="h2-elevator" style="margin-top:25px;">Çfarë është Elevator Pitch?</h2>
             <img class=elevator-img src="foto/elevatorpitch.jpeg" alt="Elevator Pitch Image" style="float:right; width:500px; margin-right:30px;">
             <p class="p-elevator" style="height:300px; width: 700px;text-align: center; margin-top: 90px;">
@@ -193,7 +200,7 @@
             </p>
         </section>
 
-        <section>
+        <section id="section2">
             <h2 class="h2-elevator">Origjina e Elevator Pitch</h2>
             <img class=elevator-img src="foto/elevatorpitch1.jpg" alt="Origjina e Elevator Pitch" style="float: left; max-width: 500px; margin-right:50px">
             <p class="p-elevator" style=" height:300px; width: 1200px; text-align: center; margin-top: 70px;">
@@ -204,7 +211,7 @@
             </p>
         </section>
 
-        <section>
+        <section id="section3">
             <h2 class="h2-elevator" style="padding-top: 50px;">Si të krijoni një Elevator Pitch</h2>
             <img class=elevator-img src="foto/elevatorpitch2.webp" alt="Si të krijoni Elevator Pitch" style="float: right; max-width: 500px;">
             <p class="p-elevator" style="margin-top: 40px;">
@@ -219,7 +226,7 @@
             </p>
         </section>
         <div>
-            <section>
+            <section id="section4">
                 <h2 class="h2-elevator">Përfundim</h2>
                 <img class=elevator-img src="foto/elevatorpitch3.png" alt="Përfundim" style="float: left; width:500px; margin-right:50px">
                 <p class="p-elevator" style=" height:300px; width: 1200px; text-align: center; margin-top: 70px;">
@@ -233,6 +240,26 @@
     <!-- Shigjeta flotuese për kthim -->
      <a href="#" class="back-btn-floating" onclick="kthehu();"></a>
 </body>
+<script>
+    const sections = document.querySelectorAll('section');
+    let currentIndex = 1;
+
+    function moveToNextSection() {
+        // Lëviz te seksioni aktual
+        sections[currentIndex].scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+        // Përditëso indeksin: nëse është te fundi, kthehu te fillimi
+        currentIndex = (currentIndex + 1) % sections.length;
+
+        // Kalo në seksionin tjetër pas 3 sekondash
+        setTimeout(moveToNextSection, 3000);
+    }
+
+    // Fillo animacionin automatikisht
+    window.onload = () => {
+        setTimeout(moveToNextSection, 3000);
+    };
+</script>
 <div id="footer-container"></div>
     <script>
       // JavaScript per ngarkim i footer-it nga file-i i jashtëm

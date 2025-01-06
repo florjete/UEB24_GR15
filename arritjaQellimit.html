@@ -23,7 +23,7 @@
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #e6e3e3fa;
         }
         .container {
             margin: 20px;
@@ -45,38 +45,76 @@
             border-radius: 8px;
         }
         section {
+            width: 120%;
             margin-bottom: 40px;
+            padding: 20px;
+            border-radius: 12px;
+            background: #264653;
+            transition: transform 0.5s, background 0.5s;
+            color: white;
         }
+
+        section:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 4px 15px rgb(38, 70, 83.2);
+            background-color: #264653
+        }
+        .qellimi-h1 {
+            font-size: 2.5em;
+            text-align: center;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #264653;
+         }
+
+        .qellimi-h2 {
+            font-size: 2em;
+            text-transform: capitalize;
+            margin-bottom: 20px;
+        }
+
+        .qellimi-p {
+            font-size: 1.2em;
+            line-height: 1.8;
+            color: white;
+        }
+
+        .qellimi-img {
+            border: 4px solid #264653;
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+        }
+        
         .qellimi-li {
-    position: relative;
-    margin-bottom: 20px;
-    opacity: 0;
-    animation: fadeIn 0.8s forwards;
-}
+            position: relative;
+            margin-bottom: 20px;
+            opacity: 0;
+            animation: fadeIn 1.2s forwards;
+        }
 
-.qellimi-li::before {
-   
-    position: absolute;
-    left: -30px;
-    
-    font-size: 24px;
-    display: inline-block;
-    opacity: 0;
-    transform: scale(0);
-    animation: bulletAnim 0.8s forwards;
-}
+        .qellimi-li::before {
+        
+            position: absolute;
+            left: -30px;
+            
+            font-size: 24px;
+            display: inline-block;
+            opacity: 0;
+            transform: scale(0);
+            animation: bulletAnim 1.2s forwards;
+        }
 
-.qellimi-li:nth-child(1) {
-    animation-delay: 0.2s;
-}
+        .qellimi-li:nth-child(1) {
+            animation-delay: 0.2s;
+        }
 
-.qellimi-li:nth-child(2) {
-    animation-delay: 0.4s;
-}
+        .qellimi-li:nth-child(2) {
+            animation-delay: 0.6s;
+        }
 
-.qellimi-li:nth-child(3) {
-    animation-delay: 0.6s;
-}
+        .qellimi-li:nth-child(3) {
+            animation-delay: 1s;
+        }
 
 @keyframes fadeIn {
     to {
@@ -214,7 +252,7 @@
 
         <section>
             <h2 class="qellimi-h2">Motivimi si Hapi i Par&euml</h2>
-            <img class="qellimi-img" src="foto/arritjaQellimit1.jpeg" alt="Motivimi për sukses">
+            <img class="qellimi-img" src="foto/arritjaQellimit1.jpeg" alt="Motivimi për sukses" style="width: 400px;">
             <p class="qellimi-p">
                 <strong>Motivimi</strong> &eumlsht&euml nj&euml nga faktor&eumlt ky&ccedil q&euml na ndihmon t&euml arrijm&euml suksesin. Pa motivim, &eumlsht&euml e v&eumlshtir&euml t&euml angazhohemi n&euml nj&euml pun&euml t&euml vazhdueshme dhe t&euml arrijm&euml q&eumlllimet tona. Ky &eumlsht&euml hapi i par&euml p&eumlr t&euml b&eumlr&euml &ccedildo &eumlnd&eumlrr t&euml mundur.
             </p>
@@ -230,7 +268,7 @@
 
         <section>
             <h2 class="qellimi-h2">Strategjit&euml p&eumlr T&euml Arritur Suksesin</h2>
-            <img class="qellimi-img" src="foto/arritjaQellimit2.jpeg" alt="Strategjitë për Suksesin">
+            <img class="qellimi-img" src="foto/arritjaQellimit2.jpeg" alt="Strategjitë për Suksesin" style="width: 400px;">
             <p class="qellimi-p">
                 Nj&eumlher&euml kur motivimi &eumlsht&euml i pranish&eumlm, &eumlsht&euml e r&eumlnd&eumlsishme t&euml keni nj&euml plan t&euml qart&euml dhe strategji p&eumlr ta arritur suksesin. Disa strategji t&euml p&eumlrdorura shpesh jan&euml:
             </p>
@@ -246,7 +284,7 @@
 
         <section>
             <h2 class="qellimi-h2">Q&eumlndrimi Pozitiv dhe P&eumlrshtatshm&eumlria</h2>
-            <img class="qellimi-img" src="foto/arritjaQellimit3.jpeg" alt="Qëndrimi Pozitiv">
+            <img class="qellimi-img" src="foto/arritjaQellimit3.jpeg" alt="Qëndrimi Pozitiv" style="width: 400px;">
             <p class="qellimi-p">
                 T&euml kesh nj&euml <strong>q&eumlndrim pozitiv</strong> &eumlsht&euml shum&euml e r&eumlnd&eumlsishme p&eumlr t&euml kaluar p&eumlrmes pengesave dhe sfidave q&euml mund t&euml dalin gjat&euml rrug&eumls suaj. Nj&euml q&eumlndrim pozitiv do t'ju ndihmoj&euml t&euml shihni mund&eumlsit&euml edhe n&euml momentet e v&eumlshtira dhe t&euml mos dor&eumlzoheni kur gj&eumlrat b&eumlhen t&euml v&eumlshtira.
             </p>
@@ -257,7 +295,7 @@
 
         <section>
             <h2 class="qellimi-h2">P&eumlrfundim</h2>
-            <img class="qellimi-img" src="foto/arritjaQellimit4.jpg" alt="Arritja e Suksesit">
+            <img class="qellimi-img" src="foto/arritjaQellimit4.jpg" alt="Arritja e Suksesit" style="width: 400px;">
             <p class="qellimi-p">
                 Arritja e suksesit &eumlsht&euml nj&euml proces q&euml k&eumlrkon koh&euml, angazhim dhe durim. Motivimi i brendsh&eumlm, strategjit&euml e duhura, dhe q&eumlndrimi pozitiv jan&euml disa nga faktor&eumlt q&euml mund t&euml ndihmojn&euml nj&euml individ t&euml arrij&euml suksesin. Ndaj, filloni tani dhe b&eumlni &ccedildo dit&euml nj&euml hap m&euml af&eumlr &eumlndrr&eumls tuaj.
             </p>
