@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="homestyle.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
-<body>
+<body style="scroll-behavior: smooth;">
     <!-- importo file te html per nav ne div -->
 
     <div id="header-container"></div>
@@ -152,6 +152,29 @@
           })
           .catch(err => console.error('Gabim gjat&#235 ngarkimit te footer-it:', err));
     </script>
+    <script>
+        // Përcakto të gjitha seksionet
+        const sections = document.querySelectorAll('section');
+        let currentSectionIndex = 1;
+    
+        function moveToNextSection() {
+            if (currentSectionIndex < sections.length) {
+                // Shfaq seksionin e ardhshëm
+                sections[currentSectionIndex].scrollIntoView({ behavior: 'smooth', block:'center' });
+                currentSectionIndex++;
+                // Kalo në seksionin tjetër pas 3sekondave
+                if (currentSectionIndex < sections.length) {
+                    setTimeout(moveToNextSection, 2000);
+                }
+            }
+        }
+    
+        // Nise automatikisht lëvizjen pas ngarkimit të faqes
+        window.onload = () => {
+            setTimeout(moveToNextSection, 2000);
+        };
+    </script>
+    
     <script src="loginPopup.js"></script>
 </body>
 </html>
