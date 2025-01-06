@@ -26,25 +26,25 @@ body {
   box-sizing: border-box;
 }
 
+
+#tekstiRrethNesh {
+  flex: 1; /* Teksti zë hapësirën kryesore */
+  margin-right: 20px; /* Hapësirë midis tekstit dhe fotos */
+}
 #rrethnesh {
+  margin-left: 30px;
   font-size: 50px;
   margin-top: 70px;
   color: #264653;
 }
 
 #fotoRrethNesh {
-  height: 400px;
-  width: 400px;
+  flex: 0 0 250px; /* Gjerësia e fotos është fikse */
+  margin-top: 200px; 
   position: absolute;
   top: 70px;
-  right: 60px;
   border-radius: 50%;
 }
-
-
-
-
-       
         .reviews-section {
           text-align: center;
           padding: 50px 20px;
@@ -218,44 +218,6 @@ body {
           }
         }
         
-        /* Stil për desktop */
-        #rrethNesh {
-          display: flex;
-          flex-direction: row;
-          align-items: flex-start;
-        }
-        
-        #tekstiRrethNesh {
-          flex: 1; /* Teksti zë hapësirën kryesore */
-          margin-right: 20px; /* Hapësirë midis tekstit dhe fotos */
-        }
-        
-        #fotoRrethNesh {
-          flex: 0 0 250px; /* Gjerësia e fotos është fikse */
-          margin-top: 100px; /* Zhvendosje poshtë */
-        }
-        
-        #fotoRrethNesh img {
-          width: 100%; /* Bën foton të përshtatet me div-in */
-          height: auto;
-        }
-        
-        /* Stil për pajisje më të vogla */
-        @media screen and (max-width: 1200px) {
-          #rrethNesh {
-            flex-direction: column; /* Vendos foton nën tekst */
-            align-items: center; /* Qendron të dyja elementet */
-          }
-        
-          #tekstiRrethNesh {
-            margin-right: 0; /* Hiq hapësirën anësore */
-            text-align: center; /* Qendro tekstin për pamje më të mirë */
-          }
-        
-          #fotoRrethNesh {
-            margin-top: 20px; /* Ruaj hapësirën sipër fotos */
-          }
-        }
         .content {
             padding: 30px;
             background: linear-gradient(145deg,  #204d5fd2, #264653);
