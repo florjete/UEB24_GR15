@@ -89,6 +89,9 @@
             content: "←"; 
             font-size: 18px;
         }
+        .h3-elevator {
+            font-size: 5em;
+        }
     </style>
 </head>
 <body class="elevator-body">
@@ -157,9 +160,9 @@
     <!-- Main content -->
     <main class="elevator-main">
         <section>
-            <h2 class="h2-elevator">Çfarë është Elevator Pitch?</h2>
-            <img class=elevator-img src="foto/elevatorpitch.jpeg" alt="Elevator Pitch Image">
-            <p class="p-elevator">
+            <h2 class="h2-elevator" style="margin-top:25px;">Çfarë është Elevator Pitch?</h2>
+            <img class=elevator-img src="foto/elevatorpitch.jpeg" alt="Elevator Pitch Image" style="float:right; width:500px; margin-right:30px;">
+            <p class="p-elevator" style="height:300px; width: 700px;text-align: center; margin-top: 40px;">
                 Elevator Pitch është një përshkrim i shkurtër dhe i qartë i një ideje, një projekti ose një personi,
                 i cili mund të komunikohen në një periudhë të shkurtër kohe – zakonisht në kohën që zgjat një udhëtim me lift (për këtë arsye quhet "Elevator Pitch").
                 Ky lloj përshkrimi është shumë i rëndësishëm, sepse ndihmon të prezantosh ide apo projekte në një mënyrë të shpejtë dhe efikase.
@@ -168,8 +171,8 @@
 
         <section>
             <h2 class="h2-elevator">Origjina e Elevator Pitch</h2>
-            <img class=elevator-img src="foto/elevatorpitch1.jpg" alt="Origjina e Elevator Pitch">
-            <p class="p-elevator">
+            <img class=elevator-img src="foto/elevatorpitch1.jpg" alt="Origjina e Elevator Pitch" style="float: left; max-width: 500px; ">
+            <p class="p-elevator" style="text-align: center; margin-top: 40px;">
                 Historia e Elevator Pitch fillon në vitet 1980, kur një profesionist i fushës së marketingut dhe komunikimit,
                 genaqsi kërkonte një mënyrë për të prezantuar një produkt ose një ide në mënyrë të shpejtë dhe të fuqishme.
                 Për të krijuar një përshkrim të tillë, duhej të merrej parasysh që të transmetohej informacioni kyç pa humbur kohë.
@@ -177,10 +180,10 @@
             </p>
         </section>
 
-        <section>
-            <h2 class="h2-elevator">Si të krijoni një Elevator Pitch</h2>
-            <img class=elevator-img src="foto/elevatorpitch2.webp" alt="Si të krijoni Elevator Pitch">
-            <p class="p-elevator">
+        <section style="margin-top: 150px;">
+            <h2 class="h2-elevator" style="padding-top: 50px;">Si të krijoni një Elevator Pitch</h2>
+            <img class=elevator-img src="foto/elevatorpitch2.webp" alt="Si të krijoni Elevator Pitch" style="float: right; max-width: 500px;">
+            <p class="p-elevator" style="margin-top: 40px;">
                 Një Elevator Pitch efektiv duhet të përmbajë disa elemente të rëndësishme:
                 <ul>
                     <li class="li-elevator"><strong class="strong-elevator">Prezantimi i vetes</strong>: Kush jeni ju dhe çfarë bëni?</li>
@@ -191,20 +194,22 @@
                 Një Elevator Pitch i suksesshëm është i qartë, i shkurtër dhe bindës. Duhet të mundësojë që dikush të kuptojë menjëherë vlerën që ofroni.
             </p>
         </section>
-
-        <section>
-            <h2 class="h2-elevator">Përfundim</h2>
-            <img class=elevator-img src="foto/elevatorpitch3.png" alt="Përfundim">
-            <p class="p-elevator">
-                Elevator Pitch është një mjet i fuqishëm komunikimi që mund të përdoret në shumë situata, duke përfshirë takime biznesi,
-                intervista pune, dhe mundësitë për të prezantuar ide në një mënyrë efikase. Kjo teknikë mund të bëjë diferencën në
-                arritjen e suksesit në një botë ku koha është shumë e vlefshme.
-            </p>
-        </section>
+        <div style="margin: 100px 0 200px 0;">
+            <section>
+                <h2 class="h2-elevator">Përfundim</h2>
+                <img class=elevator-img src="foto/elevatorpitch3.png" alt="Përfundim" style="float: left; width:500px;">
+                <p class="p-elevator" style="text-align: center; margin-top: 40px;">
+                    Elevator Pitch është një mjet i fuqishëm komunikimi që mund të përdoret në shumë situata, duke përfshirë takime biznesi,
+                    intervista pune, dhe mundësitë për të prezantuar ide në një mënyrë efikase. Kjo teknikë mund të bëjë diferencën në
+                    arritjen e suksesit në një botë ku koha është shumë e vlefshme.
+                </p>
+            </section>
+    </div>
     </main>
     <!-- Shigjeta flotuese për kthim -->
      <a href="#" class="back-btn-floating" onclick="kthehu();"></a>
-    <div id="footer-container"></div>
+</body>
+<div id="footer-container"></div>
     <script>
       // JavaScript per ngarkim i footer-it nga file-i i jashtëm
       fetch('footer.html')
@@ -220,5 +225,4 @@
     }
     </script>
     <script src="loginPopup.js"></script>
-</body>
 </html>
